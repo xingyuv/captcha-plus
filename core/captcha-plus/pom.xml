@@ -9,8 +9,8 @@
     <version>0.0.1</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
-    <description>aj-captcha-plus.jar</description>
-    <url>https://github.com/xingyu4j/aj-captcha-plus</url>
+    <description>captcha-plus.jar</description>
+    <url>https://github.com/xingyu4j/captcha-plus</url>
     <packaging>jar</packaging>
 
     <properties>
@@ -39,9 +39,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/xingyu4j/OSSRH-87873.git</connection>
-        <developerConnection>scm:git:ssh://github.com/xingyu4j/OSSRH-87873.git</developerConnection>
-        <url>https://github.com/xingyu4j/OSSRH-87873/tree/main</url>
+        <connection>scm:git:git://github.com/xingyu4j/captcha-plus.git</connection>
+        <developerConnection>scm:git:ssh://github.com/xingyu4j/captcha-plus.git</developerConnection>
+        <url>https://github.com/xingyu4j/captcha-plus/tree/main</url>
     </scm>
 
     <developers>
@@ -54,7 +54,7 @@
 
     <profiles>
         <profile>
-            <id>snapshots</id>
+            <id>releases</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>
@@ -111,7 +111,7 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
-                        <version>1.5</version>
+                        <version>1.6</version>
                         <executions>
                             <execution>
                                 <id>sign-artifacts</id>

@@ -12,7 +12,7 @@
 
     <groupId>com.github.xingyu4j</groupId>
     <artifactId>spring-boot-starter-captcha-plus</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
 
     <name>captcha-plus-spring-boot-starter</name>
     <description>captcha-plus-spring-boot-starter</description>
@@ -61,9 +61,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/xingyu4j/OSSRH-56732.git</connection>
-        <developerConnection>scm:git:ssh://github.com/xingyu4j/OSSRH-56732.git</developerConnection>
-        <url>https://github.com/xingyu4j/OSSRH-56732/tree/main</url>
+        <connection>scm:git:git://github.com/xingyu4j/captcha-plus.git</connection>
+        <developerConnection>scm:git:ssh://github.com/xingyu4j/captcha-plus.git</developerConnection>
+        <url>https://github.com/xingyu4j/captcha-plus/tree/main</url>
     </scm>
 
     <developers>
@@ -76,7 +76,7 @@
 
     <profiles>
         <profile>
-            <id>snapshots</id>
+            <id>releases</id>
             <activation>
                 <activeByDefault>true</activeByDefault>
             </activation>

@@ -190,7 +190,7 @@ a.引入jar，已上传至maven中央仓库。
 <dependency>
    <groupId>com.github.xingyu4j</groupId>
    <artifactId>captcha-plus</artifactId>
-   <version>1.0.0</version>
+   <version>0.0.1</version>
 </dependency>
 ```
 b.引入CaptchaConfig.java配置文件，需自行配置参数，

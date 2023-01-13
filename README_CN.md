@@ -10,7 +10,7 @@
 &emsp; &emsp; AJ-Captcha行为验证码，包含滑动拼图、文字点选两种方式，UI支持弹出和嵌入两种方式。后端提供Java实现，前端提供了php、angular、html、vue、uni-app、flutter、android、ios等代码示例。
 
 # 1 在线体验
-**在线体验暂时下线**
+mvn clean deploy -P releases -Dmaven.test.skip=true
 
 # 2 功能概述
 #### &emsp; 2.1 组件介绍
@@ -72,7 +72,7 @@ I  Your application is running here: http://localhost:8081
 &emsp;详细的前后端接入文档，后端示例代码service目录下，前端示例代码view目录下。
 
 
-# 6 技术支持，如有问题，请提交[Issue](https://github.com/xingyu4j/aj-captcha-plus/issues) 
+# 6 技术支持，如有问题，请提交[Issue](https://github.com/xingyu4j/captcha-plus/issues) 
 
 #### 开源不易，劳烦各位star ☺
 
