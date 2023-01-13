@@ -1,12 +1,9 @@
 # captcha-plus
-============
+
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)[![Total Lines](https://tokei.rs/b1/github/anji-plus/captcha?category=lines)](https://github.com/anji-plus/captcha)
 
 > AjPlus Captcha 
 
-[![Stargazers over time](https://starchart.cc/anji-plus/captcha.svg)](https://starchart.cc/anji-plus/captcha)
-[![Stargazers over time](https://whnb.wang/img/anji-plus/captcha?e=604800)](https://whnb.wang/anji-plus/captcha?e=604800)
-          
 [![EN doc](https://img.shields.io/badge/document-English-blue.svg)](README.md)[![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](README_CN.md)
 
 # 1. Online Demo
@@ -15,8 +12,6 @@
 ### &emsp; 1.3 Wechat/H5 demo（based on uni-app)
  &emsp;&emsp; see also [gitee]( https://gitee.com/anji-plus/captcha "码云")
 
- ![Wechat](https://captcha.anji-plus.com/static/8cm.jpg  "")&emsp;&emsp;![h5](https://images.gitee.com/uploads/images/2020/0429/174246_c33e3fa3_1728982.png "h5.png")
- &emsp;&emsp;&emsp;&emsp;Wechat Demo&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
 
 # 2. Design Details
 ### &emsp; 2.1 UI Component

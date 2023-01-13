@@ -63,7 +63,7 @@
     <scm>
         <connection>scm:git:git://github.com/xingyu4j/OSSRH-56732.git</connection>
         <developerConnection>scm:git:ssh://github.com/xingyu4j/OSSRH-56732.git</developerConnection>
-        <url>https://github.com/xingyu4j/OSSRH-56732/tree/master</url>
+        <url>https://github.com/xingyu4j/OSSRH-56732/tree/main</url>
     </scm>
 
     <developers>
