@@ -1,0 +1,17 @@
+<!--index.wxml-->
+
+<view class="container">
+
+  <text class="title">• 嵌入式</text>
+  <aj-captcha class="demo1" opt="{{captchaOpt1}}"></aj-captcha>
+
+  <text class="line"></text>
+
+  <text class="title">• 弹出式</text>
+  <button type="primary" plain="true" bindtap="openDemo">打 开</button>
+
+  <aj-captcha class="demo2" opt="{{captchaOpt2}}"></aj-captcha>
+
+</view>
+
+

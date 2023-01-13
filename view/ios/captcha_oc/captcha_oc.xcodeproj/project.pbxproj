@@ -1,0 +1,522 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		90441AC5BF6D9C682746DFA1 /* Pods_captcha_oc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD475E6AA72E1C0FCD2521C8 /* Pods_captcha_oc.framework */; };
+		DF1D994B247931A7001C3ECB /* CaptchaView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1D994A247931A7001C3ECB /* CaptchaView.m */; };
+		DF1D9951247962B0001C3ECB /* UIColor+PLColor.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1D994D247962AF001C3ECB /* UIColor+PLColor.m */; };
+		DF1D9952247962B0001C3ECB /* UIView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1D9950247962B0001C3ECB /* UIView+Extension.m */; };
+		DF6BA5D02478C112009F8460 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5CF2478C112009F8460 /* AppDelegate.m */; };
+		DF6BA5D32478C112009F8460 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5D22478C112009F8460 /* SceneDelegate.m */; };
+		DF6BA5D62478C112009F8460 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5D52478C112009F8460 /* ViewController.m */; };
+		DF6BA5D92478C112009F8460 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6BA5D72478C112009F8460 /* Main.storyboard */; };
+		DF6BA5DB2478C114009F8460 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF6BA5DA2478C114009F8460 /* Assets.xcassets */; };
+		DF6BA5DE2478C114009F8460 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF6BA5DC2478C114009F8460 /* LaunchScreen.storyboard */; };
+		DF6BA5E12478C114009F8460 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5E02478C114009F8460 /* main.m */; };
+		DF6BA5EA2478DEBC009F8460 /* HttpToolManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5E82478DEBC009F8460 /* HttpToolManager.m */; };
+		DF6BA5ED2478DFF2009F8460 /* CaptchaRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5EC2478DFF2009F8460 /* CaptchaRequest.m */; };
+		DF6BA5F124790DDF009F8460 /* BaseJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5F024790DDF009F8460 /* BaseJsonModel.m */; };
+		DF6BA5F424790E34009F8460 /* CaptchaRepModel.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5F324790E34009F8460 /* CaptchaRepModel.m */; };
+		DF6BA5F724792236009F8460 /* AFAppDotNetAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5F524792236009F8460 /* AFAppDotNetAPIClient.m */; };
+		DF6BA60224792EFB009F8460 /* NSString+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5FC24792EFB009F8460 /* NSString+AES256.m */; };
+		DF6BA60324792EFB009F8460 /* ESConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA5FE24792EFB009F8460 /* ESConfig.m */; };
+		DF6BA60424792EFB009F8460 /* NSData+AES256.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6BA60024792EFB009F8460 /* NSData+AES256.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		64F01B6D04370374D91D1754 /* Pods-captcha_oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-captcha_oc.debug.xcconfig"; path = "Target Support Files/Pods-captcha_oc/Pods-captcha_oc.debug.xcconfig"; sourceTree = "<group>"; };
+		8B4759FA5828C6699287406B /* Pods-captcha_oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-captcha_oc.release.xcconfig"; path = "Target Support Files/Pods-captcha_oc/Pods-captcha_oc.release.xcconfig"; sourceTree = "<group>"; };
+		BD475E6AA72E1C0FCD2521C8 /* Pods_captcha_oc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_captcha_oc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF1D9949247931A7001C3ECB /* CaptchaView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaView.h; sourceTree = "<group>"; };
+		DF1D994A247931A7001C3ECB /* CaptchaView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaView.m; sourceTree = "<group>"; };
+		DF1D994D247962AF001C3ECB /* UIColor+PLColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+PLColor.m"; sourceTree = "<group>"; };
+		DF1D994E247962B0001C3ECB /* UIView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extension.h"; sourceTree = "<group>"; };
+		DF1D994F247962B0001C3ECB /* UIColor+PLColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+PLColor.h"; sourceTree = "<group>"; };
+		DF1D9950247962B0001C3ECB /* UIView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extension.m"; sourceTree = "<group>"; };
+		DF6BA5CB2478C112009F8460 /* captcha_oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = captcha_oc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF6BA5CE2478C112009F8460 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DF6BA5CF2478C112009F8460 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DF6BA5D12478C112009F8460 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		DF6BA5D22478C112009F8460 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		DF6BA5D42478C112009F8460 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DF6BA5D52478C112009F8460 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DF6BA5D82478C112009F8460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DF6BA5DA2478C114009F8460 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DF6BA5DD2478C114009F8460 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DF6BA5DF2478C114009F8460 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF6BA5E02478C114009F8460 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DF6BA5E82478DEBC009F8460 /* HttpToolManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpToolManager.m; sourceTree = "<group>"; };
+		DF6BA5E92478DEBC009F8460 /* HttpToolManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpToolManager.h; sourceTree = "<group>"; };
+		DF6BA5EB2478DFF2009F8460 /* CaptchaRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaRequest.h; sourceTree = "<group>"; };
+		DF6BA5EC2478DFF2009F8460 /* CaptchaRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaRequest.m; sourceTree = "<group>"; };
+		DF6BA5EF24790DDF009F8460 /* BaseJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseJsonModel.h; sourceTree = SOURCE_ROOT; };
+		DF6BA5F024790DDF009F8460 /* BaseJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseJsonModel.m; sourceTree = SOURCE_ROOT; };
+		DF6BA5F224790E34009F8460 /* CaptchaRepModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CaptchaRepModel.h; sourceTree = "<group>"; };
+		DF6BA5F324790E34009F8460 /* CaptchaRepModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaptchaRepModel.m; sourceTree = "<group>"; };
+		DF6BA5F524792236009F8460 /* AFAppDotNetAPIClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFAppDotNetAPIClient.m; sourceTree = "<group>"; };
+		DF6BA5F624792236009F8460 /* AFAppDotNetAPIClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFAppDotNetAPIClient.h; sourceTree = "<group>"; };
+		DF6BA5FC24792EFB009F8460 /* NSString+AES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+AES256.m"; sourceTree = "<group>"; };
+		DF6BA5FD24792EFB009F8460 /* ESConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESConfig.h; sourceTree = "<group>"; };
+		DF6BA5FE24792EFB009F8460 /* ESConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ESConfig.m; sourceTree = "<group>"; };
+		DF6BA5FF24792EFB009F8460 /* NSData+AES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+AES256.h"; sourceTree = "<group>"; };
+		DF6BA60024792EFB009F8460 /* NSData+AES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+AES256.m"; sourceTree = "<group>"; };
+		DF6BA60124792EFB009F8460 /* NSString+AES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+AES256.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DF6BA5C82478C112009F8460 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				90441AC5BF6D9C682746DFA1 /* Pods_captcha_oc.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0E1A76F89B3A71BD87277612 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				64F01B6D04370374D91D1754 /* Pods-captcha_oc.debug.xcconfig */,
+				8B4759FA5828C6699287406B /* Pods-captcha_oc.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CAA4B63F83C2DFB1235427C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BD475E6AA72E1C0FCD2521C8 /* Pods_captcha_oc.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF1D994824793187001C3ECB /* view */ = {
+			isa = PBXGroup;
+			children = (
+				DF1D9949247931A7001C3ECB /* CaptchaView.h */,
+				DF1D994A247931A7001C3ECB /* CaptchaView.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		DF1D994C24796299001C3ECB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				DF1D994F247962B0001C3ECB /* UIColor+PLColor.h */,
+				DF1D994D247962AF001C3ECB /* UIColor+PLColor.m */,
+				DF1D994E247962B0001C3ECB /* UIView+Extension.h */,
+				DF1D9950247962B0001C3ECB /* UIView+Extension.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		DF6BA5C22478C112009F8460 = {
+			isa = PBXGroup;
+			children = (
+				DF6BA5CD2478C112009F8460 /* captcha_oc */,
+				DF6BA5CC2478C112009F8460 /* Products */,
+				0E1A76F89B3A71BD87277612 /* Pods */,
+				CAA4B63F83C2DFB1235427C4 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DF6BA5CC2478C112009F8460 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DF6BA5CB2478C112009F8460 /* captcha_oc.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DF6BA5CD2478C112009F8460 /* captcha_oc */ = {
+			isa = PBXGroup;
+			children = (
+				DF1D994C24796299001C3ECB /* Category */,
+				DF1D994824793187001C3ECB /* view */,
+				DF6BA5FB24792EC6009F8460 /* config */,
+				DF6BA5EE24790DC5009F8460 /* model */,
+				DF6BA5E72478DEBC009F8460 /* HttpTools */,
+				DF6BA5CE2478C112009F8460 /* AppDelegate.h */,
+				DF6BA5CF2478C112009F8460 /* AppDelegate.m */,
+				DF6BA5D12478C112009F8460 /* SceneDelegate.h */,
+				DF6BA5D22478C112009F8460 /* SceneDelegate.m */,
+				DF6BA5D42478C112009F8460 /* ViewController.h */,
+				DF6BA5D52478C112009F8460 /* ViewController.m */,
+				DF6BA5D72478C112009F8460 /* Main.storyboard */,
+				DF6BA5DA2478C114009F8460 /* Assets.xcassets */,
+				DF6BA5DC2478C114009F8460 /* LaunchScreen.storyboard */,
+				DF6BA5DF2478C114009F8460 /* Info.plist */,
+				DF6BA5E02478C114009F8460 /* main.m */,
+			);
+			path = captcha_oc;
+			sourceTree = "<group>";
+		};
+		DF6BA5E72478DEBC009F8460 /* HttpTools */ = {
+			isa = PBXGroup;
+			children = (
+				DF6BA5F624792236009F8460 /* AFAppDotNetAPIClient.h */,
+				DF6BA5F524792236009F8460 /* AFAppDotNetAPIClient.m */,
+				DF6BA5E92478DEBC009F8460 /* HttpToolManager.h */,
+				DF6BA5E82478DEBC009F8460 /* HttpToolManager.m */,
+				DF6BA5EB2478DFF2009F8460 /* CaptchaRequest.h */,
+				DF6BA5EC2478DFF2009F8460 /* CaptchaRequest.m */,
+			);
+			path = HttpTools;
+			sourceTree = "<group>";
+		};
+		DF6BA5EE24790DC5009F8460 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				DF6BA5EF24790DDF009F8460 /* BaseJsonModel.h */,
+				DF6BA5F024790DDF009F8460 /* BaseJsonModel.m */,
+				DF6BA5F224790E34009F8460 /* CaptchaRepModel.h */,
+				DF6BA5F324790E34009F8460 /* CaptchaRepModel.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		DF6BA5FB24792EC6009F8460 /* config */ = {
+			isa = PBXGroup;
+			children = (
+				DF6BA5FD24792EFB009F8460 /* ESConfig.h */,
+				DF6BA5FE24792EFB009F8460 /* ESConfig.m */,
+				DF6BA5FF24792EFB009F8460 /* NSData+AES256.h */,
+				DF6BA60024792EFB009F8460 /* NSData+AES256.m */,
+				DF6BA60124792EFB009F8460 /* NSString+AES256.h */,
+				DF6BA5FC24792EFB009F8460 /* NSString+AES256.m */,
+			);
+			path = config;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DF6BA5CA2478C112009F8460 /* captcha_oc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DF6BA5E42478C114009F8460 /* Build configuration list for PBXNativeTarget "captcha_oc" */;
+			buildPhases = (
+				39D30D90EE0EC758366974D5 /* [CP] Check Pods Manifest.lock */,
+				DF6BA5C72478C112009F8460 /* Sources */,
+				DF6BA5C82478C112009F8460 /* Frameworks */,
+				DF6BA5C92478C112009F8460 /* Resources */,
+				9621F3707955BBA02EDFC272 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = captcha_oc;
+			productName = captcha_oc;
+			productReference = DF6BA5CB2478C112009F8460 /* captcha_oc.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DF6BA5C32478C112009F8460 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = kean_qi;
+				TargetAttributes = {
+					DF6BA5CA2478C112009F8460 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = DF6BA5C62478C112009F8460 /* Build configuration list for PBXProject "captcha_oc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DF6BA5C22478C112009F8460;
+			productRefGroup = DF6BA5CC2478C112009F8460 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DF6BA5CA2478C112009F8460 /* captcha_oc */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DF6BA5C92478C112009F8460 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF6BA5DE2478C114009F8460 /* LaunchScreen.storyboard in Resources */,
+				DF6BA5DB2478C114009F8460 /* Assets.xcassets in Resources */,
+				DF6BA5D92478C112009F8460 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		39D30D90EE0EC758366974D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-captcha_oc-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9621F3707955BBA02EDFC272 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-captcha_oc/Pods-captcha_oc-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-captcha_oc/Pods-captcha_oc-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-captcha_oc/Pods-captcha_oc-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF6BA5C72478C112009F8460 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DF1D9952247962B0001C3ECB /* UIView+Extension.m in Sources */,
+				DF6BA5F424790E34009F8460 /* CaptchaRepModel.m in Sources */,
+				DF6BA5D62478C112009F8460 /* ViewController.m in Sources */,
+				DF6BA60324792EFB009F8460 /* ESConfig.m in Sources */,
+				DF1D9951247962B0001C3ECB /* UIColor+PLColor.m in Sources */,
+				DF6BA5F124790DDF009F8460 /* BaseJsonModel.m in Sources */,
+				DF1D994B247931A7001C3ECB /* CaptchaView.m in Sources */,
+				DF6BA5D02478C112009F8460 /* AppDelegate.m in Sources */,
+				DF6BA5F724792236009F8460 /* AFAppDotNetAPIClient.m in Sources */,
+				DF6BA60224792EFB009F8460 /* NSString+AES256.m in Sources */,
+				DF6BA5E12478C114009F8460 /* main.m in Sources */,
+				DF6BA5D32478C112009F8460 /* SceneDelegate.m in Sources */,
+				DF6BA5ED2478DFF2009F8460 /* CaptchaRequest.m in Sources */,
+				DF6BA60424792EFB009F8460 /* NSData+AES256.m in Sources */,
+				DF6BA5EA2478DEBC009F8460 /* HttpToolManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DF6BA5D72478C112009F8460 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF6BA5D82478C112009F8460 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DF6BA5DC2478C114009F8460 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DF6BA5DD2478C114009F8460 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DF6BA5E22478C114009F8460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DF6BA5E32478C114009F8460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DF6BA5E52478C114009F8460 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 64F01B6D04370374D91D1754 /* Pods-captcha_oc.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A44TJ86VM;
+				INFOPLIST_FILE = captcha_oc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anji.plus.captcha-oc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DF6BA5E62478C114009F8460 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8B4759FA5828C6699287406B /* Pods-captcha_oc.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4A44TJ86VM;
+				INFOPLIST_FILE = captcha_oc/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.anji.plus.captcha-oc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DF6BA5C62478C112009F8460 /* Build configuration list for PBXProject "captcha_oc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF6BA5E22478C114009F8460 /* Debug */,
+				DF6BA5E32478C114009F8460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF6BA5E42478C114009F8460 /* Build configuration list for PBXNativeTarget "captcha_oc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DF6BA5E52478C114009F8460 /* Debug */,
+				DF6BA5E62478C114009F8460 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DF6BA5C32478C112009F8460 /* Project object */;
+}

@@ -1,0 +1,57 @@
+var startX, startY, offsetX, barBlockWidth, slideMaxWidth,startMoveTime,endMovetime;
+ 
+function touchstart(event, ownerInstance) {
+  //获取当前按下的接触点
+  startMoveTime = Date.now();
+  var t = event.touches[0];
+  var barAreaElm = ownerInstance.selectComponent('.verify-bar-area');//滑动区域
+  var barBlockElm = ownerInstance.selectComponent('.verify-move-block');//滑块
+  var barLeftElm = ownerInstance.selectComponent('.verify-left-bar');//滑块痕迹
+  var barAreaWidth = parseInt(barAreaElm.getComputedStyle(['width']).width);
+  barBlockWidth = parseInt(barBlockElm.getComputedStyle(['width']).width);
+  slideMaxWidth = barAreaWidth - barBlockWidth;
+  startX = t.pageX;
+  startY = t.pageY;
+  offsetX = 0;
+  console.log("start:"+startMoveTime+"\tX坐标："+startX+"\tY坐标："+startX+"\t滑块可移动最大值："+slideMaxWidth);
+  barBlockElm.setStyle({'transform': 'translateX(' + offsetX + 'px)'})
+  barLeftElm.setStyle({'width': barBlockWidth+ 'px'})
+  barLeftElm.removeClass("status-1");
+  barLeftElm.addClass("status-2");
+}
+ 
+function touchmove(event, ownerInstance) {
+  //获取当前移动的接触点
+  var t = event.touches[0];
+  var barBlockElm = ownerInstance.selectComponent('.verify-move-block');//滑块
+  var barLeftElm = ownerInstance.selectComponent('.verify-left-bar');//滑块痕迹
+  //移动距离判断
+  var x = t.pageX - startX;
+  if( x <= 0 ){
+    offsetX = 0;
+  }else if( x > 0 && x <= slideMaxWidth ){
+    offsetX = x;
+  }else if( x > slideMaxWidth ){
+    offsetX = slideMaxWidth;
+  }
+  var leftWidth = offsetX + barBlockWidth-1;
+  console.log("move \tX坐标："+t.pageX+"\tY坐标"+t.pageY+"\tleft宽度："+leftWidth)
+  barBlockElm.setStyle({'transform': 'translateX(' + offsetX + 'px)'})
+  barLeftElm.setStyle({'width': leftWidth+ 'px'})
+}
+ 
+function touchend(event, ownerInstance) {
+  endMovetime = Date.now();
+  console.log("end \toffsetX:"+offsetX)
+  ownerInstance.callMethod('_blockPuzzleCheck', {
+    offsetX:offsetX,
+    offsetY: 5.0,
+    expendTime: ((endMovetime - startMoveTime)/1000).toFixed(2),  //单位秒
+  })
+}
+
+module.exports = {
+  touchmove: touchmove,
+  touchend: touchend,
+  touchstart: touchstart,
+}

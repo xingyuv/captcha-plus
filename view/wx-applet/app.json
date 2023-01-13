@@ -1,0 +1,33 @@
+{
+  "pages":[
+    "pages/block_puzzle/index",
+    "pages/click_word/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "aj-captche-applet-demo",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#333333",
+    "selectedColor":"#eb732d",
+    "backgroundColor":"#FFF",
+    "list": [
+      {
+        "pagePath": "pages/block_puzzle/index",
+        "text": "滑动",
+        "iconPath": "images/icon1-1.png",
+        "selectedIconPath": "images/icon1-2.png"
+      },
+      {
+        "pagePath": "pages/click_word/index",
+        "text": "点选",
+        "iconPath": "images/icon2-1.png",
+        "selectedIconPath": "images/icon2-2.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

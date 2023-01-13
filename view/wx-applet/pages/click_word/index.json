@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "aj-captcha": "/components/aj-captcha/index"
+  }
+  
+}

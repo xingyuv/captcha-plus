@@ -1,0 +1,16 @@
+.btn{
+  border: none;
+  outline: none;
+  width: 300px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+  background-color: #409EFF;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1em;
+}
+.modal-dialog{
+  width: 466px;
+}
