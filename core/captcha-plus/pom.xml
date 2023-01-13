@@ -6,7 +6,7 @@
 
     <groupId>com.github.xingyu4j</groupId>
     <artifactId>captcha-plus</artifactId>
-    <version>1.0.0</version>
+    <version>0.0.1</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>aj-captcha-plus.jar</description>
