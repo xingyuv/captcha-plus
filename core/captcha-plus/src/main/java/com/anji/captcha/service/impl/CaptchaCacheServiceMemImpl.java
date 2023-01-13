@@ -3,6 +3,8 @@ package com.anji.captcha.service.impl;
 import com.anji.captcha.service.CaptchaCacheService;
 import com.anji.captcha.util.CacheUtil;
 
+import java.util.Objects;
+
 /**
  * 对于分布式部署的应用，我们建议应用自己实现CaptchaCacheService，比如用Redis，参考service/spring-boot代码示例。
  * 如果应用是单点的，也没有使用redis，那默认使用内存。
@@ -15,7 +17,6 @@ import com.anji.captcha.util.CacheUtil;
 public class CaptchaCacheServiceMemImpl implements CaptchaCacheService {
     @Override
     public void set(String key, String value, long expiresInSeconds) {
-
         CacheUtil.set(key, value, expiresInSeconds);
     }
 
@@ -36,7 +37,7 @@ public class CaptchaCacheServiceMemImpl implements CaptchaCacheService {
 
     @Override
     public Long increment(String key, long val) {
-        Long ret = Long.valueOf(CacheUtil.get(key)) + val;
+        Long ret = Long.parseLong(Objects.requireNonNull(CacheUtil.get(key))) + val;
         CacheUtil.set(key, ret + "", 0);
         return ret;
     }

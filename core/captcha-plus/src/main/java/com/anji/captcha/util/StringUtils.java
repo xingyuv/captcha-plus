@@ -107,7 +107,7 @@ public class StringUtils {
             return true;
         }
         for (int i = 0; i < strLen; i++) {
-            if ((Character.isWhitespace(str.charAt(i)) == false)) {
+            if ((!Character.isWhitespace(str.charAt(i)))) {
                 return false;
             }
         }
@@ -1230,8 +1230,7 @@ public class StringUtils {
         int ret = Integer.MAX_VALUE;
 
         int tmp = 0;
-        for (int i = 0; i < sz; i++) {
-            String search = searchStrs[i];
+        for (String search : searchStrs) {
             if (search == null) {
                 continue;
             }
@@ -1280,8 +1279,7 @@ public class StringUtils {
         int sz = searchStrs.length;
         int ret = INDEX_NOT_FOUND;
         int tmp = 0;
-        for (int i = 0; i < sz; i++) {
-            String search = searchStrs[i];
+        for (String search : searchStrs) {
             if (search == null) {
                 continue;
             }

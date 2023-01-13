@@ -54,7 +54,6 @@ public class CaptchaServiceFactory {
         for (CaptchaService item : services) {
             instances.put(item.captchaType(), item);
         }
-        ;
         logger.info("supported-captchaTypes-service:{}", instances.keySet().toString());
     }
 }

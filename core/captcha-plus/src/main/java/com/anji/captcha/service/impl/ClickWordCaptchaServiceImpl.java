@@ -43,22 +43,22 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
         super.init(config);
         clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, "SourceHanSansCN-Normal.otf");
         try {
-            int size = Integer.valueOf(config.getProperty(Const.CAPTCHA_FONT_SIZE, HAN_ZI_SIZE + ""));
+            int size = Integer.parseInt(config.getProperty(Const.CAPTCHA_FONT_SIZE, HAN_ZI_SIZE + ""));
 
             if (clickWordFontStr.toLowerCase().endsWith(".ttf")
                     || clickWordFontStr.toLowerCase().endsWith(".ttc")
                     || clickWordFontStr.toLowerCase().endsWith(".otf")) {
                 this.clickWordFont = Font.createFont(Font.TRUETYPE_FONT,
-                                getClass().getResourceAsStream("/fonts/" + clickWordFontStr))
+                                Objects.requireNonNull(getClass().getResourceAsStream("/fonts/" + clickWordFontStr)))
                         .deriveFont(Font.BOLD, size);
             } else {
-                int style = Integer.valueOf(config.getProperty(Const.CAPTCHA_FONT_STYLE, Font.BOLD + ""));
+                int style = Integer.parseInt(config.getProperty(Const.CAPTCHA_FONT_STYLE, Font.BOLD + ""));
                 this.clickWordFont = new Font(clickWordFontStr, style, size);
             }
         } catch (Exception ex) {
             logger.error("load font error:{}", ex);
         }
-        this.wordTotalCount = Integer.valueOf(config.getProperty(Const.CAPTCHA_WORD_COUNT, "4"));
+        this.wordTotalCount = Integer.parseInt(config.getProperty(Const.CAPTCHA_WORD_COUNT, "4"));
     }
 
     @Override
@@ -208,7 +208,7 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
     private CaptchaVO getImageData(BufferedImage backgroundImage) {
         CaptchaVO dataVO = new CaptchaVO();
         List<String> wordList = new ArrayList<String>();
-        List<PointVO> pointList = new ArrayList();
+        List<PointVO> pointList = new ArrayList<>();
 
         Graphics backgroundGraphics = backgroundImage.getGraphics();
         int width = backgroundImage.getWidth();
@@ -313,6 +313,5 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
         y = RandomUtils.getRandomInt(HAN_ZI_SIZE, imageHeight - HAN_ZI_SIZE);
         return new PointVO(x, y, null);
     }
-
 
 }

@@ -11,8 +11,8 @@ import javax.crypto.Cipher;
 import javax.crypto.KeyGenerator;
 import javax.crypto.spec.SecretKeySpec;
 import java.math.BigInteger;
+import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-
 
 public class AESUtil {
     //算法
@@ -77,7 +77,7 @@ public class AESUtil {
         Cipher cipher = Cipher.getInstance(ALGORITHMSTR);
         cipher.init(Cipher.ENCRYPT_MODE, new SecretKeySpec(encryptKey.getBytes(), "AES"));
 
-        return cipher.doFinal(content.getBytes("utf-8"));
+        return cipher.doFinal(content.getBytes(StandardCharsets.UTF_8));
     }
 
 

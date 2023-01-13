@@ -74,7 +74,8 @@ public final class CacheUtil {
         }
         CACHE_MAP.put(key, value);
         if (expiresInSeconds > 0) {
-            CACHE_MAP.put(key + "_HoldTime", System.currentTimeMillis() + expiresInSeconds * 1000);//缓存失效时间
+            // 缓存失效时间
+            CACHE_MAP.put(key + "_HoldTime", System.currentTimeMillis() + expiresInSeconds * 1000);
         }
     }
 

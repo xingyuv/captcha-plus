@@ -79,8 +79,7 @@ public abstract class FileCopyUtils {
             }
 
             out.flush();
-            int var5 = byteCount;
-            return var5;
+            return byteCount;
         } finally {
             try {
                 in.close();

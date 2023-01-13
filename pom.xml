@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.github.xingyu4j</groupId>
-  <artifactId>aptcha-plus-parent</artifactId>
+  <artifactId>captcha-plus-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
 

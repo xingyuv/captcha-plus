@@ -66,7 +66,7 @@ public enum RepCodeEnum {
      * {fieldName}不能为空
      *
      * @param fieldNames
-     * @return
+     * @return ResponseModel
      */
     public ResponseModel parseError(Object... fieldNames) {
         ResponseModel errorMessage = new ResponseModel();

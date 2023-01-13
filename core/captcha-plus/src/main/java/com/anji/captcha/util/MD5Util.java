@@ -1,5 +1,6 @@
 package com.anji.captcha.util;
 
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 /**
@@ -15,11 +16,11 @@ public abstract class MD5Util {
     public static String md5(String dataStr) {
         try {
             MessageDigest m = MessageDigest.getInstance("MD5");
-            m.update(dataStr.getBytes("UTF8"));
+            m.update(dataStr.getBytes(StandardCharsets.UTF_8));
             byte[] s = m.digest();
             StringBuilder result = new StringBuilder();
-            for (int i = 0; i < s.length; i++) {
-                result.append(Integer.toHexString((0x000000FF & s[i]) | 0xFFFFFF00).substring(6));
+            for (byte b : s) {
+                result.append(Integer.toHexString((0x000000FF & b) | 0xFFFFFF00).substring(6));
             }
             return result.toString();
         } catch (Exception e) {

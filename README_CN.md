@@ -1,5 +1,6 @@
-# **在线体验暂时下线 ！！！**
-#### &emsp; 在线文档:[https://ajcaptcha.beliefteam.cn/captcha-doc/](https://ajcaptcha.beliefteam.cn/captcha-doc/ "doc")<br>
+# 项目fork自 aj-captcha 升级依赖，支持springboot3
+
+### &emsp; 在线文档:[https://ajcaptcha.beliefteam.cn/captcha-doc/](https://ajcaptcha.beliefteam.cn/captcha-doc/ "doc")<br>
 
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)[![Total Lines](https://tokei.rs/b1/github/anji-plus/captcha?category=lines)](https://github.com/anji-plus/captcha)
 
@@ -41,14 +42,9 @@
 
 # 4 目录结构
 ├─core<br>
-│&emsp;├─captcha   &emsp;&emsp;    java核心源码<br>
-│&emsp;└─captcha-spring-boot-starter    &emsp;&emsp;    springboot快速启动<br>
+│&emsp;├─captcha-plus   &emsp;&emsp;    java核心源码<br>
+│&emsp;└─spring-boot-starter-captcha-plus    &emsp;&emsp;    springboot快速启动<br>
 ├─images    &emsp;&emsp;&emsp;&emsp;&emsp;    效果图<br>
-├─service<br>
-│&emsp;├─go   &emsp;&emsp;    后端为go项目示例<br>
-│&emsp;├─php   &emsp;&emsp;    后端为php项目示例<br>
-│&emsp;├─springboot   &emsp;&emsp;    后端为springboot项目示例<br>
-│&emsp;└─springmvc    &emsp;&emsp;    后端为springmvc非springboot项目示例<br>
 └─view    &emsp;&emsp;&emsp;&emsp;&emsp;    多语言客户端示例<br>
 &emsp;├─android    &emsp;&emsp;    原生android实现示例<br>
 &emsp;├─angular    &emsp;&emsp;    angular实现示例<br>
@@ -76,21 +72,11 @@ I  Your application is running here: http://localhost:8081
 &emsp;详细的前后端接入文档，后端示例代码service目录下，前端示例代码view目录下。
 
 
-# 6 技术支持，如有问题，请提交[Issue](https://gitee.com/anji-plus/captcha/issues) 
-个人企业微信：加微信进群备注 **AJ-Captcha** 或者 **Captcha**，**一定要加备注！！！** <br>
-如果不是为了进群，请直接说明来意，每天加群的都很多，企微也是我们自己的工作企微，会有很多消息会被刷下去，如果半天没有回复你，请过段时间再发送。 <br>
-<img src="https://images.gitee.com/uploads/images/2021/0729/130901_1672e6c5_7492051.jpeg" width = "300" height = "300" align=left/>
+# 6 技术支持，如有问题，请提交[Issue](https://github.com/xingyu4j/captcha-plus/issues) 
 
 #### 开源不易，劳烦各位star ☺
-
-#### 感谢JetBrains 的支持
-
-##### JetBrains:[https://www.jetbrains.com/?from=AJ-Captcha](https://www.jetbrains.com/?from=AJ-Captcha "链接")
 
 <br>
 
 
 
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/anji-plus/captcha.svg)](https://starchart.cc/anji-plus/captcha)

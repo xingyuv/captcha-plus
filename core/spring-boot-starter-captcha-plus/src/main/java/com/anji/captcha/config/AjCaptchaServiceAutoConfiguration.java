@@ -1,6 +1,5 @@
 package com.anji.captcha.config;
 
-
 import com.anji.captcha.model.common.Const;
 import com.anji.captcha.properties.AjCaptchaProperties;
 import com.anji.captcha.service.CaptchaService;

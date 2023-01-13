@@ -40,6 +40,4 @@ public interface CaptchaCacheService {
         return 0L;
     }
 
-    ;
-
 }

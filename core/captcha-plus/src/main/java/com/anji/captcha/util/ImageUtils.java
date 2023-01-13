@@ -75,8 +75,7 @@ public class ImageUtils {
             return null;
         }
         Integer randomInt = RandomUtils.getRandomInt(0, strings.length);
-        String s = slidingBlockCacheMap.get(strings[randomInt]);
-        return s;
+        return slidingBlockCacheMap.get(strings[randomInt]);
     }
 
     public static BufferedImage getPicClick() {
@@ -154,6 +153,7 @@ public class ImageUtils {
             return new HashMap<>();
         }
         File[] files = file.listFiles();
+        assert files != null;
         Arrays.stream(files).forEach(item -> {
             try {
                 FileInputStream fileInputStream = new FileInputStream(item);

@@ -391,8 +391,7 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
 
     private static void fillMatrix(int[][] matrix, int[] values) {
         int filled = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            int[] x = matrix[i];
+        for (int[] x : matrix) {
             for (int j = 0; j < x.length; j++) {
                 x[j] = values[filled++];
             }
@@ -403,8 +402,7 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
         int r = 0;
         int g = 0;
         int b = 0;
-        for (int i = 0; i < matrix.length; i++) {
-            int[] x = matrix[i];
+        for (int[] x : matrix) {
             for (int j = 0; j < x.length; j++) {
                 if (j == 1) {
                     continue;
@@ -417,6 +415,5 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
         }
         return new Color(r / 8, g / 8, b / 8).getRGB();
     }
-
 
 }

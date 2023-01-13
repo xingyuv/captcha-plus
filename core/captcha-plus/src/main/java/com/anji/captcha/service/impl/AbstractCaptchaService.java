@@ -18,10 +18,11 @@ import org.slf4j.LoggerFactory;
 
 import java.awt.*;
 import java.io.File;
-import java.io.FileOutputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
 import java.util.Base64;
+import java.util.Objects;
 import java.util.Properties;
 
 /**
@@ -197,7 +198,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
             if (waterMarkFontStr.toLowerCase().endsWith(".ttf") || waterMarkFontStr.toLowerCase().endsWith(".ttc")
                     || waterMarkFontStr.toLowerCase().endsWith(".otf")) {
                 this.waterMarkFont = Font.createFont(Font.TRUETYPE_FONT,
-                                getClass().getResourceAsStream("/fonts/" + waterMarkFontStr))
+                                Objects.requireNonNull(getClass().getResourceAsStream("/fonts/" + waterMarkFontStr)))
                         .deriveFont(Font.BOLD, HAN_ZI_SIZE / 2);
             } else {
                 this.waterMarkFont = new Font(waterMarkFontStr, Font.BOLD, HAN_ZI_SIZE / 2);
@@ -228,7 +229,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
             if (!tempFile.getParentFile().exists()) {
                 tempFile.getParentFile().mkdirs();
             }
-            OutputStream out = new FileOutputStream(tempFile);
+            OutputStream out = Files.newOutputStream(tempFile.toPath());
             out.write(b);
             out.flush();
             out.close();
@@ -264,6 +265,5 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         int enOffset = enCount * 8;
         return chOffset + enOffset;
     }
-
 
 }

@@ -56,10 +56,7 @@ public class RequestModel implements Serializable {
      * @return
      */
     public boolean isVaildateRequest() {
-        if (StringUtils.isBlank(sign) || StringUtils.isBlank(time)) {
-            return false;
-        }
-        return true;
+        return !StringUtils.isBlank(sign) && !StringUtils.isBlank(time);
     }
 
     public String getServletPath() {
