@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import * as $ from 'jquery';
 import "./verify/verify.js";
+
 @Component({
   selector: 'verify-slipping',
   templateUrl: './verifySlipping.component.html',

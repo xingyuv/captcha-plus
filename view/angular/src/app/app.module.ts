@@ -1,9 +1,9 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
 import {VerifyService} from './service/app.service';
 import {verifySlippingComponent} from '../components/verifySlipping.component';
 import {verifyClickComponent} from '../components/verifyClick.component';

@@ -207,7 +207,6 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
                 }
             }
 
-
             // 设置“抗锯齿”的属性
             graphics.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
             graphics.setStroke(new BasicStroke(bold, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL));

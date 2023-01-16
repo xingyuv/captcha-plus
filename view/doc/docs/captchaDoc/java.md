@@ -5,7 +5,7 @@
 a.引入jar，已上传至maven中央仓库。
 ```java
 <dependency>
-   <groupId>com.github.xingyu4j</groupId>
+   <groupId>com.xingyuv</groupId>
    <artifactId>spring-boot-starter-captcha-plus</artifactId>
    <version>1.0.0</version>
 </dependency>
@@ -188,7 +188,7 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 a.引入jar，已上传至maven中央仓库。
 ```java
 <dependency>
-   <groupId>com.github.xingyu4j</groupId>
+   <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
    <version>0.0.1</version>
 </dependency>

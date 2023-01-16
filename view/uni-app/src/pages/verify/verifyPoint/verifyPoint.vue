@@ -46,13 +46,14 @@
     </view>
 </template>
 <script type="text/babel">
-    /**
-     * VerifyPoints
-     * @description 点选
-     * */
-    import {aesEncrypt} from "./../utils/ase.js"
-	import {myRequest} from "../utils/request.js"
-    export default {
+/**
+ * VerifyPoints
+ * @description 点选
+ * */
+import {aesEncrypt} from "./../utils/ase.js"
+import {myRequest} from "../utils/request.js"
+
+export default {
         name: 'VerifyPoints',
         props: {
             //弹出式pop，固定fixed

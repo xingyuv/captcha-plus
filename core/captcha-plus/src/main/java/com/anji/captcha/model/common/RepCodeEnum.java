@@ -65,7 +65,7 @@ public enum RepCodeEnum {
      * 将入参fieldNames与this.desc组合成错误信息
      * {fieldName}不能为空
      *
-     * @param fieldNames
+     * @param fieldNames 入参
      * @return ResponseModel
      */
     public ResponseModel parseError(Object... fieldNames) {

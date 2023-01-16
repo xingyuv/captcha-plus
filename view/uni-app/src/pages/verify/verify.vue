@@ -49,14 +49,14 @@
 </view>
 </template>
 <script>
-    /**
-     * Verify 验证码组件
-     * @description 分发验证码使用
-     * */
-    import VerifySlide from './verifySlider/verifySlider'
-    import VerifyPoint from "./verifyPoint/verifyPoint"
+/**
+ * Verify 验证码组件
+ * @description 分发验证码使用
+ * */
+import VerifySlide from './verifySlider/verifySlider'
+import VerifyPoint from "./verifyPoint/verifyPoint"
 
-    export default {
+export default {
         name: 'Vue2Verify',
         props: {
             captchaType:{

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { from } from 'rxjs';
+import {Component} from '@angular/core';
 import {verify} from './model/verify';
 import {VerifyService} from './service/app.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',

@@ -59,12 +59,12 @@
 </template>
 <script type="text/babel">
 /**
-     * VerifySlide
-     * @description 滑块
-     * */
-import { aesEncrypt } from './../utils/ase'
-import { resetSize } from './../utils/util'
-import { reqGet, reqCheck } from './../api/index'
+ * VerifySlide
+ * @description 滑块
+ * */
+import {aesEncrypt} from './../utils/ase'
+import {resetSize} from './../utils/util'
+import {reqCheck, reqGet} from './../api/index'
 
 //  "captchaType":"blockPuzzle",
 export default {

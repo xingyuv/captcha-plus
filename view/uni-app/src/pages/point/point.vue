@@ -52,8 +52,9 @@
 </template>
 
 <script>
-	import Verify from "./../verify/verify"
-	export default {
+import Verify from "./../verify/verify"
+
+export default {
 		data() {
 			return {
 				showMode:'fixed',

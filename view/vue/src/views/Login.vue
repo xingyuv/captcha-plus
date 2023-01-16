@@ -92,10 +92,6 @@
 </template>
 
 <script>
-import { reqLogin, getMenu, queryForCodeSelect } from '@/api/basic'
-import { aesEncrypt, aesDecrypt } from '@/utils/aes'
-import { setItem, getItem } from '@/utils/storage'
-
 import Verify from './../components/verifition/Verify'
 
 export default {

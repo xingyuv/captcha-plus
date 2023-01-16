@@ -74,12 +74,6 @@ public class ResponseModel implements Serializable {
         return responseModel;
     }
 
-    @Override
-    public String toString() {
-        return "ResponseModel{" + "repCode='" + repCode + '\'' + ", repMsg='"
-                + repMsg + '\'' + ", repData=" + repData + '}';
-    }
-
     public boolean isSuccess() {
         return StringUtils.equals(repCode, RepCodeEnum.SUCCESS.getCode());
     }
@@ -113,5 +107,9 @@ public class ResponseModel implements Serializable {
         this.repData = repData;
     }
 
-
+    @Override
+    public String toString() {
+        return "ResponseModel{" + "repCode='" + repCode + '\'' + ", repMsg='"
+                + repMsg + '\'' + ", repData=" + repData + '}';
+    }
 }

@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import { getPicture, reqCheck} from '../api/base.js'
-import { CSSTransition } from 'react-transition-group';
+import React, {Component} from 'react'
+import {getPicture, reqCheck} from '../api/base.js'
+import {CSSTransition} from 'react-transition-group';
 import '../assets/index.css';
 import defaultImg from './../assets/images/default.jpg'
 import {aesEncrypt} from "../api/ase.js";

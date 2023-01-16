@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import VerifyPoint from "../components/verifyPoint";
 import VerifyPointFixed from "../components/verifyPointFixed";
 import VerifySlide from "../components/verifySlide";

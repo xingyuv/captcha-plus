@@ -1,4 +1,5 @@
 import CryptoJS from 'crypto-js'
+
 export function aesEncrypt(word) {
   var key = CryptoJS.enc.Utf8.parse('XwKsGlMcdPMEhR1B')
   var srcs = CryptoJS.enc.Utf8.parse(word)

@@ -81,7 +81,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         captchaAesStatus = Boolean.parseBoolean(config.getProperty(Const.CAPTCHA_AES_STATUS, "true"));
         clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, "WenQuanZhengHei.ttf");
         //clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, "SourceHanSansCN-Normal.otf");
-        cacheType = config.getProperty(Const.CAPTCHA_CACHETYPE, "local");
+        cacheType = config.getProperty(Const.CAPTCHA_CACHE_TYPE, "local");
         captchaInterferenceOptions = Integer.parseInt(
                 config.getProperty(Const.CAPTCHA_INTERFERENCE_OPTIONS, "0"));
 
@@ -89,12 +89,12 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         // 通过加载resources下的font字体解决，无需在linux中安装字体
         loadWaterMarkFont();
 
-        if (cacheType.equals("local")) {
+        if ("local".equals(cacheType)) {
             logger.info("初始化local缓存...");
-            CacheUtil.init(Integer.parseInt(config.getProperty(Const.CAPTCHA_CACAHE_MAX_NUMBER, "1000")),
+            CacheUtil.init(Integer.parseInt(config.getProperty(Const.CAPTCHA_CACHE_MAX_NUMBER, "1000")),
                     Long.parseLong(config.getProperty(Const.CAPTCHA_TIMING_CLEAR_SECOND, "180")));
         }
-        if (config.getProperty(Const.HISTORY_DATA_CLEAR_ENABLE, "0").equals("1")) {
+        if ("1".equals(config.getProperty(Const.HISTORY_DATA_CLEAR_ENABLE, "0"))) {
             logger.info("历史资源清除开关...开启..." + captchaType());
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 @Override
@@ -103,7 +103,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
                 }
             }));
         }
-        if (config.getProperty(Const.REQ_FREQUENCY_LIMIT_ENABLE, "0").equals("1")) {
+        if ("1".equals(config.getProperty(Const.REQ_FREQUENCY_LIMIT_ENABLE, "0"))) {
             if (limitHandler == null) {
                 logger.info("接口分钟内限流开关...开启...");
                 limitHandler = new FrequencyLimitHandler.DefaultLimitHandler(config, getCacheService(cacheType));

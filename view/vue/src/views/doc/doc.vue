@@ -18,7 +18,6 @@
 
 <script>
 import myHeader from './../layout/Header'
-import MenuItem from './../layout/UseMenuItem'
 
 export default {
   name: 'Doc',

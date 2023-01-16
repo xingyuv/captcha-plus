@@ -57,12 +57,12 @@
 </template>
 <script type="text/babel">
 /**
-     * VerifyPoints
-     * @description 点选
-     * */
-import { resetSize, _code_chars, _code_color1, _code_color2 } from './../utils/util'
-import { aesEncrypt } from './../utils/ase'
-import { reqGet, reqCheck } from './../api/index'
+ * VerifyPoints
+ * @description 点选
+ * */
+import {resetSize} from './../utils/util'
+import {aesEncrypt} from './../utils/ase'
+import {reqCheck, reqGet} from './../api/index'
 
 export default {
   name: 'VerifyPoints',

@@ -9,9 +9,9 @@
 a.引入jar，已上传至maven中央仓库。
 ```java
 <dependency>
-   <groupId>com.github.anji-plus</groupId>
-   <artifactId>captcha</artifactId>
-   <version>1.1.8</version>
+   <groupId>com.xingyuv</groupId>
+   <artifactId>captcha-plus</artifactId>
+   <version>1.0.0</version>
 </dependency>
 ```
 b.修改application.properties，自定义底图和水印，启动后前端就可以请求接口了。[社区底图库](https://gitee.com/anji-plus/AJ-Captcha-Images)

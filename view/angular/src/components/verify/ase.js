@@ -3,7 +3,8 @@
  * @word 要加密的内容
  * @keyWord String  服务器随机返回的关键字
  *  */
-import { AES, mode, pad, enc } from 'crypto-js';
+import {AES, enc, mode, pad} from 'crypto-js';
+
 function aesEncrypt(word,keyWord){
   var key = enc.Utf8.parse(keyWord);
   var srcs = enc.Utf8.parse(word);

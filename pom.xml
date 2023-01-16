@@ -4,14 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.github.xingyu4j</groupId>
+  <groupId>com.xingyuv</groupId>
   <artifactId>captcha-plus-parent</artifactId>
-  <version>0.0.1</version>
+  <version>1.0.0</version>
   <packaging>pom</packaging>
 
   <properties>
     <springboot.version>2.7.7</springboot.version>
-    <captcha.core.version>0.0.1</captcha.core.version>
+    <captcha.core.version>1.0.0</captcha.core.version>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <encoding>UTF-8</encoding>
@@ -35,7 +35,7 @@
         <scope>provided</scope>
       </dependency>
       <dependency>
-        <groupId>com.github.xingyu4j</groupId>
+        <groupId>com.xingyuv</groupId>
         <artifactId>captcha-plus</artifactId>
         <version>${captcha.core.version}</version>
       </dependency>

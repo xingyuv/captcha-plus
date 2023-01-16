@@ -46,13 +46,14 @@
     </view>
 </template>
 <script>
-    /**
-     * VerifySlide
-     * @description 滑块
-     * */
-    import {aesEncrypt} from "./../utils/ase.js"
-	import {myRequest} from "../utils/request.js"
-    export default {
+/**
+ * VerifySlide
+ * @description 滑块
+ * */
+import {aesEncrypt} from "./../utils/ase.js"
+import {myRequest} from "../utils/request.js"
+
+export default {
         name: 'VerifySlide',
         props: {
             captchaType:{

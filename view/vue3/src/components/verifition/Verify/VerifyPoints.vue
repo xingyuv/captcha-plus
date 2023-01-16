@@ -44,15 +44,16 @@
     </div>
 </template>
 <script type="text/babel">
-    /**
-     * VerifyPoints
-     * @description 点选
-     * */
-    import {resetSize, _code_chars, _code_color1, _code_color2} from './../utils/util'
-    import {aesEncrypt} from "./../utils/ase"
-    import {reqGet,reqCheck}  from "./../api/index"
-    import { computed, onMounted, reactive, ref,watch,nextTick,toRefs, watchEffect,getCurrentInstance} from 'vue';
-    export default {
+/**
+ * VerifyPoints
+ * @description 点选
+ * */
+import {resetSize} from './../utils/util'
+import {aesEncrypt} from "./../utils/ase"
+import {reqCheck, reqGet} from "./../api/index"
+import {getCurrentInstance, nextTick, onMounted, reactive, ref, toRefs} from 'vue';
+
+export default {
         name: 'VerifyPoints',
         props: {
             //弹出式pop，固定fixed

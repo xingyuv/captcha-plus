@@ -27,15 +27,15 @@
 </div>
 </template>
 <script type="text/babel">
-    /**
-     * Verify 验证码组件
-     * @description 分发验证码使用
-     * */
-    import VerifySlide from './Verify/VerifySlide'
-    import VerifyPoints from './Verify/VerifyPoints'
-import { computed, ref,watch,toRefs,watchEffect } from 'vue';
+/**
+ * Verify 验证码组件
+ * @description 分发验证码使用
+ * */
+import VerifySlide from './Verify/VerifySlide'
+import VerifyPoints from './Verify/VerifyPoints'
+import {computed, ref, toRefs, watchEffect} from 'vue';
 
-    export default {
+export default {
         name: 'Vue2Verify',
         components: {
             VerifySlide,

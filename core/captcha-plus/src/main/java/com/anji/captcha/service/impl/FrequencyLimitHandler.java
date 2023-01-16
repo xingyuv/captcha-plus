@@ -46,7 +46,6 @@ public interface FrequencyLimitHandler {
     /***
      * 验证码接口限流:
      *      客户端ClientUid 组件实例化时设置一次，如：场景码+UUID，客户端可以本地缓存,保证一个组件只有一个值
-     *
      * 针对同一个客户端的请求，做如下限制:
      * get
      * 	 1分钟内check失败5次，锁定5分钟
@@ -150,5 +149,4 @@ public interface FrequencyLimitHandler {
             return null;
         }
     }
-
 }

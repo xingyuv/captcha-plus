@@ -22,7 +22,8 @@
 <!--
 -->
 <script>
-import { setItem, getItem } from '@/utils/storage'
+import {getItem} from '@/utils/storage'
+
 export default {
   data() {
     return {

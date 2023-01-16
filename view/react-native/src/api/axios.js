@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 axios.defaults.baseURL = 'https://captcha.anji-plus.com/captcha-api';
 // axios.defaults.baseURL = 'http://10.108.11.46:8088/';
 

@@ -72,7 +72,7 @@ I  Your application is running here: http://localhost:8081
 &emsp;详细的前后端接入文档，后端示例代码service目录下，前端示例代码view目录下。
 
 
-# 6 技术支持，如有问题，请提交[Issue](https://github.com/xingyu4j/captcha-plus/issues) 
+# 6 技术支持，如有问题，请提交[Issue](https://github.com/xingyuv/captcha-plus/issues) 
 
 #### 开源不易，劳烦各位star ☺
 

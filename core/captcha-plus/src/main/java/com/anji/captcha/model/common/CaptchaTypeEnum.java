@@ -30,7 +30,12 @@ public enum CaptchaTypeEnum {
         return this.codeDesc;
     }
 
-    //根据codeValue获取枚举
+    /**
+     * 根据codeValue获取枚举
+     *
+     * @param codeValue codeValue
+     * @return 枚举
+     */
     public static CaptchaTypeEnum parseFromCodeValue(String codeValue) {
         for (CaptchaTypeEnum e : CaptchaTypeEnum.values()) {
             if (e.codeValue.equals(codeValue)) {
@@ -40,20 +45,34 @@ public enum CaptchaTypeEnum {
         return null;
     }
 
-    //根据codeValue获取描述
+    /**
+     * 根据codeValue获取描述
+     *
+     * @param codeValue codeValue
+     * @return 描述
+     */
     public static String getCodeDescByCodeBalue(String codeValue) {
         CaptchaTypeEnum enumItem = parseFromCodeValue(codeValue);
         return enumItem == null ? "" : enumItem.getCodeDesc();
     }
 
-    //验证codeValue是否有效
+    /**
+     * 验证codeValue是否有效
+     *
+     * @param codeValue codeValue
+     * @return 是否有效
+     */
     public static boolean validateCodeValue(String codeValue) {
         return parseFromCodeValue(codeValue) != null;
     }
 
-    //列出所有值字符串
+    /**
+     * 所有值字符串
+     *
+     * @return 所有值字符串
+     */
     public static String getString() {
-        StringBuffer buffer = new StringBuffer();
+        StringBuilder buffer = new StringBuilder();
         for (CaptchaTypeEnum e : CaptchaTypeEnum.values()) {
             buffer.append(e.codeValue).append("--").append(e.getCodeDesc()).append(", ");
         }

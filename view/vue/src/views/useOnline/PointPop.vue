@@ -77,6 +77,7 @@
 
 <script>
 import Verify from './../../components/verifition/Verify'
+
 export default {
   name: 'SliderFixed',
   components: {

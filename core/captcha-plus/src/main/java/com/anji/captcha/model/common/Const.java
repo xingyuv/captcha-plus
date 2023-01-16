@@ -18,7 +18,7 @@ public interface Const {
     /**
      * 缓存local/redis...
      */
-    String CAPTCHA_CACHETYPE = "captcha.cacheType";
+    String CAPTCHA_CACHE_TYPE = "captcha.cacheType";
 
     /**
      * 右下角水印文字(我的水印)
@@ -65,7 +65,7 @@ public interface Const {
     /**
      * local缓存的阈值
      */
-    String CAPTCHA_CACAHE_MAX_NUMBER = "captcha.cache.number";
+    String CAPTCHA_CACHE_MAX_NUMBER = "captcha.cache.number";
 
     /**
      * 定时清理过期local缓存，秒

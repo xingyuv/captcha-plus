@@ -41,15 +41,15 @@
     </div>
 </template>
 <script type="text/babel">
-    /**
-     * VerifySlide
-     * @description 滑块
-     * */
-    import {aesEncrypt} from "./../utils/ase"
-    import {resetSize} from './../utils/util'
-    import {reqGet,reqCheck}  from "./../api/index"
- import { computed, onMounted, reactive, ref,watch,nextTick,toRefs, watchEffect,getCurrentInstance} from 'vue';
-    //  "captchaType":"blockPuzzle",
+/**
+ * VerifySlide
+ * @description 滑块
+ * */
+import {aesEncrypt} from "./../utils/ase"
+import {resetSize} from './../utils/util'
+import {reqCheck, reqGet} from "./../api/index"
+import {computed, getCurrentInstance, nextTick, onMounted, reactive, ref, toRefs, watch} from 'vue';
+//  "captchaType":"blockPuzzle",
     export default {
         name: 'VerifySlide',
         props: {

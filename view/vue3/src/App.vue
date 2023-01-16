@@ -10,8 +10,9 @@
 </template>
 
 <script>
-import { ref,getCurrentInstance} from 'vue'
+import {ref} from 'vue'
 import Verify from '@/components/verifition/Verify'
+
 export default {
   name: 'App',
   components: {

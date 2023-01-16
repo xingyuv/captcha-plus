@@ -6,7 +6,7 @@
 
 <script>
 
-import { readFile } from './../utils/readFile'
+import {readFile} from './../utils/readFile'
 
 export default {
   props: {

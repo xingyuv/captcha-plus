@@ -4,13 +4,25 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.github.xingyu4j</groupId>
+    <groupId>com.xingyuv</groupId>
     <artifactId>captcha-plus</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>captcha-plus.jar</description>
-    <url>https://github.com/xingyu4j/captcha-plus</url>
+    <url>https://github.com/xingyuv/captcha-plus</url>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>8</source>
+                    <target>8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <packaging>jar</packaging>
 
     <properties>
@@ -39,9 +51,9 @@
         </license>
     </licenses>
     <scm>
-        <connection>scm:git:git://github.com/xingyu4j/captcha-plus.git</connection>
-        <developerConnection>scm:git:ssh://github.com/xingyu4j/captcha-plus.git</developerConnection>
-        <url>https://github.com/xingyu4j/captcha-plus/tree/main</url>
+        <connection>scm:git:git://github.com/xingyuv/captcha-plus.git</connection>
+        <developerConnection>scm:git:ssh://github.com/xingyuv/captcha-plus.git</developerConnection>
+        <url>https://github.com/xingyuv/captcha-plus/tree/main</url>
     </scm>
 
     <developers>
@@ -49,94 +61,103 @@
             <id>xingyu4j</id>
             <name>xingyu4j</name>
             <email>xingyu4j@vip.qq.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+8</timezone>
         </developer>
     </developers>
 
     <profiles>
         <profile>
-            <id>releases</id>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
+            <id>release</id>
             <build>
                 <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>3.3</version>
-                        <configuration>
-                            <source>1.8</source>
-                            <target>1.8</target>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-resources-plugin</artifactId>
-                        <version>2.4</version>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                        </configuration>
-                    </plugin>
+                    <!-- Source -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-source-plugin</artifactId>
                         <version>2.2.1</version>
                         <executions>
                             <execution>
-                                <id>attach-sources</id>
+                                <phase>package</phase>
                                 <goals>
                                     <goal>jar-no-fork</goal>
                                 </goals>
                             </execution>
                         </executions>
                     </plugin>
+                    <!-- Javadoc -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-javadoc-plugin</artifactId>
                         <version>2.9.1</version>
+                        <configuration>
+                            <show>private</show>
+                            <nohelp>true</nohelp>
+                            <charset>UTF-8</charset>
+                            <encoding>UTF-8</encoding>
+                            <docencoding>UTF-8</docencoding>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                            <!-- TODO 临时解决不规范的javadoc生成报错,后面要规范化后把这行去掉 -->
+                        </configuration>
                         <executions>
                             <execution>
-                                <id>attach-javadocs</id>
+                                <phase>package</phase>
                                 <goals>
                                     <goal>jar</goal>
                                 </goals>
                             </execution>
                         </executions>
-                        <configuration>
-                            <encoding>UTF-8</encoding>
-                            <additionalparam>-Xdoclint:none</additionalparam>
-                        </configuration>
                     </plugin>
+                    <!-- GPG -->
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
                         <version>1.6</version>
                         <executions>
                             <execution>
-                                <id>sign-artifacts</id>
-                                <phase>site</phase>
+                                <phase>verify</phase>
                                 <goals>
                                     <goal>sign</goal>
                                 </goals>
                             </execution>
                         </executions>
                     </plugin>
+                    <!--Compiler -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-compiler-plugin</artifactId>
+                        <version>3.0</version>
+                        <configuration>
+                            <source>1.8</source>
+                            <target>1.8</target>
+                            <fork>true</fork>
+                            <verbose>true</verbose>
+                            <encoding>UTF-8</encoding>
+                        </configuration>
+                    </plugin>
+                    <!--Release -->
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-release-plugin</artifactId>
+                        <version>2.5.1</version>
+                    </plugin>
                 </plugins>
             </build>
-            <!-- 【注】snapshotRepository 与 repository 中的 id 一定要与 setting.xml 中 server 的 id 保持一致！ -->
             <distributionManagement>
                 <snapshotRepository>
-                    <id>releases</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
                 </snapshotRepository>
                 <repository>
-                    <id>releases</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                    <id>ossrh</id>
+                    <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
                 </repository>
             </distributionManagement>
         </profile>
     </profiles>
     <!--中央仓库上传配置结束-->
-
 </project>
+
+

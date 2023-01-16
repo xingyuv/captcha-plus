@@ -6,8 +6,6 @@ import com.anji.captcha.service.CaptchaService;
 import com.anji.captcha.service.impl.CaptchaServiceFactory;
 import com.anji.captcha.util.ImageUtils;
 import com.anji.captcha.util.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,14 +22,11 @@ import java.util.Properties;
 @Configuration
 public class AjCaptchaServiceAutoConfiguration {
 
-    private static Logger logger = LoggerFactory.getLogger(AjCaptchaServiceAutoConfiguration.class);
-
     @Bean
     @ConditionalOnMissingBean
     public CaptchaService captchaService(AjCaptchaProperties prop) {
-        logger.info("自定义配置项：{}", prop.toString());
         Properties config = new Properties();
-        config.put(Const.CAPTCHA_CACHETYPE, prop.getCacheType().name());
+        config.put(Const.CAPTCHA_CACHE_TYPE, prop.getCacheType().name());
         config.put(Const.CAPTCHA_WATER_MARK, prop.getWaterMark());
         config.put(Const.CAPTCHA_FONT_TYPE, prop.getFontType());
         config.put(Const.CAPTCHA_TYPE, prop.getType().getCodeValue());
@@ -41,7 +36,7 @@ public class AjCaptchaServiceAutoConfiguration {
         config.put(Const.CAPTCHA_SLIP_OFFSET, prop.getSlipOffset());
         config.put(Const.CAPTCHA_AES_STATUS, String.valueOf(prop.getAesStatus()));
         config.put(Const.CAPTCHA_WATER_FONT, prop.getWaterFont());
-        config.put(Const.CAPTCHA_CACAHE_MAX_NUMBER, prop.getCacheNumber());
+        config.put(Const.CAPTCHA_CACHE_MAX_NUMBER, prop.getCacheNumber());
         config.put(Const.CAPTCHA_TIMING_CLEAR_SECOND, prop.getTimingClear());
 
         config.put(Const.HISTORY_DATA_CLEAR_ENABLE, prop.isHistoryDataClearEnable() ? "1" : "0");
@@ -63,8 +58,7 @@ public class AjCaptchaServiceAutoConfiguration {
             config.put(Const.CAPTCHA_INIT_ORIGINAL, "true");
             initializeBaseMap(prop.getJigsaw(), prop.getPicClick());
         }
-        CaptchaService s = CaptchaServiceFactory.getInstance(config);
-        return s;
+        return CaptchaServiceFactory.getInstance(config);
     }
 
     private static void initializeBaseMap(String jigsaw, String picClick) {
