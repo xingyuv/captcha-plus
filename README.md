@@ -6,6 +6,22 @@
 
 [![EN doc](https://img.shields.io/badge/document-English-blue.svg)](README.md)[![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](README_CN.md)
 
+Maven
+```java
+
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>captcha-plus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>spring-boot-starter-captcha-plus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 # 1. Online Demo
 ### &emsp; 1.1 [Have a try](https://captcha.anji-plus.com/ "链接")
 ### &emsp; 1.2 [Document](https://captcha.anji-plus.com/#/doc "doc")

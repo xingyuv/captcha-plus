@@ -9,6 +9,22 @@
 ## 简介
 &emsp; &emsp; AJ-Captcha行为验证码，包含滑动拼图、文字点选两种方式，UI支持弹出和嵌入两种方式。后端提供Java实现，前端提供了php、angular、html、vue、uni-app、flutter、android、ios等代码示例。
 
+Maven 
+```java
+
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>captcha-plus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>spring-boot-starter-captcha-plus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+
 # 1 在线体验
 mvn clean deploy -P releases -Dmaven.test.skip=true
 
