@@ -3,11 +3,11 @@
 ## springboot
 ### SpringBoot项目，参考示例：service/springboot
 a.引入jar，已上传至maven中央仓库。
-```java
+```xml
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>spring-boot-starter-captcha-plus</artifactId>
-   <version>1.0.0</version>
+   <version>1.0.1</version>
 </dependency>
 ```
 b.修改application.properties，自定义底图和水印，启动后前端就可以请求接口了。[社区底图库](https://gitee.com/anji-plus/AJ-Captcha-Images)<br>
