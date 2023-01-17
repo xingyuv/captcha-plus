@@ -1,20 +1,33 @@
 # captcha-plus
 
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)[![Total Lines](https://tokei.rs/b1/github/anji-plus/captcha?category=lines)](https://github.com/anji-plus/captcha)
+## 简介
+* Captcha-plus行为验证码，包含滑动拼图、文字点选两种方式，UI支持弹出和嵌入两种方式。后端提供Java实现，前端提供了php、angular、html、vue、uni-app、flutter、android、ios等代码示例。
 
-> AjPlus Captcha 
+## 在线体验
+- [在线体验 element-plus](http://admin.x-surge.com/)
+- [在线体验 antdv](http://vben.x-surge.com/)
 
-[![EN doc](https://img.shields.io/badge/document-English-blue.svg)](README.md)[![CN doc](https://img.shields.io/badge/文档-中文版-blue.svg)](README_CN.md)
-
-Maven
-```java
-
+## 安装
+### 1.Maven
+在项目的pom.xml的dependencies中加入以下内容:
+spring mvc
+```xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>captcha-plus</artifactId>
   <version>1.0.0</version>
 </dependency>
-
+```
+spring boot 2
+```xml
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>spring-boot-starter-captcha-plus</artifactId>
+  <version>1.0.0</version>
+</dependency>
+```
+spring boot 3
+```xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
@@ -22,67 +35,62 @@ Maven
 </dependency>
 ```
 
-# 1. Online Demo
-### &emsp; 1.1 [Have a try](https://captcha.anji-plus.com/ "链接")
-### &emsp; 1.2 [Document](https://captcha.anji-plus.com/#/doc "doc")
-### &emsp; 1.3 Wechat/H5 demo（based on uni-app)
- &emsp;&emsp; see also [gitee]( https://gitee.com/anji-plus/captcha "码云")
+### 2.验证码接口
+- [参考 springboot2 demo](./demo/springboot.java)
+- [参考 springboot3 demo](./demo/springboot3.java)
 
+### 功能概述
+#### 组件介绍
+* 行为验证码采用嵌入式集成方式，接入方便，安全，高效。抛弃了传统字符型验证码展示-填写字符-比对答案的流程，采用验证码展示-采集用户行为-分析用户行为流程，用户只需要产生指定的行为轨迹，不需要键盘手动输入，极大优化了传统验证码用户体验不佳的问题；同时，快速、准确的返回人机判定结果。目前对外提供两种类型的验证码，其中包含滑动拼图、文字点选。如图1-1、1-2所示。若希望不影响原UI布局，可采用弹出式交互。<br>
+* 后端基于Java实现，提供纯Java.jar和SpringBoot Starter。前端提供了Android、iOS、Futter、Uni-App、ReactNative、Vue、Angular、Html、Php等多端示例。<br>
 
-# 2. Design Details
-### &emsp; 2.1 UI Component
- &emsp;&emsp; support Android、iOS、Futter、Uni-App、ReactNative、Vue、Angular、Html、Php。
- 
-| blockPuzzle | clickWord |
+| 滑动拼图 | 文字点选 |
 | --- | --- |
-|![blockPuzzle](https://captcha.anji-plus.com/static/blockPuzzle.png "滑动拼图")&emsp;|![clickWord](https://captcha.anji-plus.com/static/clickWord.png "点选文字")|
-| 1-1 | 1-2 |
- 
+|![滑动拼图](images/%E6%BB%91%E5%8A%A8%E6%8B%BC%E5%9B%BE.gif "滑动拼图")&emsp;|![点选文字](images/%E7%82%B9%E9%80%89%E6%96%87%E5%AD%97.gif "点选文字")|
+| 图1-1 | 图1-2 |
 
-### &emsp; 2.2 Concept Related
-| concept  | desc  |
+#### 概念术语描述
+| 术语  | 描述  |
 | ------------ | ------------ |
-| Captcha Type | blockPuzzle, clickWord|
-| Check  |  user action: drag block or click workds,then check if it was human did|
-| Verify  | bind user action with backend service. call captchaService.verification in backend service to prevent invalid access ,for example,directly call it |
+| 验证码类型 | 1）滑动拼图 blockPuzzle  2）文字点选 clickWord|
+| 验证  |  用户拖动/点击一次验证码拼图即视为一次“验证”，不论拼图/点击是否正确 |
+| 二次校验  | 验证数据随表单提交到后台后，后台需要调用captchaService.verification做二次校验。目的是核实验证数据的有效性。  |
 
-### &emsp; 2.3 Main Features 
-CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart. CAPTCHA determines whether the user is real or a spam robot. CAPTCHAs stretch or manipulate letters and numbers, and rely on human ability to determine which symbols they are.
- 
-Ajplus Captcha , an open source toolset for users,its main Features are as follows:
-- Easy to integrate ui Component in your apps,support varies frontend UI,
-- Support Integrate with Android、iOS、Futter、Uni-App、ReactNative、Vue、Angular、Html、Php
-- No dependencies lib in core source,Easy to include in your backend service
-- Core api is simple and Open to Extend,all instance initialized by JAVA SPI,Easy to add your custom Implement to form a new Captcha type。
-- Support security feature
+### 交互流程
+①	用户访问应用页面，请求显示行为验证码<br>
+②	用户按照提示要求完成验证码拼图/点击<br>
+③	用户提交表单，前端将第二步的输出一同提交到后台<br>
+④	验证数据随表单提交到后台后，后台需要调用captchaService.verification做二次校验。<br>
+⑤	第4步返回校验通过/失败到产品应用后端，再返回到前端。如下图所示。
+![时序图](view/vue/static/shixu.png "时序图")
 
-# 3. How to Integrate
-![Sequence Diagram](https://captcha.anji-plus.com/static/shixu.png "时序图")
+### 目录结构
+```
+├─core
+│ ├─captcha-plus  java核心源码
+│ └─spring-boot-starter-captcha-plus  springboot快速启动
+├─demo
+│ ├─springboot     springboot2接口实现示例
+│ ├─springboot3    springboot3接实现示例
+├─images      效果图
+└─view        多语言客户端示例
+   ├─android     原生android实现示例
+   ├─angular     angular实现示例
+   ├─flutter     flutter实现示例
+   ├─html        原生html实现示例
+   ├─ios         原生ios实现示例
+   ├─php         php实现示例
+   ├─react       react实现示例
+   ├─uni-app     uni-app实现示例
+   ├─wx-applet   微信小程序实现示例
+   └─vue         vue实现示例
+```
 
-# 4. SourceCode Structure
+### 如有问题，请提交[Issue](https://github.com/xingyuv/captcha-plus/issues)
 
-![输入图片说明](https://images.gitee.com/uploads/images/2021/0207/112335_bd789fff_1600789.png "屏幕截图.png")
+#### 开源不易，劳烦各位star ☺
 
-# 5. Dev & Run 
-#### &emsp; 
-- start backend service
-  import source code into Eclipse or Intellij,
-  start StartApplication class in package service/springboot。[online images](https://gitee.com/anji-plus/AJ-Captcha-Images)
-- start frontend ui
-  open source files in view/vue with your IDE like Visual Code，
-```js
-    npm install
-    npm run dev
+### 谁在用
+- [ruoyi-vue-pro](https://gitee.com/zhijiantianya/ruoyi-vue-pro)
 
-    DONE  Compiled successfully in 29587ms                       12:06:38
-    I  Your application is running here: http://localhost:8081
-``` 
-
-# 6. Work Plan
-  [issues](https://github.com/xingyuv/captcha-plus/issues)
-
-
-
-<br>
- ### Have a try & enjoy it !!!  ☺
 

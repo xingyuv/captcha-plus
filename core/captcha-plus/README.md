@@ -5,9 +5,9 @@
 ### 2.1.2 前端接入
  引入相关组件，调用初始化函数，通过配置的一些参数信息。将行为验证码渲染出来。
 ## 2.2 后端接入
-### 2.2.1 SpringBoot项目，参考示例：service\springboot。
+### 2.2.1 SpringBoot项目，参考示例：demo\springboot。
 a.引入jar，已上传至maven中央仓库。
-```java
+```xml
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
@@ -18,19 +18,19 @@ b.修改application.properties，自定义底图和水印，启动后前端就�
 ```properties
 ....
 # 滑动验证，底图路径，不配置将使用默认图片
-#captcha.captchaOriginalPath.jigsaw=/app/product/dist/captchabg
+#aj.captcha.captchaOriginalPath.jigsaw=/app/product/dist/captchabg
 # 滑动验证，底图路径，不配置将使用默认图片
-#captcha.captchaOriginalPath.pic-click=/app/product/dist/captchabg
+#aj.captcha.captchaOriginalPath.pic-click=/app/product/dist/captchabg
 
 # 汉字统一使用Unicode,保证程序通过@value读取到是中文，可通过这个在线转换 https://tool.chinaz.com/tools/unicode.aspx 中文转Unicode
 # 右下角水印文字(我的水印)
-captcha.water.mark=\u6211\u7684\u6c34\u5370
+aj.captcha.water.mark=\u6211\u7684\u6c34\u5370
 # 右下角水印字体(宋体)
-captcha.water.font=\u5b8b\u4f53
+aj.captcha.water.font=\u5b8b\u4f53
 # 点选文字验证码的文字字体(宋体)
-captcha.font.type=\u5b8b\u4f53
+aj.captcha.font.type=\u5b8b\u4f53
 # 校验滑动拼图允许误差偏移量(默认5像素)
-captcha.slip.offset=5
+aj.captcha.slip.offset=5
 # aes.key(16位，和前端加密保持一致)
 #captcha.aes.key=XwKsGlMcdPMEhR1B
 ```
