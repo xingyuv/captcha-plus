@@ -29,9 +29,9 @@ public class AjCaptchaProperties {
 
 
     /**
-     * 右下角水印文字(我的水印).
+     * 右下角水印文字(captcha-plus).
      */
-    private String waterMark = "我的水印";
+    private String waterMark = "captcha-plus";
 
     /**
      * 右下角水印字体(文泉驿正黑).

@@ -78,8 +78,7 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
             return ResponseModel.errorMsg(RepCodeEnum.API_CAPTCHA_BASEMAP_NULL);
         }
         CaptchaVO imageData = getImageData(bufferedImage);
-        if (imageData == null
-                || StringUtils.isBlank(imageData.getOriginalImageBase64())) {
+        if (StringUtils.isBlank(imageData.getOriginalImageBase64())) {
             return ResponseModel.errorMsg(RepCodeEnum.API_CAPTCHA_ERROR);
         }
         return ResponseModel.successData(imageData);
@@ -139,7 +138,7 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
         }
         //校验成功，将信息存入缓存
         String secretKey = point.get(0).getSecretKey();
-        String value = null;
+        String value;
         try {
             value = AESUtil.aesEncrypt(captchaVO.getToken().concat("---").concat(pointJson), secretKey);
         } catch (Exception e) {
@@ -296,7 +295,7 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
      * @param imageHeight   图片高度
      * @param wordSortIndex 字体循环排序下标(i)
      * @param wordCount     字数量
-     * @return
+     * @return PointVO
      */
     private static PointVO randomWordPoint(int imageWidth, int imageHeight, int wordSortIndex, int wordCount) {
         int avgWidth = imageWidth / (wordCount + 1);

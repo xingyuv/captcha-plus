@@ -1,8 +1,4 @@
 package com.xingyuv.captcha.util;
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
 
 import java.io.*;
 import java.nio.file.Files;
@@ -32,16 +28,13 @@ public abstract class FileCopyUtils {
         } finally {
             try {
                 in.close();
-            } catch (IOException var12) {
+            } catch (IOException ignored) {
             }
-
             try {
                 out.close();
-            } catch (IOException var11) {
+            } catch (IOException ignored) {
             }
-
         }
-
         return var2;
     }
 
@@ -51,7 +44,7 @@ public abstract class FileCopyUtils {
         } finally {
             try {
                 out.close();
-            } catch (IOException var8) {
+            } catch (IOException ignored) {
             }
 
         }
@@ -83,12 +76,12 @@ public abstract class FileCopyUtils {
         } finally {
             try {
                 in.close();
-            } catch (IOException var15) {
+            } catch (IOException ignored) {
             }
 
             try {
                 out.close();
-            } catch (IOException var14) {
+            } catch (IOException ignored) {
             }
 
         }
@@ -100,7 +93,7 @@ public abstract class FileCopyUtils {
         } finally {
             try {
                 out.close();
-            } catch (IOException var8) {
+            } catch (IOException ignored) {
             }
 
         }

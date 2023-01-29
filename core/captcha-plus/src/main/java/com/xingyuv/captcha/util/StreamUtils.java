@@ -1,8 +1,4 @@
 package com.xingyuv.captcha.util;
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
 
 import java.io.*;
 import java.nio.charset.Charset;
@@ -31,7 +27,6 @@ public abstract class StreamUtils {
             StringBuilder out = new StringBuilder();
             InputStreamReader reader = new InputStreamReader(in, charset);
             char[] buffer = new char[4096];
-            boolean var5 = true;
 
             int bytesRead;
             while ((bytesRead = reader.read(buffer)) != -1) {

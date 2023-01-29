@@ -21,24 +21,24 @@ public interface FrequencyLimitHandler {
     /**
      * get 接口限流
      *
-     * @param captchaVO
-     * @return
+     * @param captchaVO captchaVO
+     * @return ResponseModel
      */
     ResponseModel validateGet(CaptchaVO captchaVO);
 
     /**
      * check接口限流
      *
-     * @param captchaVO
-     * @return
+     * @param captchaVO captchaVO
+     * @return ResponseModel
      */
     ResponseModel validateCheck(CaptchaVO captchaVO);
 
     /**
      * verify接口限流
      *
-     * @param captchaVO
-     * @return
+     * @param captchaVO captchaVO
+     * @return ResponseModel
      */
     ResponseModel validateVerify(CaptchaVO captchaVO);
 

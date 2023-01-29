@@ -12,7 +12,7 @@ import java.util.Objects;
  *
  * @author lide1202@hotmail.com
  * @Title: 默认使用内存当缓存
- * @date 2020-05-12
+ * @Date 2020-05-12
  */
 public class CaptchaCacheServiceMemImpl implements CaptchaCacheService {
     @Override

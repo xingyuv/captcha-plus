@@ -152,8 +152,10 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
 
     /**
      * 根据模板切图
-     *
-     * @throws Exception
+     * @param originalImage originalImage
+     * @param jigsawImage jigsawImage
+     * @param jigsawImageBase64 jigsawImageBase64
+     * @return CaptchaVO
      */
     public CaptchaVO pictureTemplatesCut(BufferedImage originalImage, BufferedImage jigsawImage, String jigsawImageBase64) {
         try {
@@ -167,7 +169,6 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
             //随机生成拼图坐标
             PointVO point = generateJigsawPoint(originalWidth, originalHeight, jigsawWidth, jigsawHeight);
             int x = point.getX();
-            int y = point.getY();
 
             //生成新的拼图图像
             BufferedImage newJigsawImage = new BufferedImage(jigsawWidth, jigsawHeight, jigsawImage.getType());
@@ -241,15 +242,13 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
         }
     }
 
-
     /**
      * 随机生成拼图坐标
-     *
-     * @param originalWidth
-     * @param originalHeight
-     * @param jigsawWidth
-     * @param jigsawHeight
-     * @return
+     * @param originalWidth originalWidth
+     * @param originalHeight originalHeight
+     * @param jigsawWidth jigsawWidth
+     * @param jigsawHeight jigsawHeight
+     * @return PointVO
      */
     private static PointVO generateJigsawPoint(int originalWidth, int originalHeight, int jigsawWidth, int jigsawHeight) {
         Random random = new Random();
@@ -279,7 +278,6 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
      * @param newImage      新抠出的小图
      * @param x             随机扣取坐标X
      * @param y             随机扣取坐标y
-     * @throws Exception
      */
     private static void cutByTemplate(BufferedImage oriImage, BufferedImage templateImage, BufferedImage newImage, int x, int y) {
         //临时数组遍历用于高斯模糊存周边像素值
@@ -327,7 +325,6 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
      * @param templateImage 模板图
      * @param x             随机扣取坐标X
      * @param y             随机扣取坐标y
-     * @throws Exception
      */
     private static void interferenceByTemplate(BufferedImage oriImage, BufferedImage templateImage, int x, int y) {
         //临时数组遍历用于高斯模糊存周边像素值

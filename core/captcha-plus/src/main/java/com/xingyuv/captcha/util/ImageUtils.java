@@ -22,9 +22,18 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ImageUtils {
     private static Logger logger = LoggerFactory.getLogger(ImageUtils.class);
-    private static Map<String, String> originalCacheMap = new ConcurrentHashMap();  //滑块底图
-    private static Map<String, String> slidingBlockCacheMap = new ConcurrentHashMap(); //滑块
-    private static Map<String, String> picClickCacheMap = new ConcurrentHashMap(); //点选文字
+    /**
+     * 滑块底图
+     */
+    private static Map<String, String> originalCacheMap = new ConcurrentHashMap<>();
+    /**
+     * 滑块
+     */
+    private static Map<String, String> slidingBlockCacheMap = new ConcurrentHashMap<>();
+    /**
+     * 点选文字
+     */
+    private static Map<String, String> picClickCacheMap = new ConcurrentHashMap<>();
     private static Map<String, String[]> fileNameMap = new ConcurrentHashMap<>();
 
     public static void cacheImage(String captchaOriginalPathJigsaw, String captchaOriginalPathClick) {
@@ -91,8 +100,8 @@ public class ImageUtils {
     /**
      * 图片转base64 字符串
      *
-     * @param templateImage
-     * @return
+     * @param templateImage templateImage
+     * @return base64
      */
     public static String getImageToBase64Str(BufferedImage templateImage) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -111,8 +120,8 @@ public class ImageUtils {
     /**
      * base64 字符串转图片
      *
-     * @param base64String
-     * @return
+     * @param base64String base64String
+     * @return 图片
      */
     public static BufferedImage getBase64StrToImage(String base64String) {
         try {
@@ -160,8 +169,6 @@ public class ImageUtils {
                 byte[] bytes = FileCopyUtils.copyToByteArray(fileInputStream);
                 String string = Base64Utils.encodeToString(bytes);
                 imgMap.put(item.getName(), string);
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }

@@ -61,7 +61,7 @@ public class JsonUtil {
         if (object instanceof List) {
             List<PointVO> list = (List<PointVO>) object;
             StringBuilder buf = new StringBuilder("[");
-            list.stream().forEach(t -> {
+            list.forEach(t -> {
                 buf.append(t.toJsonString()).append(",");
             });
             return buf.deleteCharAt(buf.lastIndexOf(",")).append("]").toString();

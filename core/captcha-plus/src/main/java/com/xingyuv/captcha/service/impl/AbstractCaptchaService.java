@@ -51,7 +51,10 @@ public abstract class AbstractCaptchaService implements CaptchaService {
 
     protected static String waterMarkFontStr = "WenQuanZhengHei.ttf";
 
-    protected Font waterMarkFont;//水印字体
+    /**
+     * 水印字体
+     */
+    protected Font waterMarkFont;
 
     protected static String slipOffset = "5";
 
@@ -59,13 +62,19 @@ public abstract class AbstractCaptchaService implements CaptchaService {
 
     protected static String clickWordFontStr = "WenQuanZhengHei.ttf";
 
-    protected Font clickWordFont;//点选文字字体
+    /**
+     * 点选文字字体
+     */
+    protected Font clickWordFont;
 
     protected static String cacheType = "local";
 
     protected static int captchaInterferenceOptions = 0;
 
-    //判断应用是否实现了自定义缓存，没有就使用内存
+    /**
+     * 判断应用是否实现了自定义缓存，没有就使用内存
+     * @param config config
+     */
     @Override
     public void init(final Properties config) {
         //初始化底图
@@ -242,9 +251,10 @@ public abstract class AbstractCaptchaService implements CaptchaService {
     /**
      * 解密前端坐标aes加密
      *
-     * @param point
-     * @return
-     * @throws Exception
+     * @param point 前端坐标
+     * @param key key
+     * @return 前端坐标aes加密
+     * @throws Exception E
      */
     public static String decrypt(String point, String key) throws Exception {
         return AESUtil.aesDecrypt(point, key);

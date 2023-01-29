@@ -15,13 +15,15 @@ import java.nio.charset.StandardCharsets;
 import java.util.Base64;
 
 public class AESUtil {
-    //算法
+    /**
+     * 算法
+     */
     private static final String ALGORITHMSTR = "AES/ECB/PKCS5Padding";
 
     /**
      * 获取随机key
      *
-     * @return
+     * @return 随机key
      */
     public static String getKey() {
         return RandomUtils.getRandomString(16);
@@ -36,7 +38,8 @@ public class AESUtil {
      * @return 转换后的字符串
      */
     public static String binary(byte[] bytes, int radix) {
-        return new BigInteger(1, bytes).toString(radix);// 这里的1代表正数
+        // 这里的1代表正数
+        return new BigInteger(1, bytes).toString(radix);
     }
 
     /**
@@ -46,7 +49,6 @@ public class AESUtil {
      * @return 编码后的base 64 code
      */
     public static String base64Encode(byte[] bytes) {
-        //return Base64.encodeBase64String(bytes);
         return Base64.getEncoder().encodeToString(bytes);
     }
 
@@ -55,7 +57,7 @@ public class AESUtil {
      *
      * @param base64Code 待解码的base 64 code
      * @return 解码后的byte[]
-     * @throws Exception
+     * @throws Exception e
      */
     public static byte[] base64Decode(String base64Code) throws Exception {
         Base64.Decoder decoder = Base64.getDecoder();
@@ -69,7 +71,7 @@ public class AESUtil {
      * @param content    待加密的内容
      * @param encryptKey 加密密钥
      * @return 加密后的byte[]
-     * @throws Exception
+     * @throws Exception e
      */
     public static byte[] aesEncryptToBytes(String content, String encryptKey) throws Exception {
         KeyGenerator kgen = KeyGenerator.getInstance("AES");
@@ -87,7 +89,7 @@ public class AESUtil {
      * @param content    待加密的内容
      * @param encryptKey 加密密钥
      * @return 加密后的base 64 code
-     * @throws Exception
+     * @throws Exception e
      */
     public static String aesEncrypt(String content, String encryptKey) throws Exception {
         if (StringUtils.isBlank(encryptKey)) {
@@ -102,7 +104,7 @@ public class AESUtil {
      * @param encryptBytes 待解密的byte[]
      * @param decryptKey   解密密钥
      * @return 解密后的String
-     * @throws Exception
+     * @throws Exception e
      */
     public static String aesDecryptByBytes(byte[] encryptBytes, String decryptKey) throws Exception {
         KeyGenerator kgen = KeyGenerator.getInstance("AES");
@@ -121,7 +123,7 @@ public class AESUtil {
      * @param encryptStr 待解密的base 64 code
      * @param decryptKey 解密密钥
      * @return 解密后的string
-     * @throws Exception
+     * @throws Exception e
      */
     public static String aesDecrypt(String encryptStr, String decryptKey) throws Exception {
         if (StringUtils.isBlank(decryptKey)) {
@@ -133,15 +135,15 @@ public class AESUtil {
     /**
      * 测试
      */
-    public static void main(String[] args) throws Exception {
-        String randomString = RandomUtils.getRandomString(16);
-        String content = "hahhahaahhahni";
-        System.out.println("加密前：" + content);
-        System.out.println("加密密钥和解密密钥：" + randomString);
-        String encrypt = aesEncrypt(content, randomString);
-        System.out.println("加密后：" + encrypt);
-        String decrypt = aesDecrypt(encrypt, randomString);
-        System.out.println("解密后：" + decrypt);
-    }
+//    public static void main(String[] args) throws Exception {
+//        String randomString = RandomUtils.getRandomString(16);
+//        String content = "hahhahaahhahni";
+//        System.out.println("加密前：" + content);
+//        System.out.println("加密密钥和解密密钥：" + randomString);
+//        String encrypt = aesEncrypt(content, randomString);
+//        System.out.println("加密后：" + encrypt);
+//        String decrypt = aesDecrypt(encrypt, randomString);
+//        System.out.println("解密后：" + decrypt);
+//    }
 
 }

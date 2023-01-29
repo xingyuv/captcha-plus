@@ -11,13 +11,12 @@ import java.util.Random;
 import java.util.UUID;
 import java.util.concurrent.ThreadLocalRandom;
 
-
 public class RandomUtils {
 
     /**
      * 生成UUID
      *
-     * @return
+     * @return UUID
      */
     public static String getUUID() {
         String uuid = UUID.randomUUID().toString();
@@ -28,11 +27,10 @@ public class RandomUtils {
     /**
      * 获取指定文字的随机中文
      *
-     * @return
+     * @return 随机中文
      */
     public static String getRandomHan(String hanZi) {
-        String ch = hanZi.charAt(new Random().nextInt(hanZi.length())) + "";
-        return ch;
+        return hanZi.charAt(new Random().nextInt(hanZi.length())) + "";
     }
 
     public static int getRandomInt(int bound) {
@@ -42,7 +40,7 @@ public class RandomUtils {
     /**
      * 获取随机中文
      *
-     * @return
+     * @return 随机中文
      */
     public static String getRandomHan() {
         String str = "";
@@ -51,8 +49,10 @@ public class RandomUtils {
 
         Random random = new Random();
 
-        highCode = (176 + Math.abs(random.nextInt(39))); //B0 + 0~39(16~55) 一级汉字所占区
-        lowCode = (161 + Math.abs(random.nextInt(93))); //A1 + 0~93 每区有94个汉字
+        // B0 + 0~39(16~55) 一级汉字所占区
+        highCode = (176 + Math.abs(random.nextInt(39)));
+        // A1 + 0~93 每区有94个汉字
+        lowCode = (161 + Math.abs(random.nextInt(93)));
 
         byte[] b = new byte[2];
         b[0] = (Integer.valueOf(highCode)).byteValue();
@@ -69,9 +69,9 @@ public class RandomUtils {
     /**
      * 随机范围内数字
      *
-     * @param startNum
-     * @param endNum
-     * @return
+     * @param startNum 开始
+     * @param endNum 结束
+     * @return 随机数
      */
     public static Integer getRandomInt(int startNum, int endNum) {
         return ThreadLocalRandom.current().nextInt(endNum - startNum) + startNum;
@@ -80,8 +80,8 @@ public class RandomUtils {
     /**
      * 获取随机字符串
      *
-     * @param length
-     * @return
+     * @param length 长度
+     * @return 随机字符串
      */
     public static String getRandomString(int length) {
         String str = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
