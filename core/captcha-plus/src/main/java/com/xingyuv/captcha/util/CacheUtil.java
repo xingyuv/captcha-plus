@@ -38,7 +38,7 @@ public final class CacheUtil {
                     refresh();
                 }
             }, 0, second * 1000);*/
-            scheduledExecutor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
+            ScheduledExecutorService scheduledExecutor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
                 @Override
                 public Thread newThread(Runnable r) {
                     return new Thread(r, "thd-captcha-cache-clean");
@@ -52,8 +52,6 @@ public final class CacheUtil {
             }, 10, second, TimeUnit.SECONDS);
         }
     }
-
-    private static ScheduledExecutorService scheduledExecutor;
 
     /**
      * 缓存刷新,清除过期数据

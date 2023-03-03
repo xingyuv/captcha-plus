@@ -10,12 +10,13 @@
 ## 安装
 ### 1.Maven
 在项目的pom.xml的dependencies中加入以下内容:
+
 spring mvc
 ```xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>captcha-plus</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 spring boot 2
@@ -23,7 +24,7 @@ spring boot 2
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 spring boot 3
@@ -31,7 +32,7 @@ spring boot 3
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
 </dependency>
 ```
 

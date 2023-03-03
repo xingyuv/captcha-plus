@@ -52,8 +52,10 @@ public class AjCaptchaServiceAutoConfiguration {
         config.put(Const.CAPTCHA_FONT_STYLE, prop.getFontStyle() + "");
         config.put(Const.CAPTCHA_WORD_COUNT, prop.getClickWordCount() + "");
 
-        if ((StringUtils.isNotBlank(prop.getJigsaw()) && prop.getJigsaw().startsWith("classpath:"))
-                || (StringUtils.isNotBlank(prop.getPicClick()) && prop.getPicClick().startsWith("classpath:"))) {
+        boolean judge = (StringUtils.isNotBlank(prop.getJigsaw()) && prop.getJigsaw().startsWith("classpath:"))
+                || (StringUtils.isNotBlank(prop.getPicClick()) && prop.getPicClick().startsWith("classpath:"));
+
+        if (judge) {
             //自定义resources目录下初始化底图
             config.put(Const.CAPTCHA_INIT_ORIGINAL, "true");
             initializeBaseMap(prop.getJigsaw(), prop.getPicClick());

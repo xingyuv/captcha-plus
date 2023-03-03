@@ -14,8 +14,8 @@ public enum CaptchaTypeEnum {
      */
     DEFAULT("default", "默认");
 
-    private String codeValue;
-    private String codeDesc;
+    private final String codeValue;
+    private final String codeDesc;
 
     private CaptchaTypeEnum(String codeValue, String codeDesc) {
         this.codeValue = codeValue;

@@ -40,8 +40,8 @@ public enum RepCodeEnum {
     API_REQ_LOCK_GET_ERROR("6202", "接口验证失败数过多，请稍后再试"),
     API_REQ_LIMIT_CHECK_ERROR("6204", "check接口请求次数超限，请稍后再试!"),
     API_REQ_LIMIT_VERIFY_ERROR("6205", "verify请求次数超限!");
-    private String code;
-    private String desc;
+    private final String code;
+    private final String desc;
 
     RepCodeEnum(String code, String desc) {
         this.code = code;

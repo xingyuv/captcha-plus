@@ -17,8 +17,8 @@ public enum CaptchaBaseMapEnum {
      */
     PIC_CLICK("PIC_CLICK", "文字点选底图");
 
-    private String codeValue;
-    private String codeDesc;
+    private final String codeValue;
+    private final String codeDesc;
 
     private CaptchaBaseMapEnum(String codeValue, String codeDesc) {
         this.codeValue = codeValue;

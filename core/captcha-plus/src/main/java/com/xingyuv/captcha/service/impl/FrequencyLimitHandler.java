@@ -56,8 +56,8 @@ public interface FrequencyLimitHandler {
      *   1分钟内不超过600次
      */
     class DefaultLimitHandler implements FrequencyLimitHandler {
-        private Properties config;
-        private CaptchaCacheService cacheService;
+        private final Properties config;
+        private final CaptchaCacheService cacheService;
 
         public DefaultLimitHandler(Properties config, CaptchaCacheService cacheService) {
             this.config = config;
