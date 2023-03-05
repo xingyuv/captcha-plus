@@ -78,7 +78,7 @@ public class ImageUtils {
         return getBase64StrToImage(s);
     }
 
-    public static String getslidingBlock() {
+    public static String getSlidingBlock() {
         String[] strings = fileNameMap.get(CaptchaBaseMapEnum.SLIDING_BLOCK.getCodeValue());
         if (null == strings || strings.length == 0) {
             return null;

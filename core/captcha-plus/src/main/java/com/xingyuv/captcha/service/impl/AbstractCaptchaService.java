@@ -47,7 +47,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
 
     protected static Long EXPIRESIN_THREE = 3 * 60L;
 
-    protected static String waterMark = "我的水印";
+    protected static String waterMark = "xingyuv";
 
     protected static String waterMarkFontStr = "WenQuanZhengHei.ttf";
 
@@ -84,13 +84,13 @@ public abstract class AbstractCaptchaService implements CaptchaService {
                     config.getProperty(Const.ORIGINAL_PATH_PIC_CLICK));
         }
         logger.info("--->>>初始化验证码底图<<<---" + captchaType());
-        waterMark = config.getProperty(Const.CAPTCHA_WATER_MARK, "我的水印");
-        slipOffset = config.getProperty(Const.CAPTCHA_SLIP_OFFSET, "5");
-        waterMarkFontStr = config.getProperty(Const.CAPTCHA_WATER_FONT, "WenQuanZhengHei.ttf");
+        waterMark = config.getProperty(Const.CAPTCHA_WATER_MARK, waterMark);
+        slipOffset = config.getProperty(Const.CAPTCHA_SLIP_OFFSET, slipOffset);
+        waterMarkFontStr = config.getProperty(Const.CAPTCHA_WATER_FONT, clickWordFontStr);
         captchaAesStatus = Boolean.parseBoolean(config.getProperty(Const.CAPTCHA_AES_STATUS, "true"));
-        clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, "WenQuanZhengHei.ttf");
+        clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, clickWordFontStr);
         //clickWordFontStr = config.getProperty(Const.CAPTCHA_FONT_TYPE, "SourceHanSansCN-Normal.otf");
-        cacheType = config.getProperty(Const.CAPTCHA_CACHE_TYPE, "local");
+        cacheType = config.getProperty(Const.CAPTCHA_CACHE_TYPE, cacheType);
         captchaInterferenceOptions = Integer.parseInt(
                 config.getProperty(Const.CAPTCHA_INTERFERENCE_OPTIONS, "0"));
 
@@ -98,7 +98,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         // 通过加载resources下的font字体解决，无需在linux中安装字体
         loadWaterMarkFont();
 
-        if ("local".equals(cacheType)) {
+        if (cacheType.equals(cacheType)) {
             logger.info("初始化local缓存...");
             CacheUtil.init(Integer.parseInt(config.getProperty(Const.CAPTCHA_CACHE_MAX_NUMBER, "1000")),
                     Long.parseLong(config.getProperty(Const.CAPTCHA_TIMING_CLEAR_SECOND, "180")));
@@ -208,7 +208,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
                     || waterMarkFontStr.toLowerCase().endsWith(".otf")) {
                 this.waterMarkFont = Font.createFont(Font.TRUETYPE_FONT,
                                 Objects.requireNonNull(getClass().getResourceAsStream("/fonts/" + waterMarkFontStr)))
-                        .deriveFont(Font.BOLD, HAN_ZI_SIZE / 2);
+                        .deriveFont(Font.BOLD, HAN_ZI_SIZE_HALF);
             } else {
                 this.waterMarkFont = new Font(waterMarkFontStr, Font.BOLD, HAN_ZI_SIZE / 2);
             }

@@ -65,7 +65,7 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
         backgroundGraphics.drawString(waterMark, width - getEnOrChLength(waterMark), height - (HAN_ZI_SIZE / 2) + 7);
 
         //抠图图片
-        String jigsawImageBase64 = ImageUtils.getslidingBlock();
+        String jigsawImageBase64 = ImageUtils.getSlidingBlock();
         BufferedImage jigsawImage = ImageUtils.getBase64StrToImage(jigsawImageBase64);
         if (null == jigsawImage) {
             logger.error("滑动底图未初始化成功，请检查路径");
@@ -107,9 +107,10 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
             afterValidateFail(captchaVO);
             return ResponseModel.errorMsg(e.getMessage());
         }
-        if (point.x - Integer.parseInt(slipOffset) > point1.x
+        boolean exists = point.x - Integer.parseInt(slipOffset) > point1.x
                 || point1.x > point.x + Integer.parseInt(slipOffset)
-                || point.y != point1.y) {
+                || point.y != point1.y;
+        if (exists) {
             afterValidateFail(captchaVO);
             return ResponseModel.errorMsg(RepCodeEnum.API_CAPTCHA_COORDINATE_ERROR);
         }
@@ -152,8 +153,9 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
 
     /**
      * 根据模板切图
-     * @param originalImage originalImage
-     * @param jigsawImage jigsawImage
+     *
+     * @param originalImage     originalImage
+     * @param jigsawImage       jigsawImage
      * @param jigsawImageBase64 jigsawImageBase64
      * @return CaptchaVO
      */
@@ -189,7 +191,7 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
                     position = RandomUtils.getRandomInt(100, x - jigsawWidth - 5);
                 }
                 while (true) {
-                    String s = ImageUtils.getslidingBlock();
+                    String s = ImageUtils.getSlidingBlock();
                     if (!jigsawImageBase64.equals(s)) {
                         interferenceByTemplate(originalImage, Objects.requireNonNull(ImageUtils.getBase64StrToImage(s)), position, 0);
                         break;
@@ -198,7 +200,7 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
             }
             if (captchaInterferenceOptions > 1) {
                 while (true) {
-                    String s = ImageUtils.getslidingBlock();
+                    String s = ImageUtils.getSlidingBlock();
                     if (!jigsawImageBase64.equals(s)) {
                         Integer randomInt = RandomUtils.getRandomInt(jigsawWidth, 100 - jigsawWidth);
                         interferenceByTemplate(originalImage, Objects.requireNonNull(ImageUtils.getBase64StrToImage(s)),
@@ -244,10 +246,11 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
 
     /**
      * 随机生成拼图坐标
-     * @param originalWidth originalWidth
+     *
+     * @param originalWidth  originalWidth
      * @param originalHeight originalHeight
-     * @param jigsawWidth jigsawWidth
-     * @param jigsawHeight jigsawHeight
+     * @param jigsawWidth    jigsawWidth
+     * @param jigsawHeight   jigsawHeight
      * @return PointVO
      */
     private static PointVO generateJigsawPoint(int originalWidth, int originalHeight, int jigsawWidth, int jigsawHeight) {
@@ -308,7 +311,11 @@ public class BlockPuzzleCaptchaServiceImpl extends AbstractCaptchaService {
                 int rightRgb = templateImage.getRGB(i + 1, j);
                 int downRgb = templateImage.getRGB(i, j + 1);
                 //描边处理，,取带像素和无像素的界点，判断该点是不是临界轮廓点,如果是设置该坐标像素是白色
-                if ((rgb >= 0 && rightRgb < 0) || (rgb < 0 && rightRgb >= 0) || (rgb >= 0 && downRgb < 0) || (rgb < 0 && downRgb >= 0)) {
+                boolean exists = (rgb >= 0 && rightRgb < 0) ||
+                        (rgb < 0 && rightRgb >= 0) ||
+                        (rgb >= 0 && downRgb < 0) ||
+                        (rgb < 0 && downRgb >= 0);
+                if (exists) {
                     newImage.setRGB(i, j, Color.white.getRGB());
                     oriImage.setRGB(x + i, y + j, Color.white.getRGB());
                 }

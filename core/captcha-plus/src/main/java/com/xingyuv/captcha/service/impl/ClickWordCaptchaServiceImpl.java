@@ -33,6 +33,15 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
 
     protected Font clickWordFont;//点选文字字体
 
+    /**
+     * 点选文字 字体总个数
+     */
+    private int wordTotalCount = 4;
+    /**
+     * 点选文字 字体颜色是否随机
+     */
+    private boolean fontColorRandom = Boolean.TRUE;
+
     @Override
     public String captchaType() {
         return CaptchaTypeEnum.CLICKWORD.getCodeValue();
@@ -45,9 +54,10 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
         try {
             int size = Integer.parseInt(config.getProperty(Const.CAPTCHA_FONT_SIZE, HAN_ZI_SIZE + ""));
 
-            if (clickWordFontStr.toLowerCase().endsWith(".ttf")
+            boolean exists = clickWordFontStr.toLowerCase().endsWith(".ttf")
                     || clickWordFontStr.toLowerCase().endsWith(".ttc")
-                    || clickWordFontStr.toLowerCase().endsWith(".otf")) {
+                    || clickWordFontStr.toLowerCase().endsWith(".otf");
+            if (exists) {
                 this.clickWordFont = Font.createFont(Font.TRUETYPE_FONT,
                                 Objects.requireNonNull(getClass().getResourceAsStream("/fonts/" + clickWordFontStr)))
                         .deriveFont(Font.BOLD, size);
@@ -194,15 +204,6 @@ public class ClickWordCaptchaServiceImpl extends AbstractCaptchaService {
     public void setFontColorRandom(boolean fontColorRandom) {
         this.fontColorRandom = fontColorRandom;
     }
-
-    /**
-     * 点选文字 字体总个数
-     */
-    private int wordTotalCount = 4;
-    /**
-     * 点选文字 字体颜色是否随机
-     */
-    private boolean fontColorRandom = Boolean.TRUE;
 
     private CaptchaVO getImageData(BufferedImage backgroundImage) {
         CaptchaVO dataVO = new CaptchaVO();

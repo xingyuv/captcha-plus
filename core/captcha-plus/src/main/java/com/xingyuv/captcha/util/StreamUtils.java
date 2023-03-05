@@ -14,7 +14,7 @@ public abstract class StreamUtils {
         if (in == null) {
             return new byte[0];
         } else {
-            ByteArrayOutputStream out = new ByteArrayOutputStream(4096);
+            ByteArrayOutputStream out = new ByteArrayOutputStream(BUFFER_SIZE);
             copy((InputStream) in, out);
             return out.toByteArray();
         }
@@ -26,7 +26,7 @@ public abstract class StreamUtils {
         } else {
             StringBuilder out = new StringBuilder();
             InputStreamReader reader = new InputStreamReader(in, charset);
-            char[] buffer = new char[4096];
+            char[] buffer = new char[BUFFER_SIZE];
 
             int bytesRead;
             while ((bytesRead = reader.read(buffer)) != -1) {
@@ -49,7 +49,7 @@ public abstract class StreamUtils {
 
     public static int copy(InputStream in, OutputStream out) throws IOException {
         int byteCount = 0;
-        byte[] buffer = new byte[4096];
+        byte[] buffer = new byte[BUFFER_SIZE];
 
         int bytesRead;
         for (boolean var4 = true; (bytesRead = in.read(buffer)) != -1; byteCount += bytesRead) {
@@ -66,7 +66,7 @@ public abstract class StreamUtils {
             throw new IOException("Skipped only " + skipped + " bytes out of " + start + " required");
         } else {
             long bytesToCopy = end - start + 1L;
-            byte[] buffer = new byte[4096];
+            byte[] buffer = new byte[BUFFER_SIZE];
 
             while (bytesToCopy > 0L) {
                 int bytesRead = in.read(buffer);
@@ -88,7 +88,7 @@ public abstract class StreamUtils {
     }
 
     public static int drain(InputStream in) throws IOException {
-        byte[] buffer = new byte[4096];
+        byte[] buffer = new byte[BUFFER_SIZE];
         int byteCount;
         int bytesRead;
         for (byteCount = 0; (bytesRead = in.read(buffer)) != -1; byteCount += bytesRead) {

@@ -55,7 +55,7 @@ public abstract class FileCopyUtils {
         if (in == null) {
             return new byte[0];
         } else {
-            ByteArrayOutputStream out = new ByteArrayOutputStream(4096);
+            ByteArrayOutputStream out = new ByteArrayOutputStream(BUFFER_SIZE);
             copy((InputStream) in, (OutputStream) out);
             return out.toByteArray();
         }
@@ -64,7 +64,7 @@ public abstract class FileCopyUtils {
     public static int copy(Reader in, Writer out) throws IOException {
         try {
             int byteCount = 0;
-            char[] buffer = new char[4096];
+            char[] buffer = new char[BUFFER_SIZE];
 
             int bytesRead;
             for (boolean var4 = true; (bytesRead = in.read(buffer)) != -1; byteCount += bytesRead) {
