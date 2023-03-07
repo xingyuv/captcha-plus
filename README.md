@@ -12,7 +12,7 @@
 在项目的pom.xml的dependencies中加入以下内容:
 
 spring mvc
-```xml
+``` xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>captcha-plus</artifactId>
@@ -20,7 +20,7 @@ spring mvc
 </dependency>
 ```
 spring boot 2
-```xml
+``` xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
@@ -28,7 +28,7 @@ spring boot 2
 </dependency>
 ```
 spring boot 3
-```xml
+``` xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>

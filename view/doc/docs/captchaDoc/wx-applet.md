@@ -15,7 +15,7 @@
 
 ## 基础示例
 ##### 小程序代码片段：https://developers.weixin.qq.com/s/s9JdutmD73p0
-```javascript
+``` javascript
 1)对应页面index.js
 
     data: {

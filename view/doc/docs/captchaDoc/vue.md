@@ -9,7 +9,7 @@
       npm install axios  crypto-js   -S
 
 ## 基础示例
-```javascript
+``` js
 <template>
     <Verify
 	@success="success" //验证成功的回调函数
@@ -73,14 +73,14 @@ export default {
 #### 接口地址：http://*:*/captcha/get
     组件内部默认请求服务器地址: process.env.BASE_API ; 是vue项目打包配置地址,方便分环境打包
 ##### 请求参数：
-```json
+``` json
 {
 	"captchaType": "blockPuzzle",  //验证码类型 clickWord
   "clientUid": "唯一标识"  //客户端UI组件id,组件初始化时设置一次，UUID（非必传参数）
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {
@@ -102,7 +102,7 @@ export default {
 #### 请求接口：http://*:*/captcha/check
     组件内部默认请求服务器地址: process.env.BASE_API ; 是vue项目打包配置地址,方便分环境打包
 ##### 请求参数：
-```json
+``` json
 {
 	 "captchaType": "blockPuzzle",
 	 "pointJson": "QxIVdlJoWUi04iM+65hTow==",  //aes加密坐标信息
@@ -110,7 +110,7 @@ export default {
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {

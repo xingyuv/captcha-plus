@@ -3,15 +3,15 @@
 ## springboot
 ### SpringBoot项目，参考示例：service/springboot
 a.引入jar，已上传至maven中央仓库。
-```xml
+``` xml
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>spring-boot-starter-captcha-plus</artifactId>
-   <version>1.0.2</version>
+   <version>1.0.3</version>
 </dependency>
 ```
 b.修改application.properties，自定义底图和水印，启动后前端就可以请求接口了。[社区底图库](https://gitee.com/anji-plus/AJ-Captcha-Images)<br>
-```properties
+``` properties
 # 滑动验证，底图路径，不配置将使用默认图片
 # 支持全路径
 # 支持项目路径,以classpath:开头,取resource目录下路径,例：classpath:images/jigsaw
@@ -90,7 +90,7 @@ c.`非常重要`。对于分布式多实例部署的应用，应用必须自己�
 **二次校验参数请查看前端接入文档,例：vue,html接入文档等**
 
 以登录为例，用户在提交表单到后台，会携带一个验证码相关的参数。后端登录接口login，首先调用CaptchaService.verification做二次校验，
-```java
+``` java
 @Autowired
 private CaptchaService captchaService;
 
@@ -118,14 +118,14 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 ### 2.2.3 后端接口
 #### 获取验证码接口：http://*:*/captcha/get
 ##### 请求参数：
-```json
+``` json
 {
 	"captchaType": "blockPuzzle",  //验证码类型 clickWord
 	"clientUid": "唯一标识"  //客户端UI组件id,组件初始化时设置一次，UUID（非必传参数）
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {
@@ -146,7 +146,7 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 ```
 #### 核对验证码接口接口：http://*:*/captcha/check
 ##### 请求参数：
-```json
+``` json
 {
 	 "captchaType": "blockPuzzle",
 	 "pointJson": "QxIVdlJoWUi04iM+65hTow==",  //aes加密坐标信息
@@ -154,7 +154,7 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {
@@ -186,11 +186,11 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
      主要是配置redisTemplate和包扫描。
 ```
 a.引入jar，已上传至maven中央仓库。
-```java
+``` java
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
-   <version>0.0.1</version>
+   <version>1.0.3</version>
 </dependency>
 ```
 b.引入CaptchaConfig.java配置文件，需自行配置参数，

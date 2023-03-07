@@ -8,7 +8,7 @@
 
 ## 基础示例
 
-```javascript
+``` js
 <template>
 	<Verify
 	  @success="'success'" //验证成功的回调函数
@@ -46,7 +46,7 @@ export default {
 ```
 ## 注意事项
 	后端请求地址根据部署情况到:\view\uni-app\src\pages\verify\utils\request.js  第二行 修改路劲
-```javascript
+``` js
 let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 ```
 ## 回调事件
@@ -76,13 +76,13 @@ let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 ## 获取验证码接口详情
 ### 接口地址：http://*:*/captcha/get
 #### 请求参数：
-```json
+``` json
 {
 	"captchaType": "blockPuzzle"  //验证码类型 clickWord
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {
@@ -103,7 +103,7 @@ let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 ## 核对验证码接口详情
 ### 请求接口：http://*:*/captcha/check
 #### 请求参数：
-```json
+``` json
 {
 	 "captchaType": "blockPuzzle",
 	 "pointJson": "QxIVdlJoWUi04iM+65hTow==",  //aes加密坐标信息
@@ -111,7 +111,7 @@ let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 }
 ```
 ##### 响应参数：
-```json
+``` json
 {
     "repCode": "0000",
     "repData": {

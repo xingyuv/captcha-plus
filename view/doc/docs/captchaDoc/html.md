@@ -7,7 +7,7 @@
     2)按顺序引入js文件下js文件 jquery.min.js, crypto-js.js, ase.js, verify.js
 
 ## 基础示例
-```javascript
+``` js
 准备初始化的容器,以及id值
 
      <div id="content"></div>
