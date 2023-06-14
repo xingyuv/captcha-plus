@@ -10,6 +10,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.Map;
+import java.util.Objects;
 import java.util.concurrent.*;
 
 public final class CacheUtil {
@@ -31,13 +32,6 @@ public final class CacheUtil {
     public static void init(int cacheMaxNumber, long second) {
         CACHE_MAX_NUMBER = cacheMaxNumber;
         if (second > 0L) {
-            /*Timer timer = new Timer();
-            timer.schedule(new TimerTask() {
-                @Override
-                public void run() {
-                    refresh();
-                }
-            }, 0, second * 1000);*/
             ScheduledExecutorService scheduledExecutor = new ScheduledThreadPoolExecutor(1, new ThreadFactory() {
                 @Override
                 public Thread newThread(Runnable r) {
@@ -50,6 +44,16 @@ public final class CacheUtil {
                     refresh();
                 }
             }, 10, second, TimeUnit.SECONDS);
+
+            Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    if(Objects.nonNull(scheduledExecutor)){
+                        clear();
+                        scheduledExecutor.shutdownNow();
+                    }
+                }
+            }));
         }
     }
 
