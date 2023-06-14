@@ -15,6 +15,11 @@ public interface Const {
      */
     String ORIGINAL_PATH_PIC_CLICK = "captcha.captchaOriginalPath.pic-click";
 
+    /***
+     *旋转底图路径
+     */
+    String ORIGINAL_PATH_ROTATE = "captcha.captchaOriginalPath.rotate";
+
     /**
      * 缓存local/redis...
      */

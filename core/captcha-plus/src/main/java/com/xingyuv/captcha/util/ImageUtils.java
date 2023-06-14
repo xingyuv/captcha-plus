@@ -23,6 +23,14 @@ import java.util.concurrent.ConcurrentHashMap;
 public class ImageUtils {
     private static Logger logger = LoggerFactory.getLogger(ImageUtils.class);
     /**
+     * 旋转底图
+     */
+    private static Map<String, String> originalRotateCacheMap = new ConcurrentHashMap();
+    /**
+     * 旋转块
+     */
+    private static Map<String, String> rotateBlockCacheMap = new ConcurrentHashMap();
+    /**
      * 滑块底图
      */
     private static Map<String, String> originalCacheMap = new ConcurrentHashMap<>();
@@ -36,7 +44,15 @@ public class ImageUtils {
     private static Map<String, String> picClickCacheMap = new ConcurrentHashMap<>();
     private static Map<String, String[]> fileNameMap = new ConcurrentHashMap<>();
 
-    public static void cacheImage(String captchaOriginalPathJigsaw, String captchaOriginalPathClick) {
+    public static void cacheImage(String captchaOriginalPathJigsaw, String captchaOriginalPathClick, String captchaOriginalPathRotate) {
+        // 旋转拼图
+        if (StringUtils.isBlank(captchaOriginalPathRotate)) {
+            originalRotateCacheMap.putAll(getResourcesImagesFile("defaultImages/rotate/original"));
+            rotateBlockCacheMap.putAll(getResourcesImagesFile("defaultImages/rotate/rotateBlock"));
+        } else {
+            originalRotateCacheMap.putAll(getImagesFile(captchaOriginalPathRotate + File.separator + "original"));
+            rotateBlockCacheMap.putAll(getImagesFile(captchaOriginalPathRotate + File.separator + "rotateBlock"));
+        }
         //滑动拼图
         if (StringUtils.isBlank(captchaOriginalPathJigsaw)) {
             originalCacheMap.putAll(getResourcesImagesFile("defaultImages/jigsaw/original"));
@@ -67,6 +83,25 @@ public class ImageUtils {
         logger.info("自定义resource底图:{}", JsonUtil.toJSONString(fileNameMap));
     }
 
+    public static BufferedImage getRotate() {
+        String[] strings = fileNameMap.get(CaptchaBaseMapEnum.ROTATE.getCodeValue());
+        if (null == strings || strings.length == 0) {
+            return null;
+        }
+        Integer randomInt = RandomUtils.getRandomInt(0, strings.length);
+        String s = originalRotateCacheMap.get(strings[randomInt]);
+        return getBase64StrToImage(s);
+    }
+
+    public static String getRotateBlock() {
+        String[] strings = fileNameMap.get(CaptchaBaseMapEnum.ROTATE_BLOCK.getCodeValue());
+        if (null == strings || strings.length == 0) {
+            return null;
+        }
+        Integer randomInt = RandomUtils.getRandomInt(0, strings.length);
+        String s = rotateBlockCacheMap.get(strings[randomInt]);
+        return s;
+    }
 
     public static BufferedImage getOriginal() {
         String[] strings = fileNameMap.get(CaptchaBaseMapEnum.ORIGINAL.getCodeValue());

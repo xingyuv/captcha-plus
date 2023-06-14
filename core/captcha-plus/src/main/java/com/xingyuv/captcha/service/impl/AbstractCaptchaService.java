@@ -81,9 +81,9 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         boolean aBoolean = Boolean.parseBoolean(config.getProperty(Const.CAPTCHA_INIT_ORIGINAL));
         if (!aBoolean) {
             ImageUtils.cacheImage(config.getProperty(Const.ORIGINAL_PATH_JIGSAW),
-                    config.getProperty(Const.ORIGINAL_PATH_PIC_CLICK));
+                    config.getProperty(Const.ORIGINAL_PATH_PIC_CLICK), config.getProperty(Const.ORIGINAL_PATH_ROTATE));
         }
-        logger.info("--->>>初始化验证码底图<<<---" + captchaType());
+        logger.info("--->>>xingyuv captcha-plus 初始化验证码底图<<<---" + captchaType());
         waterMark = config.getProperty(Const.CAPTCHA_WATER_MARK, waterMark);
         slipOffset = config.getProperty(Const.CAPTCHA_SLIP_OFFSET, slipOffset);
         waterMarkFontStr = config.getProperty(Const.CAPTCHA_WATER_FONT, clickWordFontStr);

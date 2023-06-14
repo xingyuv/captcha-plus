@@ -2,6 +2,10 @@ package com.xingyuv.captcha.model.common;
 
 public enum CaptchaTypeEnum {
     /**
+     * 旋转拼图.
+     */
+    ROTATEPUZZLE("rotatePuzzle","旋转拼图"),
+    /**
      * 滑块拼图.
      */
     BLOCKPUZZLE("blockPuzzle", "滑块拼图"),

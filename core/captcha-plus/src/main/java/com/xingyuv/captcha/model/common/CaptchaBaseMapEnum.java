@@ -5,6 +5,14 @@ package com.xingyuv.captcha.model.common;
  */
 public enum CaptchaBaseMapEnum {
     /**
+     * 旋转拼图底图
+     */
+    ROTATE("ROTATE", "旋转拼图底图"),
+    /**
+     * 旋转拼图旋转块底图
+     */
+    ROTATE_BLOCK("ROTATE_BLOCK", "旋转拼图旋转块底图"),
+    /**
      * 滑动拼图底图
      */
     ORIGINAL("ORIGINAL", "滑动拼图底图"),

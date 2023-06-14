@@ -1,3 +1,4 @@
 com.xingyuv.captcha.service.impl.BlockPuzzleCaptchaServiceImpl
 com.xingyuv.captcha.service.impl.ClickWordCaptchaServiceImpl
 com.xingyuv.captcha.service.impl.DefaultCaptchaServiceImpl
+#com.xingyuv.captcha.service.impl.RotatePuzzleCaptchaServiceImpl
