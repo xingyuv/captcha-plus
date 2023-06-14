@@ -82,7 +82,7 @@ public interface FrequencyLimitHandler {
             }
             String getCnts = cacheService.get(getKey);
             if (Objects.isNull(getCnts)) {
-                cacheService.set(getKey, "1", 60);
+                cacheService.set(getKey, "1", 60L);
                 getCnts = "1";
             }
             cacheService.increment(getKey, 1);
