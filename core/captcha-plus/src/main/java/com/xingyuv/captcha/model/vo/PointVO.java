@@ -68,9 +68,9 @@ public class PointVO {
             m.put(item.split(":")[0], item.split(":")[1]);
         });
         //PointVO d = new PointVO();
-        setX(Double.valueOf("" + m.get("x")).intValue());
-        setY(Double.valueOf("" + m.get("y")).intValue());
-        setSecretKey(m.getOrDefault("secretKey", "") + "");
+        setX(Double.valueOf(String.valueOf(m.getOrDefault("x","0"))).intValue());
+        setY(Double.valueOf(String.valueOf(m.getOrDefault("y","0"))).intValue());
+        setSecretKey(String.valueOf(m.getOrDefault("secretKey", "")));
         return this;
     }
 
