@@ -1,5 +1,5 @@
 <template>
-    <view style="position: relative;">
+    <view style="position: relative; touch-action: none; touch-action: pan-y;">
         <view v-if="type === '2'" class="verify-img-out"
              :style="{height: (parseInt(imgSize.height) + vSpace) + 'px'}"
             >
@@ -170,8 +170,8 @@ export default {
                 this.barArea = query.select('.verify-bar-area')
                 var bar_area_left,barArea_offsetWidth;
                 this.barArea.boundingClientRect(data => {
-                    bar_area_left = Math.ceil(data.left) 
-                    barArea_offsetWidth =Math.ceil(data.width) 
+                    bar_area_left = Math.ceil(data.left)
+                    barArea_offsetWidth =Math.ceil(data.width)
 
                 if (this.status && this.isEnd == false) {
                     if (!e.touches) {   //兼容移动端
