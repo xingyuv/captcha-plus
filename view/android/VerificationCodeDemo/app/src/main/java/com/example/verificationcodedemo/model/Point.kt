@@ -5,6 +5,6 @@ package com.example.verificationcodedemo.model
  * author:wuyan
  */
 class Point(
-    val x: Double,
-    val y: Double
+        val x: Double,
+        val y: Double
 )

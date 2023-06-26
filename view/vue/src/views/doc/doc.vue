@@ -2,7 +2,7 @@
   <div>
     <el-container style="width: 100%;height: 100%;">
       <el-header style="height: auto; padding: 0;">
-        <myHeader />
+        <myHeader/>
       </el-header>
     </el-container>
     <el-main>
@@ -25,16 +25,12 @@ export default {
     myHeader
   },
   data() {
-    return {
-
-    }
+    return {}
   },
   mounted() {
 
   },
-  methods: {
-
-  },
+  methods: {},
 }
 </script>
 

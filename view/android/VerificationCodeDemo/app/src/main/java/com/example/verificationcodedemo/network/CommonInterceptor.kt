@@ -39,12 +39,12 @@ class CommonInterceptor(private val cx: Context) : Interceptor {
         Log.e("请求参数", originalJsonElement.toString())
 
         val newRequestBody =
-            RequestBody.create(request.body()!!.contentType(), originalJsonElement.toString())
+                RequestBody.create(request.body()!!.contentType(), originalJsonElement.toString())
 
         val newRequest = request.newBuilder()
-            .header("Accept-Language", "zh-cn,zh")
-            .method(request.method(), newRequestBody)
-            .build()
+                .header("Accept-Language", "zh-cn,zh")
+                .method(request.method(), newRequestBody)
+                .build()
 
         val response = chain.proceed(newRequest)
 

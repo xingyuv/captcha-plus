@@ -1,16 +1,21 @@
 <template>
   <div class="nav-menu">
-    <el-menu :default-active="onRoutes" :default-openeds="[$route.path]" class="el-menu-demo" mode="horizontal" background-color="#203160" text-color="rgba(255,255,255,0.4)" active-text-color="#7AB1F9" router @select="handleSelect">
+    <el-menu :default-active="onRoutes" :default-openeds="[$route.path]" class="el-menu-demo" mode="horizontal"
+             background-color="#203160" text-color="rgba(255,255,255,0.4)" active-text-color="#7AB1F9" router
+             @select="handleSelect">
       <el-row type="flex" justify="center">
         <el-col :xs="22" :sm="22" :md="22" :lg="22" :xl="23">
           <div class="grid-content pd-main">
             <div class="userBox fr" @click="dropOut">
               <!-- {{getAccessUser.userName}} -->
-              <el-button class="goOut"><i class="icon iconfont icon-zhuxiao" />退出</el-button>
+              <el-button class="goOut"><i class="icon iconfont icon-zhuxiao"/>退出</el-button>
             </div>
             <a @click="goHome"><img class="logo" src="./../../assets/image/logo2.png" alt=""></a>
             <div class="nav-md fr">
-              <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" class="fr">{{ item.navItem }}</el-menu-item>
+              <el-menu-item v-for="(item,i) in navList" :key="i" :index="item.name" class="fr">{{
+                  item.navItem
+                }}
+              </el-menu-item>
             </div>
           </div>
         </el-col>
@@ -30,9 +35,9 @@ export default {
       activeIndex: '1',
       userManageCode: [],
       navList: [
-        { name: '/apply', navItem: '谁在使用', manage: 'applyManage' },
-        { name: '/doc', navItem: '在线文档', manage: 'docManage' },
-        { name: '/useOnline', navItem: '在线体验', manage: 'chartManage' },
+        {name: '/apply', navItem: '谁在使用', manage: 'applyManage'},
+        {name: '/doc', navItem: '在线文档', manage: 'docManage'},
+        {name: '/useOnline', navItem: '在线体验', manage: 'chartManage'},
       ]
     }
   },
@@ -87,27 +92,32 @@ export default {
 </script>
 
 <style lang="less" scoped>
-  .el-dropdown-link{
-    color:rgba(255, 255, 255, 0.4);
-    font-size: 12px;
-  }
+.el-dropdown-link {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
 .nav-menu {
   width: 100%;
   background: #203160;
   position: fixed;
   z-index: 10000;
+
   .logo {
     margin-top: 14px;
     width: 85px;
   }
+
   .nav-md {
     display: block;
     margin-right: 80px;
   }
+
   .nav-mini {
     display: none;
   }
 }
+
 .el-menu-item {
   padding: 0;
   margin: 0 15px;
@@ -131,17 +141,21 @@ export default {
   background: none !important;
   line-height: 59px;
 }
+
 .el-menu-item:last-child {
   margin-right: 15px !important;
 }
+
 .el-menu-item:first-child {
   margin-left: 15px !important;
 }
+
 .userBox {
   line-height: 64px;
   color: rgba(255, 255, 255, 0.4);
   font-size: 12px;
   cursor: pointer;
+
   .headerP {
     width: 20px;
     height: 20px;
@@ -152,15 +166,18 @@ export default {
     margin-right: 10px;
     float: left;
   }
+
   .goOut {
     padding: 0;
     background: none;
     border: 0;
     color: rgba(255, 255, 255, 1);
     margin-left: 5px;
+
     .iconfont {
       font-size: 14px;
     }
+
     &:hover {
       color: #03afff;
     }
@@ -172,8 +189,10 @@ export default {
     .nav-md {
       display: none;
     }
+
     .nav-mini {
       display: block;
+
       span {
         margin-right: -30px;
         color: #fff;
@@ -184,6 +203,7 @@ export default {
         width: 100px;
         text-align: center;
       }
+
       .menu {
         display: none;
         width: 100px;
@@ -195,6 +215,7 @@ export default {
         top: 50px;
       }
     }
+
     .nav-mini:hover {
       .menu {
         display: block;

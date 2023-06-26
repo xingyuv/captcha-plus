@@ -4,7 +4,7 @@ public enum CaptchaTypeEnum {
     /**
      * 旋转拼图.
      */
-    ROTATEPUZZLE("rotatePuzzle","旋转拼图"),
+    ROTATEPUZZLE("rotatePuzzle", "旋转拼图"),
     /**
      * 滑块拼图.
      */

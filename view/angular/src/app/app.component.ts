@@ -9,14 +9,18 @@ import {VerifyService} from './service/app.service';
 })
 export class AppComponent {
   verifys: verify[] = [];
+
   constructor(private verifyService: VerifyService) {
   }
+
   ngOnInit(): void {
     // this.onGetImg();
   }
-  closeBox(){
+
+  closeBox() {
 
   }
+
   // onGetImg(){
   //   let params = {captchaType: "blockPuzzle"}
   //   this.verifyService.getVerify(params).then(verifys => {

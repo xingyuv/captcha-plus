@@ -44,9 +44,9 @@ class WordImageView : FrameLayout {
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
-        context,
-        attrs,
-        defStyle
+            context,
+            attrs,
+            defStyle
     ) {
         init()
     }
@@ -113,10 +113,10 @@ class WordImageView : FrameLayout {
     //成功高亮动画
     private fun flashShowAnime() {
         val translateAnimation = TranslateAnimation(
-            Animation.RELATIVE_TO_SELF, 1f,
-            Animation.RELATIVE_TO_SELF, -1f,
-            Animation.RELATIVE_TO_SELF, 0f,
-            Animation.RELATIVE_TO_SELF, 0f
+                Animation.RELATIVE_TO_SELF, 1f,
+                Animation.RELATIVE_TO_SELF, -1f,
+                Animation.RELATIVE_TO_SELF, 0f,
+                Animation.RELATIVE_TO_SELF, 0f
         )
         translateAnimation.duration = flashTime.toLong()
         word_v_flash!!.animation = translateAnimation
@@ -141,10 +141,10 @@ class WordImageView : FrameLayout {
         if (event.action == MotionEvent.ACTION_DOWN) {
             size--
             mList.add(
-                Point(
-                    px2dip(context, event.x).toDouble(),
-                    px2dip(context, event.y).toDouble()
-                )
+                    Point(
+                            px2dip(context, event.x).toDouble(),
+                            px2dip(context, event.y).toDouble()
+                    )
             )
             if (size > 0) {
                 //添加图标
@@ -163,17 +163,17 @@ class WordImageView : FrameLayout {
     private fun addTextView(event: MotionEvent) {
         val textView = TextView(context)
         val l = LayoutParams(
-            DisplayUtil.dip2px(context, 20*1f),
-            DisplayUtil.dip2px(context, 20*1f)
+                DisplayUtil.dip2px(context, 20 * 1f),
+                DisplayUtil.dip2px(context, 20 * 1f)
         )
         textView.layoutParams = l
-        textView.gravity= Gravity.CENTER
+        textView.gravity = Gravity.CENTER
         textView.text = mList.size.toString()
         textView.setTextColor(Color.WHITE)
         textView.background = resources.getDrawable(R.drawable.shape_dot_bg)
         val postion = textView.layoutParams as MarginLayoutParams
-        postion.leftMargin = event.x.toInt()-10
-        postion.topMargin = event.y.toInt()-10
+        postion.leftMargin = event.x.toInt() - 10
+        postion.topMargin = event.y.toInt() - 10
         word_fl_content!!.addView(textView)
     }
 

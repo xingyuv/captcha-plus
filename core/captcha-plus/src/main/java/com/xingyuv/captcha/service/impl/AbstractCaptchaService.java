@@ -73,6 +73,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
 
     /**
      * 判断应用是否实现了自定义缓存，没有就使用内存
+     *
      * @param config config
      */
     @Override
@@ -252,7 +253,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
      * 解密前端坐标aes加密
      *
      * @param point 前端坐标
-     * @param key key
+     * @param key   key
      * @return 前端坐标aes加密
      * @throws Exception E
      */

@@ -1,7 +1,11 @@
 ## 微信小程序接入
+
 ### 1. 兼容性
+
     v2.4.4 (小程序基础库v2.4.4开始支持WXS响应事件)
+
 ### 2. 引入组件
+
     1)复制view/components/aj-captcha文件夹,到自己放置组件文件夹中
 
     2)在对应页面index.json引用组件
@@ -11,7 +15,9 @@
           }
 
 #### 基础示例
+
 #####小程序代码片段：https://developers.weixin.qq.com/s/s9JdutmD73p0
+
 ```javascript
 1)对应页面index.js
 
@@ -72,31 +78,34 @@
           this.selectComponent('.demo1').reload();
         })
 ```
+
 ### 3.回调事件
 
-|  参数 | 类型 |  说明 |
-| ------------ | ------------ | ------------ |
-| success(params)  |  funciton | 验证码匹配成功后的回调函数,params为返回需回传服务器的二次验证参数  |
-| fail(data)  |  funciton | 验证码校验失败后的回调函数,data服务器响应数据  |
+| 参数              | 类型       | 说明                                   |
+|-----------------|----------|--------------------------------------|
+| success(params) | funciton | 验证码匹配成功后的回调函数,params为返回需回传服务器的二次验证参数 |
+| fail(data)      | funciton | 验证码校验失败后的回调函数,data服务器响应数据            |
 
 ### 4. 验证码参数
 
-|  参数 | 类型 |  说明 |
-| ------------ | ------------ | ------------ |
-| baseUrl | String | 服务器前缀，默认：https://captcha.anji-plus.com/captcha-api |
-| captchaType | String | 验证码类型：滑动拼图blockPuzzle，文字点选clickWord，默认：blockPuzzle  |
-| mode  | String | 验证码的显示方式，弹出式pop，固定fixed，默认：mode : ‘pop’  |
-| imgSize | Object |  其中包含了width、height两个参数，分别代表图片的宽度和高度 如:{width:'400px',height:'200px'} 
-| barHeight | String | 滑块，滑动区高度，默认:40px 
-| vSpace  | String | 验证码图片和移动条容器的间隔，默认单位是px。如：间隔为5px，默认:vSpace:5  |
+| 参数          | 类型     | 说明                                                                  |
+|-------------|--------|---------------------------------------------------------------------|
+| baseUrl     | String | 服务器前缀，默认：https://captcha.anji-plus.com/captcha-api                  |
+| captchaType | String | 验证码类型：滑动拼图blockPuzzle，文字点选clickWord，默认：blockPuzzle                  |
+| mode        | String | 验证码的显示方式，弹出式pop，固定fixed，默认：mode : ‘pop’                             |
+| imgSize     | Object | 其中包含了width、height两个参数，分别代表图片的宽度和高度 如:{width:'400px',height:'200px'} 
+| barHeight   | String | 滑块，滑动区高度，默认:40px                                                    
+| vSpace      | String | 验证码图片和移动条容器的间隔，默认单位是px。如：间隔为5px，默认:vSpace:5                         |
 
 ### 5.1默认接口api地址
-|  请求URL | 请求方式 |  
-| ------------ | ------------ |
-| {{baseUrl}}/captcha/get  | Post | 
-| {{baseUrl}}/captcha/check  | Post | 
+
+| 请求URL                     | 请求方式 |  
+|---------------------------|------|
+| {{baseUrl}}/captcha/get   | Post | 
+| {{baseUrl}}/captcha/check | Post | 
 
 ### 5.2 接口返回数据结构
+
 ```
 ##### json格式：
 

@@ -70,7 +70,7 @@ public class RandomUtils {
      * 随机范围内数字
      *
      * @param startNum 开始
-     * @param endNum 结束
+     * @param endNum   结束
      * @return 随机数
      */
     public static Integer getRandomInt(int startNum, int endNum) {

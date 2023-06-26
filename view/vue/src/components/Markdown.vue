@@ -1,6 +1,6 @@
 <template>
   <div class="markdown">
-    <mavon-editor v-model="value" />
+    <mavon-editor v-model="value"/>
   </div>
 </template>
 
@@ -42,17 +42,20 @@ export default {
 </script>
 
 <style lang="less" scoped>
-/deep/.v-note-wrapper {
-    height:calc(100vh - 186px)!important;
-    .v-note-op{
-        display: none!important;
-    }
-    .v-note-edit{
-        display: none!important;
-    }
-    .v-note-show{
-        width: 100%!important;
-        flex: 0 0 100%!important;
-    }
+/deep/ .v-note-wrapper {
+  height: calc(100vh - 186px) !important;
+
+  .v-note-op {
+    display: none !important;
+  }
+
+  .v-note-edit {
+    display: none !important;
+  }
+
+  .v-note-show {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
 }
 </style>

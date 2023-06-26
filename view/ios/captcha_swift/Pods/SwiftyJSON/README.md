@@ -8,27 +8,28 @@ SwiftyJSON makes it easy to deal with JSON data in Swift.
 2. [Requirements](#requirements)
 3. [Integration](#integration)
 4. [Usage](#usage)
-   - [Initialization](#initialization)
-   - [Subscript](#subscript)
-   - [Loop](#loop)
-   - [Error](#error)
-   - [Optional getter](#optional-getter)
-   - [Non-optional getter](#non-optional-getter)
-   - [Setter](#setter)
-   - [Raw object](#raw-object)
-   - [Literal convertibles](#literal-convertibles)
-   - [Merging](#merging)
+    - [Initialization](#initialization)
+    - [Subscript](#subscript)
+    - [Loop](#loop)
+    - [Error](#error)
+    - [Optional getter](#optional-getter)
+    - [Non-optional getter](#non-optional-getter)
+    - [Setter](#setter)
+    - [Raw object](#raw-object)
+    - [Literal convertibles](#literal-convertibles)
+    - [Merging](#merging)
 5. [Work with Alamofire](#work-with-alamofire)
 6. [Work with Moya](#work-with-moya)
 
 > [中文介绍](http://tangplin.github.io/swiftyjson/)
 
-
 ## Why is the typical JSON handling in Swift NOT good?
 
-Swift is very strict about types. But although explicit typing is good for saving us from mistakes, it becomes painful when dealing with JSON and other areas that are, by nature, implicit about types.
+Swift is very strict about types. But although explicit typing is good for saving us from mistakes, it becomes painful
+when dealing with JSON and other areas that are, by nature, implicit about types.
 
-Take the Twitter API for example. Say we want to retrieve a user's "name" value of some tweet in Swift (according to [Twitter's API](https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline)).
+Take the Twitter API for example. Say we want to retrieve a user's "name" value of some tweet in Swift (according
+to [Twitter's API](https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline)).
 
 The code would look like this:
 
@@ -102,11 +103,13 @@ You can use [Carthage](https://github.com/Carthage/Carthage) to install `SwiftyJ
 github "SwiftyJSON/SwiftyJSON" ~> 4.0
 ```
 
-If you use Carthage to build your dependencies, make sure you have added `SwiftyJSON.framework` to the "Linked Frameworks and Libraries" section of your target, and have included them in your Carthage framework copying build phase.
+If you use Carthage to build your dependencies, make sure you have added `SwiftyJSON.framework` to the "Linked
+Frameworks and Libraries" section of your target, and have included them in your Carthage framework copying build phase.
 
 #### Swift Package Manager
 
-You can use [The Swift Package Manager](https://swift.org/package-manager) to install `SwiftyJSON` by adding the proper description to your `Package.swift` file:
+You can use [The Swift Package Manager](https://swift.org/package-manager) to install `SwiftyJSON` by adding the proper
+description to your `Package.swift` file:
 
 ```swift
 // swift-tools-version:4.0
@@ -119,11 +122,12 @@ let package = Package(
     ]
 )
 ```
+
 Then run `swift build` whenever you get prepared.
 
 #### Manually (iOS 7+, OS X 10.9+)
 
-To use this library in your project manually you may:  
+To use this library in your project manually you may:
 
 1. for Projects, just drag SwiftyJSON.swift to the project tree
 2. for Workspaces, include the whole SwiftyJSON.xcodeproj
@@ -139,11 +143,13 @@ import SwiftyJSON
 ```swift
 let json = JSON(data: dataFromNetworking)
 ```
+
 Or
 
 ```swift
 let json = JSON(jsonObject)
 ```
+
 Or
 
 ```swift
@@ -213,7 +219,9 @@ for (index,subJson):(String, JSON) in json {
 
 ##### SwiftyJSON 4.x
 
-SwiftyJSON 4.x introduces an enum type called `SwiftyJSONError`, which includes `unsupportedType`, `indexOutOfBounds`, `elementTooDeep`, `wrongType`, `notExist` and `invalidJSON`, at the same time, `ErrorDomain` are being replaced by `SwiftyJSONError.errorDomain`.
+SwiftyJSON 4.x introduces an enum type called `SwiftyJSONError`, which
+includes `unsupportedType`, `indexOutOfBounds`, `elementTooDeep`, `wrongType`, `notExist` and `invalidJSON`, at the same
+time, `ErrorDomain` are being replaced by `SwiftyJSONError.errorDomain`.
 Note: Those old error types are deprecated in SwiftyJSON 4.x and will be removed in the future release.
 
 ##### SwiftyJSON 3.x
@@ -221,9 +229,10 @@ Note: Those old error types are deprecated in SwiftyJSON 4.x and will be removed
 Use a subscript to get/set a value in an Array or Dictionary
 
 If the JSON is:
-*  an array, the app may crash with "index out-of-bounds."
-*  a dictionary, it will be assigned to `nil` without a reason.
-*  not an array or a dictionary, the app may crash with an "unrecognised selector" exception.
+
+* an array, the app may crash with "index out-of-bounds."
+* a dictionary, it will be assigned to `nil` without a reason.
+* not an array or a dictionary, the app may crash with an "unrecognised selector" exception.
 
 This will never happen in SwiftyJSON.
 
@@ -451,16 +460,21 @@ let auth: JSON = [
 
 #### Merging
 
-It is possible to merge one JSON into another JSON. Merging a JSON into another JSON adds all non existing values to the original JSON which are only present in the `other` JSON.
+It is possible to merge one JSON into another JSON. Merging a JSON into another JSON adds all non existing values to the
+original JSON which are only present in the `other` JSON.
 
-If both JSONs contain a value for the same key, _mostly_ this value gets overwritten in the original JSON, but there are two cases where it provides some special treatment:
+If both JSONs contain a value for the same key, _mostly_ this value gets overwritten in the original JSON, but there are
+two cases where it provides some special treatment:
 
-- In case of both values being a `JSON.Type.array` the values form the array found in the `other` JSON getting appended to the original JSON's array value.
-- In case of both values being a `JSON.Type.dictionary` both JSON-values are getting merged the same way the encapsulating JSON is merged.
+- In case of both values being a `JSON.Type.array` the values form the array found in the `other` JSON getting appended
+  to the original JSON's array value.
+- In case of both values being a `JSON.Type.dictionary` both JSON-values are getting merged the same way the
+  encapsulating JSON is merged.
 
 In case, where two fields in a JSON have a different types, the value will get always overwritten.
 
-There are two different fashions for merging: `merge` modifies the original JSON, whereas `merged` works non-destructively on a copy.
+There are two different fashions for merging: `merge` modifies the original JSON, whereas `merged` works
+non-destructively on a copy.
 
 ```swift
 let original: JSON = [
@@ -498,9 +512,12 @@ let updated = original.merge(with: update)
 ```
 
 ## String representation
+
 There are two options available:
+
 - use the default Swift one
 - use a custom one that will handle optionals well and represent `nil` as `"null"`:
+
 ```swift
 let dict = ["1":2, "2":"two", "3": nil] as [String: Any?]
 let json = JSON(dict)
@@ -527,7 +544,6 @@ Alamofire.request(url, method: .get).validate().responseJSON { response in
 We also provide an extension of Alamofire for serializing NSData to SwiftyJSON's JSON.
 
 See: [Alamofire-SwiftyJSON](https://github.com/SwiftyJSON/Alamofire-SwiftyJSON)
-
 
 ## Work with [Moya](https://github.com/Moya/Moya)
 

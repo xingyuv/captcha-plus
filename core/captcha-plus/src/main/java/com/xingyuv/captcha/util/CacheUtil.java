@@ -48,7 +48,7 @@ public final class CacheUtil {
             Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    if(Objects.nonNull(scheduledExecutor)){
+                    if (Objects.nonNull(scheduledExecutor)) {
                         clear();
                         scheduledExecutor.shutdownNow();
                     }

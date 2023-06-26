@@ -1,7 +1,11 @@
 ## uni-app接入
+
 ### 1. 兼容性
+
 	微信小程序,H5页面等(uni-app支持的小程序系系列,H5系列)
+
 ### 2. 初始化组件
+
 	1)将view/uni-app/src/pages/verify文件夹copy到自己项目中
 
 	2)下载相关依赖, npm install crypto-js -S
@@ -44,45 +48,54 @@ export default {
 </script>
 </script>
 ```
+
 ### 注意事项
+
 	后端请求地址根据部署情况到:\view\uni-app\src\pages\verify\utils\request.js  第二行 修改路劲
+
 ```javascript
 let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 ```
 
 ### 3.回调事件
 
-|  参数 | 类型 |  说明 |
-| ------------ | ------------ | ------------ |
-| success(params)  |  funciton | 验证码匹配成功后的回调函数,params为返回需回传服务器的二次验证参数  |
-| error  |  funciton | 验证码匹配失败后的回调函数  |
-| ready  |  funciton |  验证码初始化成功的回调函数 |
+| 参数              | 类型       | 说明                                   |
+|-----------------|----------|--------------------------------------|
+| success(params) | funciton | 验证码匹配成功后的回调函数,params为返回需回传服务器的二次验证参数 |
+| error           | funciton | 验证码匹配失败后的回调函数                        |
+| ready           | funciton | 验证码初始化成功的回调函数                        |
 
 ### 4. 验证码参数
 
-|  参数 | 类型 |  说明 |
-| ------------ | ------------ | ------------ |
-| captchaType | String | 1）滑动拼图 blockPuzzle  2）文字点选 clickWord  |
-| mode  | String | 验证码的显示方式，弹出式pop，固定fixed，默认：mode : ‘pop’  |
-| vSpace  | String | 验证码图片和移动条容器的间隔，默认单位是px。如：间隔为5px，默认:vSpace:5  |
-| explain  | String |  滑动条内的提示，不设置默认是：'向右滑动完成验证' |
-| imgSize | Object |  其中包含了width、height两个参数，分别代表图片的宽度和高度，支持百分比方式设置 如:{width:'400px',height:'200px'}
+| 参数          | 类型     | 说明                                                                            |
+|-------------|--------|-------------------------------------------------------------------------------|
+| captchaType | String | 1）滑动拼图 blockPuzzle  2）文字点选 clickWord                                          |
+| mode        | String | 验证码的显示方式，弹出式pop，固定fixed，默认：mode : ‘pop’                                       |
+| vSpace      | String | 验证码图片和移动条容器的间隔，默认单位是px。如：间隔为5px，默认:vSpace:5                                   |
+| explain     | String | 滑动条内的提示，不设置默认是：'向右滑动完成验证'                                                     |
+| imgSize     | Object | 其中包含了width、height两个参数，分别代表图片的宽度和高度，支持百分比方式设置 如:{width:'400px',height:'200px'} 
 
 ### 5.1默认接口api地址
-|  请求URL | 请求方式 |  
-| ------------ | ------------ |
-| /captcha/get  | Post | 
-| /captcha/check  | Post | 
+
+| 请求URL          | 请求方式 |  
+|----------------|------|
+| /captcha/get   | Post | 
+| /captcha/check | Post | 
 
 ### 5.2 获取验证码接口详情
+
 #### 接口地址：http://*:*/captcha/get
+
 ##### 请求参数：
+
 ```json
 {
 	"captchaType": "blockPuzzle"  //验证码类型 clickWord
 }
 ```
+
 ##### 响应参数：
+
 ```json
 {
     "repCode": "0000",
@@ -101,9 +114,13 @@ let baseUrl = "https://captcha.anji-plus.com/captcha-api"
     "error": false
 }
 ```
+
 ### 5.3 核对验证码接口详情
+
 #### 请求接口：http://*:*/captcha/check
+
 ##### 请求参数：
+
 ```json
 {
 	 "captchaType": "blockPuzzle",
@@ -111,7 +128,9 @@ let baseUrl = "https://captcha.anji-plus.com/captcha-api"
 	 "token": "71dd26999e314f9abb0c635336976635"  //get请求返回的token
 }
 ```
+
 ##### 响应参数：
+
 ```json
 {
     "repCode": "0000",

@@ -10,9 +10,12 @@
 
 # CryptoSwift
 
-Crypto related functions and helpers for [Swift](https://swift.org) implemented in Swift. ([#PureSwift](https://twitter.com/hashtag/pureswift))
+Crypto related functions and helpers for [Swift](https://swift.org) implemented in
+Swift. ([#PureSwift](https://twitter.com/hashtag/pureswift))
 
-**Note**: The `master` branch follows the latest currently released **version of Swift**. If you need an earlier version for an older version of Swift, you can specify its version in your `Podfile` or use the code on the branch for that version. Older branches are unsupported. Check [versions](#swift-versions-support) for details.
+**Note**: The `master` branch follows the latest currently released **version of Swift**. If you need an earlier version
+for an older version of Swift, you can specify its version in your `Podfile` or use the code on the branch for that
+version. Older branches are unsupported. Check [versions](#swift-versions-support) for details.
 
 ---
 
@@ -20,11 +23,14 @@ Crypto related functions and helpers for [Swift](https://swift.org) implemented 
 
 ## Sponsorship
 
-If you (or your Company) use this work, please consider [Sponsorship](https://github.com/users/krzyzanowskim/sponsorship). This is the only option to keep the project alive, that is in your own best interrest.
+If you (or your Company) use this work, please
+consider [Sponsorship](https://github.com/users/krzyzanowskim/sponsorship). This is the only option to keep the project
+alive, that is in your own best interrest.
 
 CryptoSwift isn't backed by a big company and is developer in my spare time that I also use to as a freelancer.
 
 ## Requirements
+
 Good mood
 
 ## Features
@@ -35,7 +41,8 @@ Good mood
 - iOS, Android, macOS, AppleTV, watchOS, Linux support
 
 #### Hash (Digest)
-  [MD5](http://tools.ietf.org/html/rfc1321)
+
+[MD5](http://tools.ietf.org/html/rfc1321)
 | [SHA1](http://tools.ietf.org/html/rfc3174)
 | [SHA224](http://tools.ietf.org/html/rfc6234)
 | [SHA256](http://tools.ietf.org/html/rfc6234)
@@ -44,49 +51,60 @@ Good mood
 | [SHA3](http://nvlpubs.nist.gov/nistpubs/FIPS/NIST.FIPS.202.pdf)
 
 #### Cyclic Redundancy Check (CRC)
-  [CRC32](http://en.wikipedia.org/wiki/Cyclic_redundancy_check)
+
+[CRC32](http://en.wikipedia.org/wiki/Cyclic_redundancy_check)
 | [CRC32C](http://en.wikipedia.org/wiki/Cyclic_redundancy_check)
 | [CRC16](http://en.wikipedia.org/wiki/Cyclic_redundancy_check)
 
 #### Cipher
-  [AES-128, AES-192, AES-256](http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf)
+
+[AES-128, AES-192, AES-256](http://csrc.nist.gov/publications/fips/fips197/fips-197.pdf)
 | [ChaCha20](http://cr.yp.to/chacha/chacha-20080128.pdf)
 | [Rabbit](https://tools.ietf.org/html/rfc4503)
 | [Blowfish](https://www.schneier.com/academic/blowfish/)
 
 #### Message authenticators
-  [Poly1305](http://cr.yp.to/mac/poly1305-20050329.pdf)
+
+[Poly1305](http://cr.yp.to/mac/poly1305-20050329.pdf)
 | [HMAC (MD5, SHA1, SHA256)](https://www.ietf.org/rfc/rfc2104.txt)
 | [CMAC](https://tools.ietf.org/html/rfc4493)
 | [CBC-MAC](https://en.wikipedia.org/wiki/CBC-MAC)
 
 #### Cipher mode of operation
+
 - Electronic codebook ([ECB](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Electronic_codebook_.28ECB.29))
-- Cipher-block chaining ([CBC](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29))
-- Propagating Cipher Block Chaining ([PCBC](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Propagating_Cipher_Block_Chaining_.28PCBC.29))
+- Cipher-block
+  chaining ([CBC](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher-block_chaining_.28CBC.29))
+- Propagating Cipher Block
+  Chaining ([PCBC](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Propagating_Cipher_Block_Chaining_.28PCBC.29))
 - Cipher feedback ([CFB](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Cipher_feedback_.28CFB.29))
 - Output Feedback ([OFB](http://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Output_Feedback_.28OFB.29))
 - Counter Mode ([CTR](https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Counter_.28CTR.29))
 - Galois/Counter Mode ([GCM](https://csrc.nist.gov/publications/detail/sp/800-38d/final))
-- Counter with Cipher Block Chaining-Message Authentication Code ([CCM](https://csrc.nist.gov/publications/detail/sp/800-38c/final))
+- Counter with Cipher Block Chaining-Message Authentication
+  Code ([CCM](https://csrc.nist.gov/publications/detail/sp/800-38c/final))
 
 #### Password-Based Key Derivation Function
+
 - [PBKDF1](http://tools.ietf.org/html/rfc2898#section-5.1) (Password-Based Key Derivation Function 1)
 - [PBKDF2](http://tools.ietf.org/html/rfc2898#section-5.2) (Password-Based Key Derivation Function 2)
 - [HKDF](https://tools.ietf.org/html/rfc5869) (HMAC-based Extract-and-Expand Key Derivation Function)
 - [Scrypt](https://tools.ietf.org/html/rfc7914) (The scrypt Password-Based Key Derivation Function)
 
 #### Data padding
-  PKCS#5
+
+PKCS#5
 | [PKCS#7](http://tools.ietf.org/html/rfc5652#section-6.3)
 | [Zero padding](https://en.wikipedia.org/wiki/Padding_(cryptography)#Zero_padding)
 | [ISO78164](http://www.embedx.com/pdfs/ISO_STD_7816/info_isoiec7816-4%7Bed21.0%7Den.pdf)
 | No padding
 
 #### Authenticated Encryption with Associated Data (AEAD)
+
 - [AEAD\_CHACHA20\_POLY1305](https://tools.ietf.org/html/rfc7539#section-2.8)
 
 ## Why
+
 [Why?](https://github.com/krzyzanowskim/CryptoSwift/issues/5) [Because I can](https://github.com/krzyzanowskim/CryptoSwift/issues/5#issuecomment-53379391).
 
 ## How do I get involved?
@@ -106,11 +124,15 @@ To install CryptoSwift, add it as a submodule to your project (on the top level 
 
     git submodule add https://github.com/krzyzanowskim/CryptoSwift.git
 
-It is recommended to enable [Whole-Module Optimization](https://swift.org/blog/whole-module-optimizations/) to gain better performance. Non-optimized build results in significantly worse performance.
+It is recommended to enable [Whole-Module Optimization](https://swift.org/blog/whole-module-optimizations/) to gain
+better performance. Non-optimized build results in significantly worse performance.
 
 #### Embedded Framework
 
-Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9). Drag the `CryptoSwift.xcodeproj` file into your Xcode project, and add appropriate framework as a dependency to your target. Now select your App and choose the General tab for the app target. Find *Embedded Binaries* and press "+", then select `CryptoSwift.framework` (iOS, OS X, watchOS or tvOS)
+Embedded frameworks require a minimum deployment target of iOS 8 or OS X Mavericks (10.9). Drag
+the `CryptoSwift.xcodeproj` file into your Xcode project, and add appropriate framework as a dependency to your target.
+Now select your App and choose the General tab for the app target. Find *Embedded Binaries* and press "+", then
+select `CryptoSwift.framework` (iOS, OS X, watchOS or tvOS)
 
 ![](https://cloud.githubusercontent.com/assets/758033/10834511/25a26852-7e9a-11e5-8c01-6cc8f1838459.png)
 
@@ -120,7 +142,10 @@ Sometimes "embedded framework" option is not available. In that case, you have t
 
 ##### iOS, macOS, watchOS, tvOS
 
-In the project, you'll find [single scheme](https://mxcl.dev/PromiseKit/news/2016/08/Multiplatform-Single-Scheme-Xcode-Projects/) for all platforms:
+In the project, you'll
+find [single scheme](https://mxcl.dev/PromiseKit/news/2016/08/Multiplatform-Single-Scheme-Xcode-Projects/) for all
+platforms:
+
 - CryptoSwift
 
 #### Swift versions support
@@ -143,9 +168,13 @@ You can use [CocoaPods](https://cocoapods.org/pods/CryptoSwift).
 pod 'CryptoSwift', '~> 1.0'
 ```
 
-Bear in mind that CocoaPods will build CryptoSwift without [Whole-Module Optimization](https://swift.org/blog/whole-module-optimizations/) that may impact performance. You can change it manually after installation, or use [cocoapods-wholemodule](https://github.com/jedlewison/cocoapods-wholemodule) plugin.
+Bear in mind that CocoaPods will build CryptoSwift
+without [Whole-Module Optimization](https://swift.org/blog/whole-module-optimizations/) that may impact performance. You
+can change it manually after installation, or
+use [cocoapods-wholemodule](https://github.com/jedlewison/cocoapods-wholemodule) plugin.
 
 #### Carthage
+
 You can use [Carthage](https://github.com/Carthage/Carthage).
 Specify in Cartfile:
 
@@ -153,11 +182,13 @@ Specify in Cartfile:
 github "krzyzanowskim/CryptoSwift"
 ```
 
-Run `carthage` to build the framework and drag the built CryptoSwift.framework into your Xcode project. Follow [build instructions](https://github.com/Carthage/Carthage#getting-started). [Common issues](https://github.com/krzyzanowskim/CryptoSwift/issues/492#issuecomment-330822874).
+Run `carthage` to build the framework and drag the built CryptoSwift.framework into your Xcode project.
+Follow [build instructions](https://github.com/Carthage/Carthage#getting-started). [Common issues](https://github.com/krzyzanowskim/CryptoSwift/issues/492#issuecomment-330822874).
 
 #### Swift Package Manager
 
-You can use [Swift Package Manager](https://swift.org/package-manager/) and specify dependency in `Package.swift` by adding this:
+You can use [Swift Package Manager](https://swift.org/package-manager/) and specify dependency in `Package.swift` by
+adding this:
 
 ```swift
 .package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMinor(from: "1.0"))
@@ -166,6 +197,7 @@ You can use [Swift Package Manager](https://swift.org/package-manager/) and spec
 See: [Package.swift - manual](http://blog.krzyzanowskim.com/2016/08/09/package-swift-manual/)
 
 #### Accio
+
 You can use [Accio](https://github.com/JamitLabs/Accio). Specify in `Package.swift`:
 
 ```swift
@@ -199,11 +231,14 @@ also check [Playground](/CryptoSwift.playground/Contents.swift)
 import CryptoSwift
 ```
 
-CryptoSwift uses array of bytes aka `Array<UInt8>` as a base type for all operations. Every data may be converted to a stream of bytes. You will find convenience functions that accept `String` or `Data`, and it will be internally converted to the array of bytes.
+CryptoSwift uses array of bytes aka `Array<UInt8>` as a base type for all operations. Every data may be converted to a
+stream of bytes. You will find convenience functions that accept `String` or `Data`, and it will be internally converted
+to the array of bytes.
 
 ##### Data types conversion
 
-For your convenience, **CryptoSwift** provides two functions to easily convert an array of bytes to `Data` or `Data` to an array of bytes:
+For your convenience, **CryptoSwift** provides two functions to easily convert an array of bytes to `Data` or `Data` to
+an array of bytes:
 
 Data from bytes:
 
@@ -225,11 +260,13 @@ let hex   = bytes.toHexString()            // "010203"
 ```
 
 Build bytes out of `String`
+
 ```swift
 let bytes: Array<UInt8> = "cipherkey".bytes  // Array("cipherkey".utf8)
 ```
 
 Also... check out helpers that work with **Base64** encoded data:
+
 ```swift
 "aPf/i9th9iX+vf49eR7PYk2q7S5xmm3jkRLejgzHNJs=".decryptBase64ToString(cipher)
 "aPf/i9th9iX+vf49eR7PYk2q7S5xmm3jkRLejgzHNJs=".decryptBase64(cipher)
@@ -239,6 +276,7 @@ bytes.toBase64()
 ##### Calculate Digest
 
 Hashing a data or array of bytes (aka `Array<UInt8>`)
+
 ```swift
 /* Hash struct usage */
 let bytes:Array<UInt8> = [0x01, 0x02, 0x03]
@@ -256,6 +294,7 @@ let hash = data.sha256()
 let hash = data.sha384()
 let hash = data.sha512()
 ```
+
 ```swift
 do {
     var digest = MD5()
@@ -318,16 +357,17 @@ let salt: Array<UInt8> = Array("nacllcan".utf8)
 let key = try HKDF(password: password, salt: salt, variant: .sha256).calculate()
 ```
 
-
 ##### Data Padding
 
-Some content-encryption algorithms assume the input length is a multiple of `k` octets, where `k` is greater than one. For such algorithms, the input shall be padded.
+Some content-encryption algorithms assume the input length is a multiple of `k` octets, where `k` is greater than one.
+For such algorithms, the input shall be padded.
 
 ```swift
 Padding.pkcs7.add(to: bytes, blockSize: AES.blockSize)
 ```
 
 #### Working with Ciphers
+
 ##### ChaCha20
 
 ```swift
@@ -341,6 +381,7 @@ let decrypted = try ChaCha20(key: key, iv: iv).decrypt(encrypted)
 let encrypted = try Rabbit(key: key, iv: iv).encrypt(message)
 let decrypted = try Rabbit(key: key, iv: iv).decrypt(encrypted)
 ```
+
 ##### Blowfish
 
 ```swift
@@ -350,7 +391,8 @@ let decrypted = try Blowfish(key: key, blockMode: CBC(iv: iv), padding: .pkcs7).
 
 ##### AES
 
-Notice regarding padding: *Manual padding of data is optional, and CryptoSwift is using PKCS7 padding by default. If you need to manually disable/enable padding, you can do this by setting parameter for __AES__ class*
+Notice regarding padding: *Manual padding of data is optional, and CryptoSwift is using PKCS7 padding by default. If you
+need to manually disable/enable padding, you can do this by setting parameter for __AES__ class*
 
 Variant of AES encryption (AES-128, AES-192, AES-256) depends on given key length:
 
@@ -359,11 +401,13 @@ Variant of AES encryption (AES-128, AES-192, AES-256) depends on given key lengt
 - AES-256 = 32 bytes
 
 AES-256 example
+
 ```swift
 try AES(key: [1,2,3,...,32], blockMode: CBC(iv: [1,2,3,...,16]), padding: .pkcs7)
 ```
 
 ###### All at once
+
 ```swift
 do {
     let aes = try AES(key: "keykeykeykeykeyk", iv: "drowssapdrowssap") // aes128
@@ -373,7 +417,8 @@ do {
 
 ###### Incremental updates
 
-Incremental operations use instance of Cryptor and encrypt/decrypt one part at a time, this way you can save on memory for large files.
+Incremental operations use instance of Cryptor and encrypt/decrypt one part at a time, this way you can save on memory
+for large files.
 
 ```swift
 do {
@@ -396,6 +441,7 @@ do {
 See [Playground](/CryptoSwift.playground/Contents.swift) for sample code that work with stream.
 
 ###### AES Advanced usage
+
 ```swift
 let input: Array<UInt8> = [0,1,2,3,4,5,6,7,8,9]
 
@@ -427,7 +473,8 @@ let decrypted = try! encrypted.decrypt(ChaCha20(key: key, iv: iv))
 
 ##### AES-GCM
 
-The result of Galois/Counter Mode (GCM) encryption is ciphertext and **authentication tag**, that is later used to decryption.
+The result of Galois/Counter Mode (GCM) encryption is ciphertext and **authentication tag**, that is later used to
+decryption.
 
 encryption
 
@@ -456,11 +503,13 @@ do {
 }
 ```
 
-**Note**: GCM instance is not intended to be reused. So you can't use the same `GCM` instance from encoding to also perform decoding.
+**Note**: GCM instance is not intended to be reused. So you can't use the same `GCM` instance from encoding to also
+perform decoding.
 
 ##### AES-CCM
 
-The result of Counter with Cipher Block Chaining-Message Authentication Code encryption is ciphertext and **authentication tag**, that is later used to decryption.
+The result of Counter with Cipher Block Chaining-Message Authentication Code encryption is ciphertext and *
+*authentication tag**, that is later used to decryption.
 
 ```swift
 do {
@@ -491,7 +540,10 @@ You can follow me on Twitter at [@krzyzanowskim](http://twitter.com/krzyzanowski
 
 # Cryptography Notice
 
-This distribution includes cryptographic software. The country in which you currently reside may have restrictions on the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption software, please check your country's laws, regulations and policies concerning the import, possession, or use, and re-export of encryption software, to see if this is permitted. See http://www.wassenaar.org/ for more information.
+This distribution includes cryptographic software. The country in which you currently reside may have restrictions on
+the import, possession, use, and/or re-export to another country, of encryption software. BEFORE using any encryption
+software, please check your country's laws, regulations and policies concerning the import, possession, or use, and
+re-export of encryption software, to see if this is permitted. See http://www.wassenaar.org/ for more information.
 
 ## License
 
@@ -500,12 +552,15 @@ This software is provided 'as-is', without any express or implied warranty.
 
 In no event will the authors be held liable for any damages arising from the use of this software.
 
-Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it and redistribute it freely, subject to the following restrictions:
+Permission is granted to anyone to use this software for any purpose, including commercial applications, and to alter it
+and redistribute it freely, subject to the following restrictions:
 
-- The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If you use this software in a product, **an acknowledgment in the product documentation is required**.
+- The origin of this software must not be misrepresented; you must not claim that you wrote the original software. If
+  you use this software in a product, **an acknowledgment in the product documentation is required**.
 - Altered source versions must be plainly marked as such, and must not be misrepresented as being the original software.
 - This notice may not be removed or altered from any source or binary distribution.
-- Redistributions of any form whatsoever must retain the following acknowledgment: 'This product includes software developed by the "Marcin Krzyzanowski" (http://krzyzanowskim.com/).'
+- Redistributions of any form whatsoever must retain the following acknowledgment: 'This product includes software
+  developed by the "Marcin Krzyzanowski" (http://krzyzanowskim.com/).'
 
 ## Changelog
 

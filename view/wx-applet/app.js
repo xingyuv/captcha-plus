@@ -1,6 +1,6 @@
 // app.js
 App({
-  onLaunch() {
-    
-  },
+    onLaunch() {
+
+    },
 })

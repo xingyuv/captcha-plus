@@ -20,32 +20,32 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        bGo=findViewById(R.id.bGo);
+        bGo = findViewById(R.id.bGo);
         bGo.setOnClickListener(this);
-        bGo_word=findViewById(R.id.bGo_word);
+        bGo_word = findViewById(R.id.bGo_word);
         bGo_word.setOnClickListener(this);
-        blockPuzzleDialog=new BlockPuzzleDialog(this);
-        wordCaptchaDialog=new WordCaptchaDialog(this);
+        blockPuzzleDialog = new BlockPuzzleDialog(this);
+        wordCaptchaDialog = new WordCaptchaDialog(this);
 
         blockPuzzleDialog.setOnResultsListener(new BlockPuzzleDialog.OnResultsListener() {
             @Override
             public void onResultsClick(String result) {
                 //todo 二次校验回调结果
-                String s=result;
+                String s = result;
             }
         });
         wordCaptchaDialog.setOnResultsListener(new WordCaptchaDialog.OnResultsListener() {
             @Override
             public void onResultsClick(String result) {
                 //todo 二次校验回调结果
-                String s=result;
+                String s = result;
             }
         });
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.bGo:
                 blockPuzzleDialog.show();
                 break;

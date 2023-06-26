@@ -156,6 +156,7 @@ same as the Objective-C generics system. They are not mutually exclusive, but
 for JSONModel to work, the protocol must be in place.
 
 Also property can have generics info for compiler
+
 ```objc
 @interface OrderModel : JSONModel
 @property (nonatomic) NSInteger orderId;

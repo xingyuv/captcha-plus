@@ -36,8 +36,8 @@ import kotlin.reflect.jvm.internal.impl.metadata.ProtoBuf
 class BlockPuzzleDialog : Dialog {
     constructor(mContext: Context) : this(mContext, 0)
     constructor(mContext: Context, themeResId: Int) : super(
-        mContext,
-        com.example.verificationcodedemo.R.style.dialog
+            mContext,
+            com.example.verificationcodedemo.R.style.dialog
     ) {
         window!!.setGravity(Gravity.CENTER)
         window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -83,7 +83,7 @@ class BlockPuzzleDialog : Dialog {
                 rl_pb.visibility = VISIBLE
 
                 val o = CaptchaGetOt(
-                    captchaType = "blockPuzzle"
+                        captchaType = "blockPuzzle"
                 )
                 val b = Configuration.server.getAsync(o).await().body()
                 when (b?.repCode) {
@@ -95,12 +95,13 @@ class BlockPuzzleDialog : Dialog {
                         key = b.repData!!.secretKey
 
                         dragView.setUp(
-                            ImageUtil.base64ToBitmap(baseImageBase64)!!,
-                            ImageUtil.base64ToBitmap(slideImageBase64)!!
+                                ImageUtil.base64ToBitmap(baseImageBase64)!!,
+                                ImageUtil.base64ToBitmap(slideImageBase64)!!
                         )
                         dragView.setSBUnMove(true)
                         initEvent()
                     }
+
                     else -> {
                         dragView.setSBUnMove(false)
                     }
@@ -111,12 +112,12 @@ class BlockPuzzleDialog : Dialog {
             } catch (e: Exception) {
                 e.printStackTrace()
                 runUIDelayed(
-                    Runnable {
-                        dragView.setSBUnMove(false)
-                        dragView.visibility = VISIBLE
-                        rl_pb.visibility = GONE
-                        Toast.makeText(context, "网络请求错误", Toast.LENGTH_SHORT).show()
-                    }, 1000
+                        Runnable {
+                            dragView.setSBUnMove(false)
+                            dragView.visibility = VISIBLE
+                            rl_pb.visibility = GONE
+                            Toast.makeText(context, "网络请求错误", Toast.LENGTH_SHORT).show()
+                        }, 1000
                 )
             }
         }
@@ -130,9 +131,9 @@ class BlockPuzzleDialog : Dialog {
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val o = CaptchaCheckOt(
-                    captchaType = "blockPuzzle",
-                    pointJson = AESUtil.encode(pointStr, key),
-                    token = Configuration.token
+                        captchaType = "blockPuzzle",
+                        pointJson = AESUtil.encode(pointStr, key),
+                        token = Configuration.token
                 )
                 val b = Configuration.server.checkAsync(o).await().body()
                 when (b?.repCode) {
@@ -140,15 +141,16 @@ class BlockPuzzleDialog : Dialog {
                     "0000" -> {
                         dragView.ok()
                         runUIDelayed(
-                            Runnable {
-                                dragView.reset()
-                                dismiss()
-                                loadCaptcha()
-                            }, 2000
+                                Runnable {
+                                    dragView.reset()
+                                    dismiss()
+                                    loadCaptcha()
+                                }, 2000
                         )
                         val result = Configuration.token + "---" + pointStr
                         mOnResultsListener!!.onResultsClick(AESUtil.encode(result, key))
                     }
+
                     else -> {
                         dragView.fail()
                         //刷新验证码

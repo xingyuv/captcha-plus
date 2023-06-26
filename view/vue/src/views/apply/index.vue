@@ -2,7 +2,7 @@
   <div>
     <el-container style="width: 100%;height: 100%;">
       <el-header style="height: auto; padding: 0;">
-        <myHeader />
+        <myHeader/>
       </el-header>
     </el-container>
     <el-main>
@@ -48,7 +48,8 @@
                                 round
                                 class="push-logo"
                                 @click="addLogo"
-                              >我要提交</el-button>
+                              >我要提交
+                              </el-button>
                               <div class="apply-logo">
                                 <el-row>
                                   <el-col
@@ -155,9 +156,7 @@ export default {
     MenuItem
   },
   data() {
-    return {
-
-    }
+    return {}
   },
   methods: {
     addLogo() {
@@ -182,22 +181,26 @@ export default {
 
 <style scoped lang="less">
 @import "./../../assets/style/theme";
+
 .nav-menu {
   width: 100%;
   background: #203160;
   position: fixed;
   z-index: 10000;
   top: 0;
+
   .logo {
     margin-top: 14px;
     width: 85px;
   }
 }
+
 .userBox {
   line-height: 64px;
   color: rgba(255, 255, 255, 0.4);
   font-size: 12px;
   cursor: pointer;
+
   .goOut {
     padding: 10px 18px;
 
@@ -206,19 +209,23 @@ export default {
     }
   }
 }
+
 .el-button {
   font-size: 12px;
 }
+
 .right-box {
   padding: 20px;
   overflow-x: hidden;
 }
+
 .right-box {
   background: #ffffff;
   border: 1px solid rgba(151, 151, 151, 0.07);
   box-shadow: 0 0 10px 0 rgba(122, 177, 249, 0.4);
   border-radius: 6px;
 }
+
 .log-list {
   min-height: calc(100vh - 225px);
   min-height: -moz-calc(100vh - 225px);
@@ -231,27 +238,34 @@ export default {
   overflow-y: auto;
   overflow-x: hidden;
 }
+
 .title {
   text-align: center;
+
   h2 {
     font-size: 32px;
     line-height: 50px;
     font-weight: bold;
+
     span {
       color: #03afff;
       font-weight: bold;
     }
   }
+
   h4 {
     font-size: 24px;
     line-height: 52px;
   }
+
   border-bottom: 60px solid #edf4f7;
 }
+
 .apply-logo {
   width: 100%;
   display: block;
   margin-top: 20px;
+
   li {
     width: 15.4vw;
     height: 100px;
@@ -264,11 +278,13 @@ export default {
     text-align: center;
     line-height: 100px;
     margin-right: 10px;
+
     img {
       height: 100%;
     }
   }
 }
+
 .push-logo {
   float: right;
   margin-top: -1px;

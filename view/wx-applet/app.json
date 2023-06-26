@@ -1,18 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/block_puzzle/index",
     "pages/click_word/index"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "aj-captche-applet-demo",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#333333",
-    "selectedColor":"#eb732d",
-    "backgroundColor":"#FFF",
+    "selectedColor": "#eb732d",
+    "backgroundColor": "#FFF",
     "list": [
       {
         "pagePath": "pages/block_puzzle/index",

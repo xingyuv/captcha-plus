@@ -1,11 +1,11 @@
 <template>
   <div class="login-bg">
     <div class="login-bg_pattern">
-      <div class="login-bg_left-top-circle" />
-      <div class="login-bg_left100-top-circle" />
-      <div class="login-bg_right-top-circle" />
-      <div class="login-bg_right-bottom-circle" />
-      <div class="login-bg_left-bottom-circle" />
+      <div class="login-bg_left-top-circle"/>
+      <div class="login-bg_left100-top-circle"/>
+      <div class="login-bg_right-top-circle"/>
+      <div class="login-bg_right-bottom-circle"/>
+      <div class="login-bg_left-bottom-circle"/>
     </div>
 
     <Verify
@@ -22,7 +22,7 @@
             <div class="grid-content">
               <!--登录-->
               <div class="key">
-                <div class="bottom-img" />
+                <div class="bottom-img"/>
                 <div class="form-info mt14vh pb50" style="margin-left:5vw">
                   <el-row :gutter="20">
                     <el-col :xs="22" :sm="14" :md="10" :lg="8" :xl="7">
@@ -30,26 +30,32 @@
                       <form onsubmit="return false">
                         <ul class="user-info mt60">
                           <li class="user-input">
-                            <input id="usernameIput" v-model.trim="loginName" class="effect" placeholder="请输入用户名" type="text" required autocomplete="username">
+                            <input id="usernameIput" v-model.trim="loginName" class="effect" placeholder="请输入用户名"
+                                   type="text" required autocomplete="username">
                             <label>用户名</label>
                           </li>
                           <li class="user-input">
-                            <input id="passwordIput" v-model.trim="loginPassword" class="effect" placeholder="请输入密码" type="password" required autocomplete="current-password">
+                            <input id="passwordIput" v-model.trim="loginPassword" class="effect"
+                                   placeholder="请输入密码" type="password" required autocomplete="current-password">
                             <label>密码</label>
                           </li>
                           <li class="keep-password">
                             <label>
-                              测试账号: admin  &nbsp; &nbsp; 密码: 123456
+                              测试账号: admin &nbsp; &nbsp; 密码: 123456
                             </label>
 
                           </li>
                           <li class="keep-password">
                             <label>
-                              <a href="https://gitee.com/anji-plus/captcha/" target="_blank" style="color:#222"><img src="https://gitee.com/static/images/logo-en.svg" style="vertical-align:middle;margin-right:5px" width="24px"> gitee</a>
+                              <a href="https://gitee.com/anji-plus/captcha/" target="_blank" style="color:#222"><img
+                                src="https://gitee.com/static/images/logo-en.svg"
+                                style="vertical-align:middle;margin-right:5px" width="24px"> gitee</a>
                             </label>
 
                             <label class="ml20">
-                              <a href="https://gitee.com/anji-plus/captcha/stargazers" target="_blank"><img src="https://gitee.com/anji-plus/captcha/badge/star.svg?theme=gvp" style="vertical-align:middle;" alt="star"></a>
+                              <a href="https://gitee.com/anji-plus/captcha/stargazers" target="_blank"><img
+                                src="https://gitee.com/anji-plus/captcha/badge/star.svg?theme=gvp"
+                                style="vertical-align:middle;" alt="star"></a>
                             </label>
 
                           </li>
@@ -74,7 +80,8 @@
                           <li class="mt50">
 
                             <el-button class="buttonSize button-solid goHome" type="primary" @click="checkPrama">
-                              登&nbsp;&nbsp;录</el-button>
+                              登&nbsp;&nbsp;录
+                            </el-button>
                           </li>
                         </ul>
 
@@ -149,6 +156,7 @@ export default {
 </script>
 <style scoped lang="less">
 @import "./../assets/style/theme";
+
 @wathet-blue: #f0f7ff;
 @wathet-blue: #f0f7ff;
 @color91: #919191;
@@ -157,6 +165,7 @@ export default {
 :focus {
   outline: none;
 }
+
 .login-bg {
   background: @wathet-blue;
   width: 100vw;
@@ -164,11 +173,13 @@ export default {
   position: relative;
   overflow: hidden;
 }
+
 .login-bg_pattern {
   position: absolute;
   z-index: 1;
   width: 100vw;
   height: 100vh;
+
   .login-bg_left-top-circle,
   .login-bg_left100-top-circle,
   .login-bg_right-top-circle,
@@ -181,6 +192,7 @@ export default {
     float: left;
     position: relative;
   }
+
   .login-bg_left-top-circle {
     width: 300px;
     height: 300px;
@@ -188,6 +200,7 @@ export default {
     margin-top: -150px;
     margin-left: 70px;
   }
+
   .login-bg_left100-top-circle {
     width: 200px;
     height: 200px;
@@ -195,6 +208,7 @@ export default {
     margin-top: -150px;
     margin-left: 200px;
   }
+
   .login-bg_right-top-circle {
     width: 300px;
     height: 400px;
@@ -202,6 +216,7 @@ export default {
     transform: rotate(42deg);
     float: right;
   }
+
   .login-bg_right-bottom-circle {
     width: 300px;
     height: 300px;
@@ -210,6 +225,7 @@ export default {
     right: 350px;
     position: absolute;
   }
+
   .login-bg_left-bottom-circle {
     width: 300px;
     height: 300px;
@@ -219,14 +235,16 @@ export default {
     position: absolute;
   }
 }
+
 .login-login_box {
   position: absolute;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   z-index: 1000;
   width: 100%;
   /*overflow: auto;*/
+
   .key {
     box-sizing: border-box;
     background: @white url("/static/login/bg-1.png") right top no-repeat;
@@ -278,6 +296,7 @@ export default {
         max-height: 90vh;
       }
     }
+
     .bottom-img {
       width: 170px;
       height: 170px;
@@ -287,15 +306,18 @@ export default {
       bottom: 0;
       background: url("/static/login/bg-2.png") left bottom no-repeat;
     }
+
     .form-info {
-      .logo img{
+      .logo img {
         width: 200px;
         height: 89px;
         display: block;
         margin: 0 auto;
       }
+
       .user-info {
         padding-left: @px30;
+
         .user-input {
           position: relative;
           border-bottom: 1px solid @coloreE0;
@@ -303,6 +325,7 @@ export default {
           margin-top: 37px;
           height: 30px;
           background: #fff;
+
           .effect ~ label {
             position: relative;
             top: -45px;
@@ -313,6 +336,7 @@ export default {
             font-size: @f12;
             letter-spacing: 0.5px;
           }
+
           .effect:focus ~ label {
             position: relative;
             top: -45px;
@@ -322,22 +346,26 @@ export default {
             margin-left: -30px;
             padding-left: 30px;
           }
+
           input {
             position: relative;
             width: 100%;
             font-size: 13px;
           }
         }
+
         .keep-password {
           font-size: @f13;
           letter-spacing: 0;
           margin-top: @px24;
+
           label {
             .el-checkbox__input.is-checked + .el-checkbox__label {
               color: @color91;
             }
           }
         }
+
         .goHome {
           background: @lightblue;
           box-shadow: 0 12px 51px -12px @azure;
@@ -350,18 +378,22 @@ export default {
           text-align: center;
           line-height: 17px;
         }
+
         .register {
           font-size: 13px;
           color: #919191;
           text-align: center;
+
           .a {
             color: @lightblue;
             cursor: pointer;
           }
+
           .a:hover {
             text-decoration: underline;
           }
         }
+
         .forget {
           font-size: @f13;
           color: @lightblue;
@@ -377,6 +409,7 @@ export default {
     }
   }
 }
+
 /*注册*/
 .transition-box {
   position: relative;
@@ -384,17 +417,20 @@ export default {
   z-index: 1000;
   background-color: @white;
 }
+
 .qrcode {
   line-height: 40px;
   text-align: center;
   border-bottom: 1px solid #eee;
 }
+
 #qrcode {
   width: 120px;
   padding: 20px;
   margin: 40px auto;
   display: block;
 }
+
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {

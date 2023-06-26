@@ -19,23 +19,23 @@ object Configuration {
     fun getServer(cx: Context, url: String): ServerApi {
 
         val m = Moshi.Builder()
-            .add(BigDecimalAdapter())
-            .build()
+                .add(BigDecimalAdapter())
+                .build()
 
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
 
         val httpClient: OkHttpClient = OkHttpClient.Builder()
-            .addInterceptor(CommonInterceptor(cx))
-            .addInterceptor(loggingInterceptor)
-            .build()
+                .addInterceptor(CommonInterceptor(cx))
+                .addInterceptor(loggingInterceptor)
+                .build()
         return Retrofit.Builder()
-            .client(httpClient)
-            .addConverterFactory(MoshiConverterFactory.create(m))
-            .addCallAdapterFactory(CoroutineCallAdapterFactory())
-            .baseUrl(url)
-            .build()
-            .create<ServerApi>(ServerApi::class.java)
+                .client(httpClient)
+                .addConverterFactory(MoshiConverterFactory.create(m))
+                .addCallAdapterFactory(CoroutineCallAdapterFactory())
+                .baseUrl(url)
+                .build()
+                .create<ServerApi>(ServerApi::class.java)
 
     }
 

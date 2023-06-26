@@ -162,9 +162,9 @@ public class WordCaptchaDialog extends Dialog {
                         dismiss();
                     }
                 }, 1000);
-                if (mOnResultsListener!=null){
-                    String result=token+"---"+cryptedStr;
-                    mOnResultsListener.onResultsClick(AESUtil.encode(result,key));
+                if (mOnResultsListener != null) {
+                    String result = token + "---" + cryptedStr;
+                    mOnResultsListener.onResultsClick(AESUtil.encode(result, key));
                 }
             }
 

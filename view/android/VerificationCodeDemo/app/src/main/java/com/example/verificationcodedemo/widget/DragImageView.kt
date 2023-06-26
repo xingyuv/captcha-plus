@@ -65,9 +65,9 @@ class DragImageView : FrameLayout, SeekBar.OnSeekBarChangeListener {
     }
 
     constructor(context: Context, attrs: AttributeSet, defStyle: Int) : super(
-        context,
-        attrs,
-        defStyle
+            context,
+            attrs,
+            defStyle
     ) {
         init()
     }
@@ -193,10 +193,10 @@ class DragImageView : FrameLayout, SeekBar.OnSeekBarChangeListener {
         timeUse = (System.currentTimeMillis() - timeTemp) / 1000f
         if (dragListenner != null)
             dragListenner!!.onDrag(
-                px2dip(
-                    context,
-                    (drag_iv_cover!!.measuredWidth - drag_iv_block!!.measuredWidth).toFloat() * 1f * seekBar.progress.toFloat() / seekBar.max
-                ).toDouble()
+                    px2dip(
+                            context,
+                            (drag_iv_cover!!.measuredWidth - drag_iv_block!!.measuredWidth).toFloat() * 1f * seekBar.progress.toFloat() / seekBar.max
+                    ).toDouble()
             )
     }
     //===================seekbar监听===================
@@ -228,10 +228,10 @@ class DragImageView : FrameLayout, SeekBar.OnSeekBarChangeListener {
         if (drag_tv_tips!!.visibility == View.VISIBLE == isShow)
             return
         val translateAnimation = TranslateAnimation(
-            Animation.RELATIVE_TO_SELF, 0f,
-            Animation.RELATIVE_TO_SELF, 0f,
-            Animation.RELATIVE_TO_SELF, if (isShow) 1f else 0f,
-            Animation.RELATIVE_TO_SELF, if (isShow) 0f else 1f
+                Animation.RELATIVE_TO_SELF, 0f,
+                Animation.RELATIVE_TO_SELF, 0f,
+                Animation.RELATIVE_TO_SELF, if (isShow) 1f else 0f,
+                Animation.RELATIVE_TO_SELF, if (isShow) 0f else 1f
         )
         translateAnimation.duration = animeTime.toLong()
         drag_tv_tips!!.animation = translateAnimation
@@ -243,7 +243,7 @@ class DragImageView : FrameLayout, SeekBar.OnSeekBarChangeListener {
         if (drag_tv_tips2!!.visibility == View.VISIBLE == isShow)
             return
         val translateAnimation =
-            AlphaAnimation((if (isShow) 0 else 1).toFloat(), (if (isShow) 1 else 0).toFloat())
+                AlphaAnimation((if (isShow) 0 else 1).toFloat(), (if (isShow) 1 else 0).toFloat())
         translateAnimation.duration = animeTime.toLong()
         drag_tv_tips2!!.animation = translateAnimation
         drag_tv_tips2!!.visibility = if (isShow) View.VISIBLE else View.GONE
@@ -261,10 +261,10 @@ class DragImageView : FrameLayout, SeekBar.OnSeekBarChangeListener {
     //成功高亮动画
     private fun flashShowAnime() {
         val translateAnimation = TranslateAnimation(
-            Animation.RELATIVE_TO_SELF, 1f,
-            Animation.RELATIVE_TO_SELF, -1f,
-            Animation.RELATIVE_TO_SELF, 0f,
-            Animation.RELATIVE_TO_SELF, 0f
+                Animation.RELATIVE_TO_SELF, 1f,
+                Animation.RELATIVE_TO_SELF, -1f,
+                Animation.RELATIVE_TO_SELF, 0f,
+                Animation.RELATIVE_TO_SELF, 0f
         )
         translateAnimation.duration = flashTime.toLong()
         drag_v_flash!!.animation = translateAnimation

@@ -15,7 +15,7 @@ class MainApplication : Application() {
         super.onCreate()
 
         val url = getSharedPreferences("CONFIGURATION", Context.MODE_PRIVATE)
-            .getString("IP", ServerApi.urlDefault)
+                .getString("IP", ServerApi.urlDefault)
         Configuration.server = Configuration.getServer(this, url!!)
 
     }

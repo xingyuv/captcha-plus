@@ -1,10 +1,14 @@
 # HandyJSON
 
-HandyJSON is a framework written in Swift which to make converting model objects( **pure classes/structs** ) to and from JSON easy on iOS.
+HandyJSON is a framework written in Swift which to make converting model objects( **pure classes/structs** ) to and from
+JSON easy on iOS.
 
-Compared with others, the most significant feature of HandyJSON is that it does not require the objects inherit from NSObject(**not using KVC but reflection**), neither implements a 'mapping' function(**writing value to memory directly to achieve property assignment**).
+Compared with others, the most significant feature of HandyJSON is that it does not require the objects inherit from
+NSObject(**not using KVC but reflection**), neither implements a 'mapping' function(**writing value to memory directly
+to achieve property assignment**).
 
-HandyJSON is totally depend on the memory layout rules infered from Swift runtime code. We are watching it and will follow every bit if it changes.
+HandyJSON is totally depend on the memory layout rules infered from Swift runtime code. We are watching it and will
+follow every bit if it changes.
 
 [![Build Status](https://travis-ci.org/alibaba/HandyJSON.svg?branch=master)](https://travis-ci.org/alibaba/HandyJSON)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
@@ -116,7 +120,8 @@ An overview of types supported can be found at file: [BasicTypes.swift](./HandyJ
 
 **To use with Swift 3.x, version >= 1.8.0**
 
-For Legacy Swift2.x support, take a look at the [swift2 branch](https://github.com/alibaba/HandyJSON/tree/master_for_swift_2x).
+For Legacy Swift2.x support, take a look at
+the [swift2 branch](https://github.com/alibaba/HandyJSON/tree/master_for_swift_2x).
 
 ## Cocoapods
 
@@ -156,7 +161,9 @@ git init && git submodule add https://github.com/alibaba/HandyJSON.git
 
 * Click on the `+` button under the `Embedded Binaries` section.
 
-* You will see two different `HandyJSON.xcodeproj` folders each with four different versions of the HandyJSON.framework nested inside a Products folder.
+* You will see two different `HandyJSON.xcodeproj` folders each with four different versions of the HandyJSON.framework
+  nested inside a Products folder.
+
 > It does not matter which Products folder you choose from, but it does matter which HandyJSON.framework you choose.
 
 * Select one of the four `HandyJSON.framework` which matches the platform your Application should run on.
@@ -167,7 +174,8 @@ git init && git submodule add https://github.com/alibaba/HandyJSON.git
 
 ## The Basics
 
-To support deserialization from JSON, a class/struct need to conform to 'HandyJSON' protocol. It's truly protocol, not some class inherited from NSObject.
+To support deserialization from JSON, a class/struct need to conform to 'HandyJSON' protocol. It's truly protocol, not
+some class inherited from NSObject.
 
 To conform to 'HandyJSON', a class need to implement an empty initializer.
 
@@ -203,7 +211,8 @@ if let object = BasicTypes.deserialize(from: jsonString) {
 }
 ```
 
-But also notice that, if you have a designated initializer to override the default one in the struct, you should explicitly declare an empty one(no `required` modifier need).
+But also notice that, if you have a designated initializer to override the default one in the struct, you should
+explicitly declare an empty one(no `required` modifier need).
 
 ## Support Enum Property
 
@@ -229,7 +238,9 @@ if let animal = Animal.deserialize(from: jsonString) {
 
 ## Optional/ImplicitlyUnwrappedOptional/Collections/...
 
-'HandyJSON' support classes/structs composed of `optional`, `implicitlyUnwrappedOptional`, `array`, `dictionary`, `objective-c base type`, `nested type` etc. properties.
+'HandyJSON' support classes/structs composed
+of `optional`, `implicitlyUnwrappedOptional`, `array`, `dictionary`, `objective-c base type`, `nested type` etc.
+properties.
 
 ```swift
 class BasicTypes: HandyJSON {
@@ -374,9 +385,11 @@ if let object = BasicTypes.deserialize(from: dict) {
 
 ## Custom Mapping
 
-`HandyJSON` let you customize the key mapping to JSON fields, or parsing method of any property. All you need to do is implementing an optional `mapping` function, do things in it.
+`HandyJSON` let you customize the key mapping to JSON fields, or parsing method of any property. All you need to do is
+implementing an optional `mapping` function, do things in it.
 
-We bring the transformer from [`ObjectMapper`](https://github.com/Hearst-DD/ObjectMapper). If you are familiar with it, it’s almost the same here.
+We bring the transformer from [`ObjectMapper`](https://github.com/Hearst-DD/ObjectMapper). If you are familiar with it,
+it’s almost the same here.
 
 ```swift
 class Cat: HandyJSON {
@@ -471,7 +484,8 @@ print(mappedObject.date)
 
 ## Exclude Property
 
-If any non-basic property of a class/struct could not conform to `HandyJSON`/`HandyJSONEnum` or you just do not want to do the deserialization with it, you should exclude it in the mapping function.
+If any non-basic property of a class/struct could not conform to `HandyJSON`/`HandyJSONEnum` or you just do not want to
+do the deserialization with it, you should exclude it in the mapping function.
 
 ```swift
 class NotHandyJSONType {
@@ -567,21 +581,26 @@ print(object.toJSONString(prettyPrint: true)!) // serialize to pretty JSON strin
 
 ## Mapping And Excluding
 
-It’s all like what we do on deserialization. A property which is excluded, it will not take part in neither deserialization nor serialization. And the mapper items define both the deserializing rules and serializing rules. Refer to the usage above.
+It’s all like what we do on deserialization. A property which is excluded, it will not take part in neither
+deserialization nor serialization. And the mapper items define both the deserializing rules and serializing rules. Refer
+to the usage above.
 
 # FAQ
 
 ## Q: Why the mapping function is not working in the inheritance object?
 
-A: For some reason, you should define an empty mapping function in the super class(the root class if more than one layer), and override it in the subclass.
+A: For some reason, you should define an empty mapping function in the super class(the root class if more than one
+layer), and override it in the subclass.
 
 It's the same with `didFinishMapping` function.
 
 ## Q: Why my didSet/willSet is not working?
 
-A: Since `HandyJSON` assign properties by writing value to memory directly, it doesn't trigger any observing function. You need to call the `didSet/willSet` logic explicitly after/before the deserialization.
+A: Since `HandyJSON` assign properties by writing value to memory directly, it doesn't trigger any observing function.
+You need to call the `didSet/willSet` logic explicitly after/before the deserialization.
 
-But since version `1.8.0`, `HandyJSON` handle dynamic properties by the `KVC` mechanism which will trigger the `KVO`. That means, if you do really need the `didSet/willSet`, you can define your model like follow:
+But since version `1.8.0`, `HandyJSON` handle dynamic properties by the `KVC` mechanism which will trigger the `KVO`.
+That means, if you do really need the `didSet/willSet`, you can define your model like follow:
 
 ```swift
 class BasicTypes: NSObject, HandyJSON {
@@ -600,7 +619,8 @@ class BasicTypes: NSObject, HandyJSON {
 
 In this situation, `NSObject` and `dynamic` are both needed.
 
-And in versions since `1.8.0`, `HandyJSON` offer a `didFinishMapping` function to allow you to fill some observing logic.
+And in versions since `1.8.0`, `HandyJSON` offer a `didFinishMapping` function to allow you to fill some observing
+logic.
 
 ```swift
 class BasicTypes: HandyJSON {
@@ -619,7 +639,8 @@ It may help.
 
 ## Q: How to support Enum property?
 
-It your enum conform to `RawRepresentable` protocol, please look into [Support Enum Property](#support-enum-property). Or use the `EnumTransform`:
+It your enum conform to `RawRepresentable` protocol, please look into [Support Enum Property](#support-enum-property).
+Or use the `EnumTransform`:
 
 ```swift
 enum EnumType: String {
@@ -687,8 +708,11 @@ class BasicTypes: HandyJSON {
 
 # Credit
 
-* [reflection](https://github.com/Zewo/Reflection): After the first version which used the swift mirror mechanism, HandyJSON had imported the reflection library and rewrote some code for class properties inspecting.
-* [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper): To make HandyJSON more compatible with the general style, the Mapper function support Transform which designed by ObjectMapper. And we import some testcases from ObjectMapper.
+* [reflection](https://github.com/Zewo/Reflection): After the first version which used the swift mirror mechanism,
+  HandyJSON had imported the reflection library and rewrote some code for class properties inspecting.
+* [ObjectMapper](https://github.com/tristanhimmelman/ObjectMapper): To make HandyJSON more compatible with the general
+  style, the Mapper function support Transform which designed by ObjectMapper. And we import some testcases from
+  ObjectMapper.
 
 # License
 

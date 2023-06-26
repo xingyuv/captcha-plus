@@ -1,32 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="100dp"
-    android:layout_centerInParent="true"
-    android:layout_gravity="center_horizontal"
-    android:background="@android:color/transparent"
-    android:orientation="vertical">
+              android:layout_width="100dp"
+              android:layout_height="100dp"
+              android:layout_centerInParent="true"
+              android:layout_gravity="center_horizontal"
+              android:background="@android:color/transparent"
+              android:orientation="vertical">
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
         <ProgressBar
-            android:id="@+id/pb_load"
-            android:layout_width="65dp"
-            android:layout_height="65dp"
-            android:layout_centerInParent="true" />
+                android:id="@+id/pb_load"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_centerInParent="true"/>
 
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/tv_load_dialog"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:text="加载中..."
-        android:textColor="#9a9b98"
-        android:textSize="12sp" />
+            android:id="@+id/tv_load_dialog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="加载中..."
+            android:textColor="#9a9b98"
+            android:textSize="12sp"/>
 
 </LinearLayout>

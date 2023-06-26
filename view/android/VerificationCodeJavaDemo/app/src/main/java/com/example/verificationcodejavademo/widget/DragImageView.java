@@ -168,7 +168,7 @@ public class DragImageView extends FrameLayout implements SeekBar.OnSeekBarChang
                 });
 
             }
-        },1500);
+        }, 1500);
 
         drag_sb.setEnabled(false);
         setSbThumb(R.drawable.drag_btn_success);
@@ -206,7 +206,7 @@ public class DragImageView extends FrameLayout implements SeekBar.OnSeekBarChang
                 });
 
             }
-        },1500);
+        }, 1500);
         drag_sb.setEnabled(false);
         setSbThumb(R.drawable.drag_btn_error);
         drag_sb.setProgressDrawable(getResources().getDrawable(R.drawable.drag_seek_progress_fail));

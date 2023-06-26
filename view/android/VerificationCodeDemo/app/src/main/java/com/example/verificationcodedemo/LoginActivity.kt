@@ -25,19 +25,19 @@ class LoginActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        blockPuzzleDialog.setOnResultsListener(object : BlockPuzzleDialog.OnResultsListener{
+        blockPuzzleDialog.setOnResultsListener(object : BlockPuzzleDialog.OnResultsListener {
             override fun onResultsClick(result: String) {
                 //todo 二次校验回调结果
                 val s = result
-                Log.e("wuyan","result:"+result);
+                Log.e("wuyan", "result:" + result);
             }
         })
 
-        wordCaptchaDialog.setOnResultsListener(object : WordCaptchaDialog.OnResultsListener{
+        wordCaptchaDialog.setOnResultsListener(object : WordCaptchaDialog.OnResultsListener {
             override fun onResultsClick(result: String) {
                 //todo 二次校验回调结果
                 val s = result
-                Log.e("wuyan","result:"+result);
+                Log.e("wuyan", "result:" + result);
             }
         })
         bGo.setOnClickListener {
@@ -48,6 +48,7 @@ class LoginActivity : BaseActivity() {
             wordCaptchaDialog.show()
         }
     }
+
     override fun onConfigurationChanged(newConfig: Configuration) {
         //非默认值
         if (newConfig.fontScale.toInt() != 1) {

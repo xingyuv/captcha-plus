@@ -14,21 +14,22 @@ export class verifySlippingComponent {
     }
     this.getVerify()
   }
-  getVerify(){
+
+  getVerify() {
     // 初始化验证码  嵌入式
     (<any>$('#mpanel2')).pointsVerify({
-      baseUrl:'https://captcha.anji-plus.com/captcha-api',  //服务器请求地址, 默认地址为安吉服务器;
-      mode:'fixed',
-      imgSize : {
+      baseUrl: 'https://captcha.anji-plus.com/captcha-api',  //服务器请求地址, 默认地址为安吉服务器;
+      mode: 'fixed',
+      imgSize: {
         width: '400px',
         height: '200px',
       },
-      ready : function() {
+      ready: function () {
       },
-      success : function(params:any) {
+      success: function (params: any) {
         //返回的二次验证参数 合并到验证通过之后的逻辑 参数中回传服务器
       },
-      error : function() {
+      error: function () {
       }
     });
 

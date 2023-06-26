@@ -33,8 +33,8 @@ import kotlinx.coroutines.launch
 class WordCaptchaDialog : Dialog {
     constructor(mContext: Context) : this(mContext, 0)
     constructor(mContext: Context, themeResId: Int) : super(
-        mContext,
-        com.example.verificationcodedemo.R.style.dialog
+            mContext,
+            com.example.verificationcodedemo.R.style.dialog
     ) {
         window!!.setGravity(Gravity.CENTER)
         window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
@@ -68,7 +68,7 @@ class WordCaptchaDialog : Dialog {
         //设置默认图片
         val bitmap: Bitmap = ImageUtil.getBitmap(context, R.drawable.bg_default)
         wordView.setUp(
-            ImageUtil.base64ToBitmap(ImageUtil.bitmapToBase64(bitmap))!!
+                ImageUtil.base64ToBitmap(ImageUtil.bitmapToBase64(bitmap))!!
         )
         loadCaptcha()
     }
@@ -83,7 +83,7 @@ class WordCaptchaDialog : Dialog {
                 rl_pb_word.visibility = View.VISIBLE
 
                 val o = CaptchaGetOt(
-                    captchaType = "clickWord"
+                        captchaType = "clickWord"
                 )
                 val b = Configuration.server.getWordCaptchaAsync(o).await().body()
                 when (b?.repCode) {
@@ -91,7 +91,7 @@ class WordCaptchaDialog : Dialog {
                     "0000" -> {
                         baseImageBase64 = b.repData!!.originalImageBase64
                         Configuration.token = b.repData!!.token
-                        key= b.repData!!.secretKey
+                        key = b.repData!!.secretKey
                         var wordStr: String = ""
                         var i = 0;
                         b.repData!!.wordList!!.forEach {
@@ -104,10 +104,11 @@ class WordCaptchaDialog : Dialog {
                         bottomTitle.text = "请依此点击【" + wordStr + "】"
                         bottomTitle.setTextColor(Color.BLACK)
                         wordView.setUp(
-                            ImageUtil.base64ToBitmap(baseImageBase64)!!
+                                ImageUtil.base64ToBitmap(baseImageBase64)!!
                         )
                         initEvent()
                     }
+
                     else -> {
                         bottomTitle.text = "加载失败,请刷新"
                         bottomTitle.setTextColor(Color.RED)
@@ -121,13 +122,13 @@ class WordCaptchaDialog : Dialog {
                 e.printStackTrace()
                 Log.e("wuyan", e.toString())
                 runUIDelayed(
-                    Runnable {
-                        bottomTitle.text = "加载失败,请刷新"
-                        bottomTitle.setTextColor(Color.RED)
-                        wordView.setSize(-1)
-                        wordView.visibility = VISIBLE
-                        rl_pb_word.visibility = GONE
-                    }, 1000
+                        Runnable {
+                            bottomTitle.text = "加载失败,请刷新"
+                            bottomTitle.setTextColor(Color.RED)
+                            wordView.setSize(-1)
+                            wordView.visibility = VISIBLE
+                            rl_pb_word.visibility = GONE
+                        }, 1000
                 )
             }
         }
@@ -135,13 +136,13 @@ class WordCaptchaDialog : Dialog {
 
     //检查验证码
     private fun checkCaptcha(pointListStr: String) {
-        Log.e("wuyan", AESUtil.encode(pointListStr,key))
+        Log.e("wuyan", AESUtil.encode(pointListStr, key))
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val o = CaptchaCheckOt(
-                    captchaType = "clickWord",
-                    pointJson = AESUtil.encode(pointListStr,key),
-                    token = Configuration.token
+                        captchaType = "clickWord",
+                        pointJson = AESUtil.encode(pointListStr, key),
+                        token = Configuration.token
                 )
                 val b = Configuration.server.checkAsync(o).await().body()
                 when (b?.repCode) {
@@ -151,25 +152,26 @@ class WordCaptchaDialog : Dialog {
                         bottomTitle.setTextColor(Color.GREEN)
                         wordView.ok()
                         runUIDelayed(
-                            Runnable {
-                                dismiss()
-                                loadCaptcha()
-                            }, 2000
+                                Runnable {
+                                    dismiss()
+                                    loadCaptcha()
+                                }, 2000
                         )
 
                         val result = token + "---" + pointListStr
                         mOnResultsListener!!.onResultsClick(AESUtil.encode(result, key))
 
                     }
+
                     else -> {
                         bottomTitle.text = "验证失败"
                         bottomTitle.setTextColor(Color.RED)
                         wordView.fail()
                         runUIDelayed(
-                            Runnable {
-                                //刷新验证码
-                                loadCaptcha()
-                            }, 1500
+                                Runnable {
+                                    //刷新验证码
+                                    loadCaptcha()
+                                }, 1500
                         )
                     }
                 }
@@ -180,10 +182,10 @@ class WordCaptchaDialog : Dialog {
                 bottomTitle.setTextColor(Color.RED)
                 wordView.fail()
                 runUIDelayed(
-                    Runnable {
-                        //刷新验证码
-                        loadCaptcha()
-                    }, 1500
+                        Runnable {
+                            //刷新验证码
+                            loadCaptcha()
+                        }, 1500
                 )
             }
         }

@@ -7,24 +7,24 @@
               android:gravity="center"
               tools:context=".LoginActivity">
     <TextView
-        android:id="@+id/bGo"
-        android:layout_width="290dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="50dp"
-        android:background="@drawable/selector_btn_bg"
-        android:gravity="center"
-        android:text="@string/drag_login"
-        android:textColor="@android:color/white"
-        android:textSize="17sp" />
+            android:id="@+id/bGo"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/selector_btn_bg"
+            android:gravity="center"
+            android:text="@string/drag_login"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"/>
     <TextView
-        android:id="@+id/bGo_word"
-        android:layout_width="290dp"
-        android:layout_height="45dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/selector_btn_bg"
-        android:gravity="center"
-        android:text="@string/word_login"
-        android:textColor="@android:color/white"
-        android:textSize="17sp" />
+            android:id="@+id/bGo_word"
+            android:layout_width="290dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/selector_btn_bg"
+            android:gravity="center"
+            android:text="@string/word_login"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"/>
 
 </LinearLayout>

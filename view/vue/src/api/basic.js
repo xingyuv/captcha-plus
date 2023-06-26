@@ -9,6 +9,7 @@ export function reqLogin(data) {
     data: data
   })
 }
+
 // 登出
 export function LogOut(data) {
   return request({
@@ -17,6 +18,7 @@ export function LogOut(data) {
     data: data
   })
 }
+
 // 项目分页接口
 export function queryByPage(data) {
   return request({
@@ -26,6 +28,7 @@ export function queryByPage(data) {
     data: data
   })
 }
+
 // 项目创建
 export function addCreate(data) {
   return request({
@@ -34,6 +37,7 @@ export function addCreate(data) {
     data: data
   })
 }
+
 // 项目信息更新
 export function UpdataPro(data) {
   return request({
@@ -42,6 +46,7 @@ export function UpdataPro(data) {
     data: data
   })
 }
+
 // 顶部项目列表
 export function GetTopPro(data) {
   return request({
@@ -50,6 +55,7 @@ export function GetTopPro(data) {
     data: data
   })
 }
+
 // 拖拽排序
 export function DndSort(data) {
   return request({
@@ -58,6 +64,7 @@ export function DndSort(data) {
     data: data
   })
 }
+
 // 项目置顶接口
 export function SetTop(data) {
   return request({
@@ -66,6 +73,7 @@ export function SetTop(data) {
     data: data
   })
 }
+
 // 获得导航
 export function getMenu() {
   return request({
@@ -73,6 +81,7 @@ export function getMenu() {
     method: 'post'
   })
 }
+
 export function loadOption(data1) {
   const data = {
     pageNum: 1,

@@ -93,7 +93,7 @@ object ImageUtil {
                 option.inTempStorage = ByteArray(5 * 1024 * 1024)
                 inputStream = ByteArrayInputStream(imgByte)
                 val softReference =
-                    SoftReference(BitmapFactory.decodeStream(inputStream, null, option))
+                        SoftReference(BitmapFactory.decodeStream(inputStream, null, option))
                 bitmap = softReference.get()
                 softReference.clear()
                 mMemoryCache?.put(base64Data, bitmap)

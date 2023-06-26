@@ -1,4 +1,4 @@
-.btn{
+.btn {
   border: none;
   outline: none;
   width: 300px;
@@ -11,6 +11,7 @@
   font-size: 16px;
   letter-spacing: 1em;
 }
-.modal-dialog{
+
+.modal-dialog {
   width: 466px;
 }

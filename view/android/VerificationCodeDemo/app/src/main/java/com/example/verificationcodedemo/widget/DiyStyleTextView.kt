@@ -68,10 +68,10 @@ class DiyStyleTextView : AppCompatTextView {
                 val clickText = strArr[i]
 
                 styledText.setSpan(
-                    TextViewClickSpan(clickText),
-                    index,
-                    index + clickText.length,
-                    Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        TextViewClickSpan(clickText),
+                        index,
+                        index + clickText.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                 )
             }
 
@@ -82,7 +82,7 @@ class DiyStyleTextView : AppCompatTextView {
     }
 
     private inner class TextViewClickSpan internal constructor(private val clickText: String) :
-        ClickableSpan() {
+            ClickableSpan() {
         override fun onClick(widget: View) {
             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
         }

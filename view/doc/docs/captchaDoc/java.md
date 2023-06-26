@@ -1,16 +1,21 @@
-#  java
+# java
 
 ## springboot
+
 ### SpringBoot项目，参考示例：service/springboot
+
 a.引入jar，已上传至maven中央仓库。
+
 ``` xml
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>spring-boot-starter-captcha-plus</artifactId>
-   <version>1.0.4</version>
+   <version>1.0.5</version>
 </dependency>
 ```
+
 b.修改application.properties，自定义底图和水印，启动后前端就可以请求接口了。[社区底图库](https://gitee.com/anji-plus/AJ-Captcha-Images)<br>
+
 ``` properties
 # 滑动验证，底图路径，不配置将使用默认图片
 # 支持全路径
@@ -82,14 +87,18 @@ aj.captcha.req-check-minute-limit=60
 # verify接口一分钟内请求数限制
 aj.captcha.req-verify-minute-limit=60
 ```
-c.`非常重要`。对于分布式多实例部署的应用，应用必须自己实现CaptchaCacheService，比如用Redis或者memcache，参考service/springboot/src/.../CaptchaCacheServiceRedisImpl.java<br>
+
+c.`非常重要`
+。对于分布式多实例部署的应用，应用必须自己实现CaptchaCacheService，比如用Redis或者memcache，参考service/springboot/src/.../CaptchaCacheServiceRedisImpl.java<br>
 --1.2.5版本移除@AutoService<br>
 **在resources目录新建META-INF.services文件夹，参考resource/META-INF/services中的写法。**
 
-###  后端二次校验接口
+### 后端二次校验接口
+
 **二次校验参数请查看前端接入文档,例：vue,html接入文档等**
 
 以登录为例，用户在提交表单到后台，会携带一个验证码相关的参数。后端登录接口login，首先调用CaptchaService.verification做二次校验，
+
 ``` java
 @Autowired
 private CaptchaService captchaService;
@@ -115,16 +124,22 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
     return response;
 }
 ```
+
 ### 2.2.3 后端接口
+
 #### 获取验证码接口：http://*:*/captcha/get
+
 ##### 请求参数：
+
 ``` json
 {
 	"captchaType": "blockPuzzle",  //验证码类型 clickWord
 	"clientUid": "唯一标识"  //客户端UI组件id,组件初始化时设置一次，UUID（非必传参数）
 }
 ```
+
 ##### 响应参数：
+
 ``` json
 {
     "repCode": "0000",
@@ -144,8 +159,11 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
     "error": false
 }
 ```
+
 #### 核对验证码接口接口：http://*:*/captcha/check
+
 ##### 请求参数：
+
 ``` json
 {
 	 "captchaType": "blockPuzzle",
@@ -153,7 +171,9 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 	 "token": "71dd26999e314f9abb0c635336976635"  //get请求返回的token
 }
 ```
+
 ##### 响应参数：
+
 ``` json
 {
     "repCode": "0000",
@@ -169,34 +189,35 @@ public ResponseModel get(@RequestBody CaptchaVO captchaVO) {
 ```
 
 ### 防刷功能(补充中)
+
     a.同一用户，登录错误3次才要求验证码，考虑是登录模块的功能。
     b.同一用户，限制请求验证码，5分钟不能超过100次等。
     以上功能，我们会在service/springboot示例代码中提供额外的参考代码，不集成在jar中。
 
-
-
-
 ## springmvc
 
+### SpringMVC项目,参考示例：service/springMVC
 
-
-###  SpringMVC项目,参考示例：service/springMVC
 ```
 示例：仓库service\springmvc。考虑部分老项目，还是非springboot的，我们提供spring mvc的项目示例代码。
      主要是配置redisTemplate和包扫描。
 ```
+
 a.引入jar，已上传至maven中央仓库。
+
 ``` java
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
-   <version>1.0.4</version>
+   <version>1.0.5</version>
 </dependency>
 ```
+
 b.引入CaptchaConfig.java配置文件，需自行配置参数，
 详情参照service\springmvc目录下
 
 c.引入外部缓存，例：redis
+
 ```
 参考：
 1.CaptchaCacheServiceRedisImpl

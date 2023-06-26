@@ -8,8 +8,10 @@ const routes: Routes = [
 //   {path: 'dashboard', component: DashboardComponent},
 //   {path: 'heroes', component: HeroesComponent}
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

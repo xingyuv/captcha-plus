@@ -5,8 +5,8 @@ package com.example.verificationcodedemo.model
  * author:wuyan
  */
 class CaptchaCheckIt(
-    val captchaType: String,
-    val token: String,
-    val result: Boolean,
-    val opAdmin: Boolean
+        val captchaType: String,
+        val token: String,
+        val result: Boolean,
+        val opAdmin: Boolean
 )

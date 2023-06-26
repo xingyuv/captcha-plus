@@ -6,7 +6,7 @@
       :captchaType="captchaType"
       :imgSize="{width:'400px',height:'200px'}"
       ref="verify"
-    ></Verify>
+  ></Verify>
 </template>
 
 <script>
@@ -18,14 +18,14 @@ export default {
   components: {
     Verify
   },
-  setup(props,context){
+  setup(props, context) {
     const verify = ref(null)
     const captchaType = ref('')
-    const onShow = (type)=>{
+    const onShow = (type) => {
       captchaType.value = type
       verify.value.show()
     }
-    const handleSuccess = (res)=>{
+    const handleSuccess = (res) => {
       console.log(res);
       console.log('sucess');
     }
@@ -35,7 +35,7 @@ export default {
       onShow,
       captchaType
     }
-    
+
   }
 }
 </script>

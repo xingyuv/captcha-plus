@@ -5,10 +5,10 @@
  *  */
 import {AES, enc, mode, pad} from 'crypto-js';
 
-function aesEncrypt(word,keyWord){
+function aesEncrypt(word, keyWord) {
   var key = enc.Utf8.parse(keyWord);
   var srcs = enc.Utf8.parse(word);
-  var encrypted = AES.encrypt(srcs, key, {mode:mode.ECB,padding:pad.Pkcs7});
+  var encrypted = AES.encrypt(srcs, key, {mode: mode.ECB, padding: pad.Pkcs7});
   return encrypted.toString();
 }
 

@@ -17,10 +17,10 @@ export default new Router({
       component: () => import('./../views/useOnline/UseOnline.vue'),
       redirect: '/useOnline/sliderFixed',
       children: [
-        { path: 'sliderPop', name: 'sliderPop', component: () => import('./../views/useOnline/SliderPop.vue') },
-        { path: 'sliderFixed', name: 'sliderFixed', component: () => import('./../views/useOnline/SliderFixed.vue') },
-        { path: 'pointPop', name: 'pointPop', component: () => import('./../views/useOnline/PointPop.vue') },
-        { path: 'pointFixed', name: 'pointFixed', component: () => import('./../views/useOnline/PointFixed.vue') },
+        {path: 'sliderPop', name: 'sliderPop', component: () => import('./../views/useOnline/SliderPop.vue')},
+        {path: 'sliderFixed', name: 'sliderFixed', component: () => import('./../views/useOnline/SliderFixed.vue')},
+        {path: 'pointPop', name: 'pointPop', component: () => import('./../views/useOnline/PointPop.vue')},
+        {path: 'pointFixed', name: 'pointFixed', component: () => import('./../views/useOnline/PointFixed.vue')},
       ]
     },
     {

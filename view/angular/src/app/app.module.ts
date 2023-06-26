@@ -21,8 +21,9 @@ import {verifyClickComponent} from '../components/verifyClick.component';
   ],
   providers: [VerifyService],
   bootstrap: [AppComponent],
-  exports:[
+  exports: [
     verifySlippingComponent,
     verifyClickComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

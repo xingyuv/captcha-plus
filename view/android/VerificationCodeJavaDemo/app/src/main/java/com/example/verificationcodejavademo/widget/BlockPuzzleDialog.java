@@ -148,9 +148,9 @@ public class BlockPuzzleDialog extends Dialog {
                     }
                 }, 1500);
 
-                if (mOnResultsListener!=null){
-                    String result=token+"---"+pointStr;
-                    mOnResultsListener.onResultsClick(AESUtil.encode(result,key));
+                if (mOnResultsListener != null) {
+                    String result = token + "---" + pointStr;
+                    mOnResultsListener.onResultsClick(AESUtil.encode(result, key));
                 }
             }
 

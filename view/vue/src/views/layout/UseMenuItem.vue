@@ -57,55 +57,66 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .sidebar-container {
-    transition: width 0.28s;
+.sidebar-container {
+  transition: width 0.28s;
+
   .horizontal-collapse-transition {
     transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
   }
+
   .el-scrollbar {
     height: 100%;
   }
+
   .scrollbar-wrapper {
-    overflow-x: hidden!important;
-  .el-scrollbar__view {
-    height: 100%;
+    overflow-x: hidden !important;
+
+    .el-scrollbar__view {
+      height: 100%;
+    }
   }
-  }
-  .el-scrollbar__bar.is-vertical{
+
+  .el-scrollbar__bar.is-vertical {
     right: 0px;
   }
+
   .is-horizontal {
     display: none;
   }
+
   a {
     display: inline-block;
     width: 100%;
     overflow: hidden;
   }
+
   .el-menu {
     border: none;
     height: 100%;
     width: 100% !important;
   }
-  .is-active > .el-submenu__title{
-    color: #f4f4f5!important;
+
+  .is-active > .el-submenu__title {
+    color: #f4f4f5 !important;
   }
 
-  }
+}
 
-  .el-submenu__title .el-icon-arrow-down{
-    line-height: 13px!important;
-  }
+.el-submenu__title .el-icon-arrow-down {
+  line-height: 13px !important;
+}
 
-  .el-menu {
-    border-right: none;
-    a {
-      text-decoration: none;
-    }
+.el-menu {
+  border-right: none;
+
+  a {
+    text-decoration: none;
   }
-  // div:hover,ul:hover,li:hover,span:hover,ul li:hover,ul li ul:hover{
-  //   background: none!important;
-  //   color: #333!important;
-  // }
+}
+
+// div:hover,ul:hover,li:hover,span:hover,ul li:hover,ul li ul:hover{
+//   background: none!important;
+//   color: #333!important;
+// }
 
 </style>

@@ -90,12 +90,14 @@ export default {
     color: #222;
     line-height: 40px;
   }
+
   .desc {
     font-size: 14px;
     line-height: 24px;
     color: #777;
     padding-top: 8px;
   }
+
   .demo {
     box-sizing: border-box;
     border: 1px solid #e4e7ef;
@@ -103,6 +105,7 @@ export default {
     // height: 530px;
     margin-top: 24px;
     padding-bottom: 20px;
+
     .demo-result,
     .demo-code {
       box-sizing: border-box;
@@ -110,16 +113,19 @@ export default {
       float: left;
       height: 100%;
     }
+
     .demo-result {
       .result-title {
         font-size: 18px;
         line-height: 24px;
         color: #222;
       }
+
       .result_form {
         width: 60%;
         margin: 72px auto 0;
       }
+
       .result_input {
         width: 100%;
         border: 1px solid #e4e7ef;
@@ -132,6 +138,7 @@ export default {
         color: #abaeb2;
         background-color: transparent;
       }
+
       .result_btn {
         border: 0;
         outline: 0;
@@ -146,15 +153,18 @@ export default {
         margin-top: 15px;
       }
     }
+
     .demo-code {
       background: #f7f9fa;
       position: relative;
+
       .code-title {
         float: left;
         font-size: 18px;
         line-height: 24px;
         color: #222;
       }
+
       .code_copy {
         float: right;
         width: 68px;
@@ -168,7 +178,8 @@ export default {
         border: none;
         cursor: pointer;
       }
-      .code-container{
+
+      .code-container {
         padding-top: 20px;
         display: block;
         overflow: auto;

@@ -11,7 +11,7 @@
                  'margin-bottom': vSpace + 'px'}"
       >
         <div v-show="showRefresh" class="verify-refresh" style="z-index:3" @click="refresh">
-          <i class="iconfont icon-refresh" />
+          <i class="iconfont icon-refresh"/>
         </div>
         <img
           ref="canvas"
@@ -143,7 +143,7 @@ export default {
   },
   mounted() {
     // 禁止拖拽
-    this.$el.onselectstart = function() {
+    this.$el.onselectstart = function () {
       return false
     }
   },
@@ -187,7 +187,7 @@ export default {
                   this.refresh()
                 }, 1500)
               }
-              this.$parent.$emit('success', { captchaVerification })
+              this.$parent.$emit('success', {captchaVerification})
             } else {
               this.$parent.$emit('error', this)
               this.barAreaColor = '#d9534f'
@@ -206,17 +206,17 @@ export default {
     },
 
     // 获取坐标
-    getMousePos: function(obj, e) {
+    getMousePos: function (obj, e) {
       var x = e.offsetX
       var y = e.offsetY
-      return { x, y }
+      return {x, y}
     },
     // 创建坐标点
-    createPoint: function(pos) {
+    createPoint: function (pos) {
       this.tempPoints.push(Object.assign({}, pos))
       return ++this.num
     },
-    refresh: function() {
+    refresh: function () {
       this.tempPoints.splice(0, this.tempPoints.length)
       this.barAreaColor = '#000'
       this.barAreaBorderColor = '#ddd'
@@ -258,7 +258,7 @@ export default {
       var newPointArr = pointArr.map(p => {
         const x = Math.round(310 * p.x / parseInt(imgSize.imgWidth))
         const y = Math.round(155 * p.y / parseInt(imgSize.imgHeight))
-        return { x, y }
+        return {x, y}
       })
       // console.log(newPointArr,"newPointArr");
       return newPointArr
