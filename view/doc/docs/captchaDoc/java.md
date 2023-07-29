@@ -10,7 +10,7 @@ a.引入jar，已上传至maven中央仓库。
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>spring-boot-starter-captcha-plus</artifactId>
-   <version>1.0.5</version>
+   <version>1.0.6</version>
 </dependency>
 ```
 
@@ -209,7 +209,7 @@ a.引入jar，已上传至maven中央仓库。
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
-   <version>1.0.5</version>
+   <version>1.0.6</version>
 </dependency>
 ```
 
