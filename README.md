@@ -94,4 +94,22 @@ spring boot 3
 ### 谁在用
 - [ruoyi-vue-pro](https://gitee.com/zhijiantianya/ruoyi-vue-pro)
 
+## GraalVM
+### 注意事项
+#### 1. 本项目依赖AWT。AWT在 GraalVM 23.0.1上可能无法正常运行。推荐 GraalVM 22.3.x版本
+#### 2. 必须使用SpringBoot 3.X版本，JDK版本最低为：17
 
+### 编译
+#### 1. 配置GraalVM环境以及安装Native Image
+#### 2. 引入spring-boot-starter-captcha-plus
+```xml
+<dependency>
+  <groupId>com.xingyuv</groupId>
+  <artifactId>spring-boot-starter-captcha-plus</artifactId>
+  <version>适配GraalVM的版本</version>
+</dependency>
+```
+#### 3. 使用下方命令进行编译
+```shell
+mvn clean native:compile -Pnative -Dmaven.test.skip=true
+```
