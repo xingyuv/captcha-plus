@@ -1,0 +1,3 @@
+org.springframework.aot.hint.RuntimeHintsRegistrar=\
+	com.xingyuv.captcha.aot.AJCaptchaRuntimeHints,\
+	com.xingyuv.captcha.aot.AWTRuntimeHints
