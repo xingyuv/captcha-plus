@@ -6,8 +6,12 @@
 
 ## 在线体验
 
-- [在线体验 antdv](https://gitee.com/yudaocode/yudao-ui-admin-vben/)
-- [在线体验 element-plus](https://gitee.com/yudaocode/yudao-ui-admin-vue3/)
+- [在线体验 antdv](https://gitee.com/xingyuv/yudao-ui-admin-vben/)
+- [在线体验 element-plus](https://gitee.com/xingyuv/yudao-ui-admin-vue3/)
+
+## 外包项目请联系 [ xinyu370 ]
+
+- ![alt 定制开发](./images/wx2.png)
 
 ## 安装
 
@@ -104,7 +108,7 @@ spring boot 3
    └─vue         vue实现示例
 ```
 
-### 如有问题，请提交[Issue](https://github.com/xingyuv/captcha-plus/issues)
+### 如有问题，请提交[Issue](https://gitee.com/xingyuv/captcha-plus/issues)
 
 #### 开源不易，劳烦各位star ☺
 
