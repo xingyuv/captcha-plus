@@ -6,8 +6,8 @@
 
 ## 在线体验
 
-- [在线体验 element-plus](http://admin.x-surge.com/)
-- [在线体验 antdv](http://vben.x-surge.com/)
+- [在线体验 antdv](https://gitee.com/yudaocode/yudao-ui-admin-vben/)
+- [在线体验 element-plus](https://gitee.com/yudaocode/yudao-ui-admin-vue3/)
 
 ## 安装
 
