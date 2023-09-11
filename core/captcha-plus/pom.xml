@@ -6,7 +6,7 @@
 
     <groupId>com.xingyuv</groupId>
     <artifactId>captcha-plus</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
 
     <name>${project.groupId}:${project.artifactId}</name>
     <description>captcha-plus.jar</description>

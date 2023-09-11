@@ -6,12 +6,12 @@
 
     <groupId>com.xingyuv</groupId>
     <artifactId>captcha-plus-parent</artifactId>
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <packaging>pom</packaging>
 
     <properties>
-        <springboot.version>2.7.14</springboot.version>
-        <captcha.core.version>1.0.6</captcha.core.version>
+        <springboot.version>2.7.15</springboot.version>
+        <captcha.core.version>1.0.7</captcha.core.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <encoding>UTF-8</encoding>

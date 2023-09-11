@@ -30,7 +30,7 @@ public class RandomUtils {
      * @return 随机中文
      */
     public static String getRandomHan(String hanZi) {
-        return hanZi.charAt(new Random().nextInt(hanZi.length())) + "";
+        return String.valueOf(hanZi.charAt(new Random().nextInt(hanZi.length())));
     }
 
     public static int getRandomInt(int bound) {

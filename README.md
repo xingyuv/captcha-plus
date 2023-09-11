@@ -21,7 +21,7 @@ spring mvc
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>captcha-plus</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
@@ -31,7 +31,7 @@ spring boot 2
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
@@ -41,7 +41,7 @@ spring boot 3
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>1.0.6</version>
+  <version>1.0.7</version>
 </dependency>
 ```
 
