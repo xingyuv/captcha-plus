@@ -7,7 +7,7 @@
 ## 在线体验
 
 - [在线体验 antdv](https://gitee.com/xingyuv/yudao-ui-admin-vben/)
-- [在线体验 element-plus](https://gitee.com/xingyuv/yudao-ui-admin-vue3/)
+- [在线体验 element-plus](https://gitee.com/yudaocode/yudao-ui-admin-vue3/)
 
 ## 外包项目请联系 [ xinyu370 ]
 
