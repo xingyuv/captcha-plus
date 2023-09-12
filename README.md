@@ -4,10 +4,13 @@
 
 * Captcha-plus行为验证码，包含滑动拼图、文字点选两种方式，UI支持弹出和嵌入两种方式。后端提供Java实现，前端提供了php、angular、html、vue、uni-app、flutter、android、ios等代码示例。
 
-## 在线体验
+## 集成项目
 
-- [在线体验 antdv](https://gitee.com/xingyuv/yudao-ui-admin-vben/)
-- [在线体验 element-plus](https://gitee.com/yudaocode/yudao-ui-admin-vue3/)
+- [Vue3 Ant Design Vue](https://gitee.com/xingyuv/yudao-ui-admin-vben/)
+- [Vue3 Element-Plus](https://gitee.com/yudaocode/yudao-ui-admin-vue3/)
+- [Vue2 Element-UI](https://gitee.com/zhijiantianya/ruoyi-vue-pro/tree/master/yudao-ui-admin/)
+- [Vue2 UniAPP](https://gitee.com/zhijiantianya/ruoyi-vue-pro/tree/master/yudao-ui-admin-uniapp/)
+- [SpringBoot](https://gitee.com/zhijiantianya/ruoyi-vue-pro/tree/master/yudao-framework/yudao-spring-boot-starter-captcha)
 
 ## 外包项目请联系 [ xinyu370 ]
 
