@@ -4,7 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 
 /**
- * @Title: MD5工具类
+ * @deprecated MD5工具类
  */
 public abstract class MD5Util {
     /**
@@ -33,6 +33,7 @@ public abstract class MD5Util {
      * 获取指定字符串的md5值, md5(str+salt)
      *
      * @param dataStr 明文
+     * @param salt 盐值
      * @return String
      */
     public static String md5WithSalt(String dataStr, String salt) {

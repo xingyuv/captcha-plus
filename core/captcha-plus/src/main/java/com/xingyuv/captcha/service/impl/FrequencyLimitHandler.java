@@ -12,7 +12,6 @@ import java.util.Properties;
 
 /**
  * @author WongBin
- * @date 2021/1/21
  */
 public interface FrequencyLimitHandler {
 

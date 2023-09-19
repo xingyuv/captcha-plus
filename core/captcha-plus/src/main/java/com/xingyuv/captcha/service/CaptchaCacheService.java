@@ -10,7 +10,6 @@ package com.xingyuv.captcha.service;
  * 验证码缓存接口
  *
  * @author lide1202@hotmail.com
- * @date 2018-08-21
  */
 public interface CaptchaCacheService {
 
@@ -26,15 +25,15 @@ public interface CaptchaCacheService {
      * 缓存类型-local/redis/memcache/..
      * 通过java SPI机制，接入方可自定义实现类
      *
-     * @return
+     * @return type
      */
     String type();
 
     /***
      *
-     * @param key
-     * @param val
-     * @return
+     * @param key key
+     * @param val val
+     * @return increment
      */
     default Long increment(String key, long val) {
         return 0L;

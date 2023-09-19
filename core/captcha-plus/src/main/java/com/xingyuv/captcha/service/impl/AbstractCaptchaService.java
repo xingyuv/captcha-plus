@@ -231,7 +231,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
             // 处理数据
             for (int i = 0; i < b.length; ++i) {
                 if (b[i] < 0) {
-                    b[i] += 256;
+                    b[i] += (byte) 256;
                 }
             }
             //文件夹不存在则自动创建

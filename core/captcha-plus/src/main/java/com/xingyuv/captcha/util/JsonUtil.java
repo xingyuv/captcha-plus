@@ -13,7 +13,6 @@ import java.util.Map;
  * note: 该实现不具有通用性，仅用于本项目。
  *
  * @author WongBin
- * @date 2021/1/8
  */
 public class JsonUtil {
     private static Logger logger = LoggerFactory.getLogger(JsonUtil.class);
@@ -41,7 +40,7 @@ public class JsonUtil {
 					+ clazz.getSimpleName());
 		}*/
         try {
-            PointVO ret = clazz.newInstance();
+            PointVO ret = clazz.getDeclaredConstructor().newInstance();
             return ret.parse(text);
         } catch (Exception ex) {
             logger.error("json解析异常", ex);

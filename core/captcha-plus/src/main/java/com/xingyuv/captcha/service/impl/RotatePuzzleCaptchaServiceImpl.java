@@ -13,8 +13,7 @@ import java.util.Properties;
 /**
  * 旋转验证码
  *
- * @author: chenkening
- * @createTime: 2023-06-04
+ * @author chenkening
  */
 public class RotatePuzzleCaptchaServiceImpl extends AbstractCaptchaService {
     @Override

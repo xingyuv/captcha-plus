@@ -11,7 +11,7 @@ import java.text.MessageFormat;
 /**
  * 返回应答码
  *
- * @author
+ * @author xingyuv
  */
 public enum RepCodeEnum {
 

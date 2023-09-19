@@ -11,8 +11,7 @@ import java.util.Objects;
  * 内存缓存只适合单节点部署的应用，否则验证码生产与验证在节点之间信息不同步，导致失败。
  *
  * @author lide1202@hotmail.com
- * @Title: 默认使用内存当缓存
- * @Date 2020-05-12
+ * @deprecated : 默认使用内存当缓存
  */
 public class CaptchaCacheServiceMemImpl implements CaptchaCacheService {
     @Override

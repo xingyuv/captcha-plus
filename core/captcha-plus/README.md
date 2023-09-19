@@ -20,7 +20,7 @@ a.引入jar，已上传至maven中央仓库。
 <dependency>
    <groupId>com.xingyuv</groupId>
    <artifactId>captcha-plus</artifactId>
-   <version>1.0.8</version>
+   <version>2.0.1</version>
 </dependency>
 ```
 

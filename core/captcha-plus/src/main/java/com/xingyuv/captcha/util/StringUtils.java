@@ -480,7 +480,7 @@ public class StringUtils {
     /**
      * <p>Strips any of a set of characters from the start and end of every
      * String in an array.</p>
-     * Whitespace is defined by {@link Character#isWhitespace(char)}.</p>
+     * Whitespace is defined by {@link Character#isWhitespace(char)}.
      *
      * <p>A new array is returned each time, except for length zero.
      * A <code>null</code> array will return <code>null</code>.

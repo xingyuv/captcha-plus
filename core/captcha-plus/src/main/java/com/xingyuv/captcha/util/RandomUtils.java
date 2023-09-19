@@ -27,6 +27,7 @@ public class RandomUtils {
     /**
      * 获取指定文字的随机中文
      *
+     * @param hanZi 指定文字
      * @return 随机中文
      */
     public static String getRandomHan(String hanZi) {

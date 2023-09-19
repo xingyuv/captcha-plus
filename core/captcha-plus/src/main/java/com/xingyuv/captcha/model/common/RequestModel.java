@@ -53,7 +53,7 @@ public class RequestModel implements Serializable {
     /**
      * 校验自身参数合法性
      *
-     * @return
+     * @return isVaildateRequest
      */
     public boolean isVaildateRequest() {
         return !StringUtils.isBlank(sign) && !StringUtils.isBlank(time);

@@ -99,8 +99,7 @@ public class ImageUtils {
             return null;
         }
         Integer randomInt = RandomUtils.getRandomInt(0, strings.length);
-        String s = rotateBlockCacheMap.get(strings[randomInt]);
-        return s;
+        return rotateBlockCacheMap.get(strings[randomInt]);
     }
 
     public static BufferedImage getOriginal() {

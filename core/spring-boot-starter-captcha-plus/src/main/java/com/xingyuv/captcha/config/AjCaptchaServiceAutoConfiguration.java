@@ -4,6 +4,8 @@ import com.xingyuv.captcha.model.common.Const;
 import com.xingyuv.captcha.properties.AjCaptchaProperties;
 import com.xingyuv.captcha.service.CaptchaService;
 import com.xingyuv.captcha.service.impl.CaptchaServiceFactory;
+import com.xingyuv.captcha.util.Base64Utils;
+import com.xingyuv.captcha.util.FileCopyUtils;
 import com.xingyuv.captcha.util.ImageUtils;
 import com.xingyuv.captcha.util.StringUtils;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
@@ -12,8 +14,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.core.io.support.ResourcePatternResolver;
-import org.springframework.util.Base64Utils;
-import org.springframework.util.FileCopyUtils;
 
 import java.util.HashMap;
 import java.util.Map;
