@@ -32,7 +32,7 @@ spring mvc
 </dependency>
 ```
 
-spring boot 2
+spring boot 2 使用 main 分支
 
 ``` xml
 <dependency>
@@ -42,13 +42,13 @@ spring boot 2
 </dependency>
 ```
 
-spring boot 3
+spring boot 3 请使用 2.x 分支
 
 ``` xml
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>1.0.8</version>
+  <version>2.0.1</version>
 </dependency>
 ```
 
