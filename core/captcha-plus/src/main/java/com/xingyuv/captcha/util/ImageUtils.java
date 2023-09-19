@@ -80,7 +80,7 @@ public class ImageUtils {
         fileNameMap.put(CaptchaBaseMapEnum.ORIGINAL.getCodeValue(), originalCacheMap.keySet().toArray(new String[0]));
         fileNameMap.put(CaptchaBaseMapEnum.SLIDING_BLOCK.getCodeValue(), slidingBlockCacheMap.keySet().toArray(new String[0]));
         fileNameMap.put(CaptchaBaseMapEnum.PIC_CLICK.getCodeValue(), picClickCacheMap.keySet().toArray(new String[0]));
-        logger.info("自定义resource底图:{}", JsonUtil.toJSONString(fileNameMap));
+        logger.debug("自定义resource底图:{}", JsonUtil.toJSONString(fileNameMap));
     }
 
     public static BufferedImage getRotate() {

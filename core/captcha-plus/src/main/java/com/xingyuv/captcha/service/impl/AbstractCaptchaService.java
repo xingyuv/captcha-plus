@@ -100,7 +100,7 @@ public abstract class AbstractCaptchaService implements CaptchaService {
         loadWaterMarkFont();
 
         if (cacheType.equals(cacheType)) {
-            logger.info("初始化local缓存...");
+            logger.debug("初始化local缓存...");
             CacheUtil.init(Integer.parseInt(config.getProperty(Const.CAPTCHA_CACHE_MAX_NUMBER, "1000")),
                     Long.parseLong(config.getProperty(Const.CAPTCHA_TIMING_CLEAR_SECOND, "180")));
         }
