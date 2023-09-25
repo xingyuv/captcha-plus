@@ -48,7 +48,7 @@ spring boot 3
 <dependency>
   <groupId>com.xingyuv</groupId>
   <artifactId>spring-boot-starter-captcha-plus</artifactId>
-  <version>2.0.2</version>
+  <version>2.0.3</version>
 </dependency>
 ```
 
