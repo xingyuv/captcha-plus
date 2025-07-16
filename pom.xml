@@ -37,7 +37,7 @@
             <dependency>
                 <groupId>com.xingyuv</groupId>
                 <artifactId>captcha-plus</artifactId>
-                <version>${captcha.core.version}</version>
+                <version>1.0.8</version>
             </dependency>
 
         </dependencies>
